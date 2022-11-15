@@ -1,31 +1,50 @@
 .transition-fade {
-    transition: 0.4s;
-    opacity: 1;
+  transition: 0.4s;
+  opacity: 1;
 }
 
 html.is-animating .transition-fade {
-    opacity: 0;
+  opacity: 0;
 }
 
 html {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 body {
-    font-family: $font-family-base;
-    font-size: 1.6rem;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility !important;
+  font-family: $font-family-base;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility !important;
+  position: relative;
+  min-height: 100vh;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("~/assets/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+  }
+}
+
+main {
+  padding-top: 14rem;
 }
 
 .section {
-    padding: 10rem 0;
+  padding: 10rem 0;
 
-    @include bp(tablet) {
-        padding: 7.5rem 0;
-    }
-    @include bp(tablet-small) {
-        padding: 5rem 0;
-    }
+  @include bp(tablet) {
+    padding: 7.5rem 0;
+  }
+  @include bp(tablet-small) {
+    padding: 5rem 0;
+  }
 }

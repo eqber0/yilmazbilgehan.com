@@ -1,3 +1,30 @@
 .header {
-  background: var(--ui-bg);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  &__wrapper {
+    padding: 5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    width: 14rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  &__menu {
+    width: 7rem;
+    &-line {
+      width: 100%;
+      height: 0.2rem;
+      background-color: var(--c-white);
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
 }
