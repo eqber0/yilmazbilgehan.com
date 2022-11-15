@@ -12,16 +12,28 @@ export default {
       { name: "format-detection", content: "telephone=no" },
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    script: [
+      { src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Draggable.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js",
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js",
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ["~/sass/app.scss"],
+  css: ["~/sass/app.scss", "swiper/swiper-bundle.min.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [{ src: "~/plugins/swiper-client.js", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ["~/components", { path: "/v-button", extensions: ["vue"] }],
+  components: ["~/components", { path: "v-button", extensions: ["vue"] }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/svg-sprite"],

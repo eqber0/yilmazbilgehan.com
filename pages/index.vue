@@ -1,15 +1,15 @@
 <template>
   <main>
     <hero />
-    <v-button color="" hover="primary" icon="iconArrow" text="view more" />
-    <hero />
+    <works />
   </main>
 </template>
 
 <script>
 import hero from "../components/index/hero.vue";
+import works from "../components/index/works.vue";
 export default {
-  components: { hero },
+  components: { hero, works },
   name: "IndexPage",
 };
 </script>
