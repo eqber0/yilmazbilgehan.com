@@ -3,7 +3,9 @@ import Swiper, {
   Pagination,
   Navigation,
   EffectCoverflow,
+  EffectFade,
   Autoplay,
+  Thumbs,
 } from "swiper";
 const swiper = {
   install(Vue, options) {
@@ -12,7 +14,9 @@ const swiper = {
       Navigation,
       Pagination,
       EffectCoverflow,
+      EffectFade,
       Autoplay,
+      Thumbs,
     };
   },
 };
