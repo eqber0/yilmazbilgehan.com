@@ -20,6 +20,7 @@ $c-black: #000000;
   --c-black: #000000;
   --c-primary: #7d26cd;
   --c-secondary: #ae062c;
+  --c-paragraph: #484848;
 }
 
 .c-white {
@@ -36,4 +37,7 @@ $c-black: #000000;
 }
 .c-secondary {
   color: var(--c-secondary);
+}
+.c-paragraph {
+  color: var(--c-paragraph);
 }

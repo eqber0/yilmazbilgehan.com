@@ -1,5 +1,5 @@
 <template>
-  <section class="section index-about">
+  <section class="section section--pt0 index-about">
     <div class="container">
       <div class="index-about__wrapper">
         <div class="index-about__text">
@@ -13,12 +13,70 @@
           </h4>
         </div>
         <div class="index-about__skills">
-          <div class="index-about__skills-info"></div>
+          <div class="index-about__skills-progress">
+            <div
+              v-for="(item, index) in progressItems"
+              :key="index"
+              class="index-about__skills-progress__item"
+            >
+              <div class="index-about__skills-progress__item-title">
+                <h4 class="txt txt--rem32 txt--font400 c-white">
+                  {{ item.title }}
+                </h4>
+              </div>
+              <div class="index-about__skills-progress__item-line progress">
+                <div
+                  class="progress-bar"
+                  role="progressbar"
+                  :style="'width:' + item.percent + '%'"
+                  aria-valuenow="0"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                ></div>
+              </div>
+            </div>
+          </div>
+
           <div class="index-about__skills-image">
-            <img src="" alt="" />
+            <img src="~/static/images/bilgehan.png" alt="" />
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      progressItems: [
+        {
+          title: "HTML 5",
+          percent: "90",
+        },
+        {
+          title: "CSS",
+          percent: "85",
+        },
+        {
+          title: "Javascript",
+          percent: "60",
+        },
+        {
+          title: "VueJs",
+          percent: "60",
+        },
+        {
+          title: "Javascript",
+          percent: "60",
+        },
+        {
+          title: "VueJs",
+          percent: "60",
+        },
+      ],
+    };
+  },
+};
+</script>

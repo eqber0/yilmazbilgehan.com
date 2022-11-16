@@ -52,7 +52,9 @@
 
 .index-works {
   overflow: hidden;
-  height: 100vh;
+  max-height: 110vh;
+  height: 100%;
+  padding-bottom: 20rem;
 
   &__slider {
     padding-left: 0px;
@@ -220,6 +222,53 @@
     line-height: 7rem;
     span {
       color: var(--c-primary);
+    }
+  }
+  &__skills {
+    margin-top: 20rem;
+    border: 0.2rem solid var(--c-white);
+    width: 100%;
+    height: 57rem;
+    border-radius: 1.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    &-progress {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      padding: 4rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+      }
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: 4rem;
+        }
+        &-line {
+          margin-top: 2rem;
+          height: 0.5rem !important;
+          .progress-bar {
+            background-color: var(--c-primary) !important;
+          }
+        }
+      }
+    }
+    &-image {
+      width: 38%;
+      height: 100%;
+      margin-left: 4rem;
+      position: relative;
+      img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
     }
   }
 }

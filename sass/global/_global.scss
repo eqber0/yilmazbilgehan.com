@@ -47,4 +47,8 @@ main {
   @include bp(tablet-small) {
     padding: 5rem 0;
   }
+
+  &--pt0 {
+    padding-top: 0;
+  }
 }
