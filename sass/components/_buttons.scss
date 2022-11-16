@@ -46,4 +46,9 @@
     background-color: var(--c-secondary);
     border-color: var(--c-secondary);
   }
+
+  &--centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

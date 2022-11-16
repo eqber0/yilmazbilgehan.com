@@ -1,5 +1,14 @@
 <template>
-  <div class="btn" :class="(color = 'primary' ? 'btn--primary' : '')">
+  <div
+    :class="[
+      'btn',
+      color == 'primary' ? 'btn--primary' : '',
+      color == 'secondary' ? 'btn--secondary' : '',
+      hover == 'primary' ? 'btn--primary-hover' : '',
+      hover == 'secondary' ? 'btn--secondary-hover' : '',
+      type == 'centered' ? 'btn--centered' : '',
+    ]"
+  >
     <div class="btn-txt">
       {{ text }}
     </div>
@@ -11,6 +20,6 @@
 
 <script>
 export default {
-  props: ["color", "icon", "hover", "text"],
+  props: ["color", "icon", "hover", "text", "type"],
 };
 </script>

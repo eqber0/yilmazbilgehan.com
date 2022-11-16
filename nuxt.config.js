@@ -26,6 +26,10 @@ export default {
     ],
   },
 
+  server: {
+    host: "0",
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["~/sass/app.scss", "swiper/swiper-bundle.min.css"],
 
@@ -33,10 +37,13 @@ export default {
   plugins: [{ src: "~/plugins/swiper-client.js", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ["~/components", { path: "v-button", extensions: ["vue"] }],
+  components: ["~/components", { path: "v-button.vue", extensions: ["vue"] }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/svg-sprite"],
+  svgSprite: {
+    elementClass: "icon icon-font",
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],

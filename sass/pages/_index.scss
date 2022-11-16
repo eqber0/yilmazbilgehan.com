@@ -55,37 +55,171 @@
   height: 100vh;
 
   &__slider {
-    .swiper {
-      overflow: initial;
-      &-slide {
-        transition: var(--transition) !important;
-        &-prev {
-          transform: rotate(-10deg) translateY(5rem) !important;
-        }
-        &-next {
-          transform: rotate(10deg) translateY(5rem) !important;
-        }
-        &-duplicate {
-          &-next {
-            transform: rotate(-15deg) translateY(17rem) !important;
-          }
-          &-prev {
-            transform: rotate(15deg) translateY(17rem) !important;
-          }
-        }
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 600px;
+    padding-bottom: 104px;
+    position: relative;
+    height: 114rem;
+    width: 100%;
+    .line-split {
+      position: relative;
+      width: 1140px;
+      left: 50%;
+      margin-left: -570px;
+      text-align: center;
+      margin-top: 127px;
+    }
+    .btn {
+      margin-top: 92px;
+    }
+    .eyes {
+      position: absolute;
+      right: 96px;
+      top: 0px;
+      width: 79px;
+    }
+    .base {
+      width: 100%;
+      max-width: 2448px;
+      margin: 0 auto;
+      margin-top: 25px;
+      visibility: hidden;
+    }
+    .work-carousel {
+      width: 2560px;
+      height: 1140px;
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: 0;
+      left: 50%;
+      margin-left: -1280px;
+    }
+    .thumb-wrap {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      pointer-events: none;
+    }
+    .carousel-spinner {
+      width: 3600px;
+      height: 3600px;
+      border-radius: 50%;
+      position: absolute;
+      top: 603px;
+      left: 50%;
+      margin-left: -1800px;
+      will-change: transform;
+    }
+    .carousel-group {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform: rotate(-26deg);
+      pointer-events: none;
+    }
+    .work-thumb {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 376px;
+      top: -568px;
+      left: 50%;
+      margin-left: -188px;
+      pointer-events: all;
+      padding: {
+        color: #ff4444;
+        opacity: 0;
       }
     }
+
     &-item {
+      display: block;
       max-width: 40rem;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      width: 100%;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: var(--transition);
+        background: linear-gradient(
+          180deg,
+          rgba(125, 38, 205, 0) 0.01%,
+          rgba(125, 38, 205, 0) 0.02%,
+          #7d26cd 90.62%
+        );
+      }
       &__image {
         height: 60rem;
-        border-radius: 1.5rem;
-        overflow: hidden;
         img {
           width: 100%;
           height: 100%;
         }
       }
+      &__content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 15rem;
+        z-index: 1;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3rem 4rem;
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transform: translateY(10rem);
+        transition: var(--transition);
+        &-button {
+          flex-shrink: 0;
+          .icon {
+            font-size: 2.7rem;
+          }
+        }
+      }
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+        .index-works__slider-item {
+          &__content {
+            opacity: 1;
+            pointer-events: all;
+            visibility: visible;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.index-about {
+  &__wrapper {
+  }
+  &__text {
+    max-width: 140rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 7rem;
+    span {
+      color: var(--c-primary);
     }
   }
 }

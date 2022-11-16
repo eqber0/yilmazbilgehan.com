@@ -3,7 +3,7 @@
     <div class="container">
       <div class="header__wrapper">
         <div class="header__logo">
-          <img src="~/assets/qbr-logo.svg" alt="" />
+          <img src="~/static/images/qbr-logo.svg" alt="" />
         </div>
         <div class="header__menu">
           <div class="header__menu-line"></div>
