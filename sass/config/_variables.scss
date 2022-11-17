@@ -21,6 +21,13 @@ $c-black: #000000;
   --c-primary: #7d26cd;
   --c-secondary: #ae062c;
   --c-paragraph: #484848;
+
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
 }
 
 .c-white {
@@ -40,4 +47,22 @@ $c-black: #000000;
 }
 .c-paragraph {
   color: var(--c-paragraph);
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
 }
