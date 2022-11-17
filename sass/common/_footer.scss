@@ -1,6 +1,7 @@
 .footer {
   margin-top: 10rem;
-
+  position: relative;
+  z-index: 1;
   &__profiles {
     display: flex;
     justify-content: space-between;

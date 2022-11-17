@@ -12,7 +12,11 @@
                 :key="index"
                 class="swiper-slide"
               >
-                <a href="#0" class="award-slider__text-item">
+                <a
+                  href="#0"
+                  class="award-slider__text-item js-link-field"
+                  data-cursor-text="View Project"
+                >
                   <div
                     class="award-slider__text-item__title txt txt--rem64 txt--font900 c-white"
                   >
@@ -28,7 +32,10 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg-7">
+        <div
+          class="award-slider__right col-12 col-lg-7 js-drag-move-field c-none"
+          data-cursor-text="Drag"
+        >
           <div ref="thumbSlider" class="swiper">
             <div class="swiper-wrapper">
               <div
@@ -36,8 +43,10 @@
                 :key="index"
                 class="swiper-slide"
               >
-                <div class="award-slider__image">
-                  <img :src="slide.img" alt="" />
+                <div class="award-slider__right-item">
+                  <div class="award-slider__right-item__image">
+                    <img class="" :src="slide.img" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -72,27 +81,26 @@ export default {
     };
   },
   mounted() {
-    // Thumb Slider
-    this.swiperThumb = new this.$swiper(this.$refs.thumbSlider, {
+    this.swiperText = new this.$swiper(this.$refs.textSlider, {
       loop: true,
-      // configure Swiper to use modules
-      modules: [this.$swiperModules.Thumbs, this.$swiperModules.EffectFade],
-      slidesPerView: 1,
-      effect: "fade",
-      speed: 800,
-    });
-
-    this.swiper = new this.$swiper(this.$refs.textSlider, {
-      loop: true,
-      // configure Swiper to use modules
-      modules: [this.$swiperModules.Thumbs],
       direction: "vertical",
-      slidesPerView: "auto",
+      slidesPerView: 3,
       centeredSlides: true,
       spaceBetween: 200,
       speed: 800,
+      watchSlidesProgress: true,
+      watchSlidesVisibility: true,
+    });
+
+    this.swiperThumb = new this.$swiper(this.$refs.thumbSlider, {
+      loop: true,
+      modules: [this.$swiperModules.Thumbs, this.$swiperModules.EffectFade],
+      slidesPerView: 1,
+      speed: 800,
+      direction: "vertical",
+      centeredSlides: true,
       thumbs: {
-        swiper: this.swiperThumb,
+        swiper: this.swiperText,
       },
     });
   },

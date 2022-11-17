@@ -33,11 +33,6 @@
   }
   &--not-top {
     .header {
-      // &__wrapper {
-      //   &::after {
-      //     opacity: 1;
-      //   }
-      // }
       &__logo {
         filter: brightness(0) invert(1);
       }
