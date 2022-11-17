@@ -22,6 +22,7 @@ $c-black: #000000;
   --c-secondary: #ae062c;
   --c-paragraph: #484848;
 
+  // About Skills Border Animation Variables
   --d: 2500ms;
   --angle: 90deg;
   --gradX: 100%;
@@ -49,6 +50,7 @@ $c-black: #000000;
   color: var(--c-paragraph);
 }
 
+// About Skills Border Animation Properties
 @property --angle {
   syntax: "<angle>";
   initial-value: 90deg;
