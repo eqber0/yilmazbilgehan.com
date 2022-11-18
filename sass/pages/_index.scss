@@ -9,6 +9,32 @@
     text-align: center;
     margin: 0 auto;
     line-height: 18rem;
+    .text-line {
+      overflow: hidden;
+      &:nth-child(1) {
+        .text-line-inner {
+          transition-delay: 0s;
+        }
+      }
+      &:nth-child(2) {
+        .text-line-inner {
+          transition-delay: 0.35s;
+        }
+      }
+      &:nth-child(3) {
+        .text-line-inner {
+          transition-delay: 0.7s;
+        }
+      }
+      &-inner {
+        display: block;
+        transform: translateY(100%);
+        transition: var(--transition-extraslow);
+        &.loaded {
+          transform: translate(0);
+        }
+      }
+    }
   }
   &__scroll {
     margin: 8rem auto 0 auto;
