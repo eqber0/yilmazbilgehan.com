@@ -14,13 +14,14 @@ $c-black: #000000;
   --transition-fast: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
   --transition: 0.3s cubic-bezier(0.29, 0.13, 0.27, 0.74);
   --transition-slow: 0.4s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition-extraslow: 0.5s cubic-bezier(0.29, 0.13, 0.27, 0.74);
 
   --c-white: #ffffff;
   --c-white-alt: #c1c1c1;
   --c-black: #000000;
   --c-primary: #7d26cd;
   --c-secondary: #ae062c;
-  --c-paragraph: #484848;
+  --c-paragraph: #aaaaaa;
 
   // About Skills Border Animation Variables
   --d: 2500ms;

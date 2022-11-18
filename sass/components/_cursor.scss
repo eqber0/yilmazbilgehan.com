@@ -73,7 +73,7 @@
   &.is-drag {
     transition-delay: 0s;
     z-index: 3;
-    border: 0.2rem solid var(--c-primary);
+    border: 0.3rem solid var(--c-primary);
     &:before,
     &:after {
       width: 14.4rem;
@@ -111,6 +111,7 @@
         transition-delay: 0.35s !important;
         transition: var(--transition-slow);
         color: var(--c-primary);
+        font-weight: 800;
       }
     }
   }

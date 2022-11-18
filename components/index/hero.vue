@@ -3,7 +3,7 @@
     <div class="container">
       <div class="hero__wrapper">
         <div class="hero__text">
-          <h1 class="txt--rem128 txt--font900 c-white">
+          <h1 class="txt txt--rem128 txt--font900 c-white">
             Good design is about <span class="c-primary">process</span>, not
             <span class="c-secondary">product</span>.
           </h1>
@@ -17,5 +17,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  mounted() {
+    const heroText = document.querySelector(".hero__text .txt");
+    setTimeout(() => {
+      heroText.classList.add("loaded");
+    }, 1500);
+  },
+};
 </script>

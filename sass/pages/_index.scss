@@ -290,6 +290,7 @@
 }
 
 .award-slider {
+  overflow: hidden;
   height: 100vh;
   & > .container {
     height: 100%;
@@ -299,7 +300,8 @@
   }
   &__text {
     .swiper {
-      max-height: 77.6rem;
+      max-height: 30.6rem;
+      overflow: initial;
       &-slide {
         .award-slider__text-item {
           &__title {
@@ -364,6 +366,17 @@
       height: 100%;
       max-width: 80rem;
       margin: auto;
+      .award-image {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        max-width: 12rem;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
       &__image {
         border-radius: 1.5rem;
         width: 100%;

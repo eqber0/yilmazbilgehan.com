@@ -45,7 +45,8 @@
               >
                 <div class="award-slider__right-item">
                   <div class="award-slider__right-item__image">
-                    <img class="" :src="slide.img" alt="" />
+                    <img :src="slide.img" alt="" />
+                    <img class="award-image" :src="slide.awardImg" alt="" />
                   </div>
                 </div>
               </div>
@@ -58,49 +59,59 @@
 </template>
 
 <script>
+import {
+  Swiper,
+  Navigation,
+  Pagination,
+  EffectCoverflow,
+  Thumbs,
+} from "swiper";
 export default {
   data() {
     return {
       awardSlider: [
         {
           title: "Chace people",
-          subTitle: "Job Search Website",
+          subTitle: "KRİSTAL ELMA SILVER AWARD",
           img: "/images/work-chace.jpg",
+          awardImg: "/images/chace-award.png",
         },
         {
           title: "Latro",
           subTitle: "Corporate Website",
           img: "/images/work-latro.jpg",
+          awardImg: "/images/chace-award.png",
         },
         {
           title: "Trowas",
           subTitle: "E Commerce Website",
           img: "/images/work-trowas.jpg",
+          awardImg: "/images/chace-award.png",
         },
       ],
     };
   },
-  mounted() {
-    this.swiperText = new this.$swiper(this.$refs.textSlider, {
+  async mounted() {
+    Swiper.use([Navigation, Pagination, EffectCoverflow, Thumbs]);
+    await this.$nextTick();
+    const swiperText = new Swiper(this.$refs.textSlider, {
       loop: true,
       direction: "vertical",
-      slidesPerView: 3,
-      centeredSlides: true,
-      spaceBetween: 200,
+      slidesPerView: 1,
       speed: 800,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
+      onlyExternal: true,
     });
 
-    this.swiperThumb = new this.$swiper(this.$refs.thumbSlider, {
+    const swiperThumb = new Swiper(this.$refs.thumbSlider, {
       loop: true,
-      modules: [this.$swiperModules.Thumbs, this.$swiperModules.EffectFade],
+      modules: [Thumbs],
       slidesPerView: 1,
       speed: 800,
       direction: "vertical",
-      centeredSlides: true,
       thumbs: {
-        swiper: this.swiperText,
+        swiper: swiperText,
       },
     });
   },

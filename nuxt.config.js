@@ -22,16 +22,11 @@ export default {
     script: [
       { src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" },
       {
-        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/Draggable.min.js",
-      },
-      {
-        src: "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js",
-      },
-      {
         src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js",
       },
     ],
   },
+  ssr: true,
 
   server: {
     host: "0",
@@ -41,10 +36,10 @@ export default {
   css: ["~/sass/app.scss", "swiper/swiper-bundle.min.css"],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{ src: "~/plugins/swiper-client.js", mode: "client" }],
+  // plugins: [{ src: "~/plugins/swiper-client.js", mode: "client" }],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: ["~/components", { path: "v-button.vue", extensions: ["vue"] }],
+  components: ["~/components", { path: "v-button", extensions: ["vue"] }],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ["@nuxtjs/svg-sprite"],
@@ -56,5 +51,14 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    standalone: true,
+    extend(config, ctx) {
+      config.externals = [
+        {
+          encoding: "encoding",
+        },
+      ];
+    },
+  },
 };
