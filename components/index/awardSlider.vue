@@ -45,8 +45,10 @@
               >
                 <div class="award-slider__right-item">
                   <div class="award-slider__right-item__image">
+                    <div class="award-image">
+                      <img :src="slide.awardImg" alt="" />
+                    </div>
                     <img :src="slide.img" alt="" />
-                    <img class="award-image" :src="slide.awardImg" alt="" />
                   </div>
                 </div>
               </div>
@@ -74,19 +76,19 @@ export default {
           title: "Chace people",
           subTitle: "KRİSTAL ELMA SILVER AWARD",
           img: "/images/work-chace.jpg",
-          awardImg: "/images/chace-award.png",
+          awardImg: "/images/kristal.png",
         },
         {
           title: "Latro",
-          subTitle: "Corporate Website",
+          subTitle: "Horizon Silver Winner",
           img: "/images/work-latro.jpg",
-          awardImg: "/images/chace-award.png",
+          awardImg: "/images/horizon.png",
         },
         {
           title: "Trowas",
-          subTitle: "E Commerce Website",
+          subTitle: "Altin Orumcek Finalist",
           img: "/images/work-trowas.jpg",
-          awardImg: "/images/chace-award.png",
+          awardImg: "/images/orumcek.png",
         },
       ],
     };
