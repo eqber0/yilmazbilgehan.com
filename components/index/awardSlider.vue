@@ -1,8 +1,8 @@
 <template>
-  <section class="award-slider">
+  <section class="section award-slider">
     <div class="container">
       <div
-        class="award-slider__wrapper row g-4 g-md-5 align-items-center c-white"
+        class="award-slider__wrapper row g-4 g-md-5 align-items-center c-white flex-column-reverse flex-lg-row"
       >
         <div class="award-slider__text col-12 col-lg-5">
           <div ref="textSlider" class="swiper">
@@ -61,13 +61,7 @@
 </template>
 
 <script>
-import {
-  Swiper,
-  Navigation,
-  Pagination,
-  EffectCoverflow,
-  Thumbs,
-} from "swiper";
+import { Swiper, Thumbs, Autoplay } from "swiper";
 export default {
   data() {
     return {
@@ -94,26 +88,50 @@ export default {
     };
   },
   async mounted() {
-    Swiper.use([Navigation, Pagination, EffectCoverflow, Thumbs]);
+    Swiper.use([Thumbs, Autoplay]);
     await this.$nextTick();
     const swiperText = new Swiper(this.$refs.textSlider, {
       loop: true,
       direction: "vertical",
       slidesPerView: 1,
-      speed: 800,
+      speed: 1000,
       watchSlidesProgress: true,
       watchSlidesVisibility: true,
       onlyExternal: true,
+      breakpoints: {
+        320: {
+          direction: "horizontal",
+          spaceBetween: 75,
+          slidesPerView: 1,
+        },
+        991: {
+          direction: "vertical",
+        },
+      },
     });
 
     const swiperThumb = new Swiper(this.$refs.thumbSlider, {
       loop: true,
-      modules: [Thumbs],
+      modules: [Thumbs, Autoplay],
       slidesPerView: 1,
-      speed: 800,
+      speed: 1000,
       direction: "vertical",
+      autoplay: {
+        delay: 2500,
+        pauseOnMouseEnter: true,
+      },
       thumbs: {
         swiper: swiperText,
+      },
+      breakpoints: {
+        320: {
+          direction: "horizontal",
+          spaceBetween: 75,
+          slidesPerView: 1,
+        },
+        991: {
+          direction: "vertical",
+        },
       },
     });
   },

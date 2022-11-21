@@ -207,12 +207,18 @@
           rgba(125, 38, 205, 0) 0.02%,
           #7d26cd 90.62%
         );
+        @include bp(tablet-small) {
+          opacity: 1;
+        }
       }
       &__image {
         height: 60rem;
         transition: var(--transition);
         @include bp(desktop) {
           height: 50rem;
+        }
+        @include bp(tablet) {
+          height: 40rem;
         }
         img {
           width: 100%;
@@ -236,6 +242,12 @@
         visibility: hidden;
         transform: translateY(10rem);
         transition: var(--transition);
+        @include bp(tablet-small) {
+          opacity: 1;
+          visibility: visible;
+          pointer-events: all;
+          transform: translateX(0);
+        }
         &-button {
           flex-shrink: 0;
           .icon {
@@ -244,15 +256,17 @@
         }
       }
       &:hover {
-        &::after {
-          opacity: 1;
-        }
-        .index-works__slider-item {
-          &__content {
+        @include bp(tablet-small) {
+          &::after {
             opacity: 1;
-            pointer-events: all;
-            visibility: visible;
-            transform: translateY(0);
+          }
+          .index-works__slider-item {
+            &__content {
+              opacity: 1;
+              pointer-events: all;
+              visibility: visible;
+              transform: translateY(0);
+            }
           }
         }
       }
@@ -300,10 +314,12 @@
 
     @include bp(desktop) {
       height: 43rem;
+      margin-top: 15rem;
     }
     @include bp(tablet) {
       flex-direction: column-reverse;
       height: 58rem;
+      margin-top: 10rem;
     }
 
     &-progress {
@@ -339,6 +355,7 @@
         max-width: 20rem;
         margin-top: -4rem;
         margin-bottom: -4rem;
+        margin-left: 0;
       }
       @include bp(tablet-small) {
         max-width: 25rem;
@@ -360,6 +377,9 @@
 .award-slider {
   overflow: hidden;
   height: 100vh;
+  @include bp(tablet) {
+    height: unset;
+  }
   & > .container {
     height: 100%;
   }
@@ -427,6 +447,10 @@
   &__right {
     .swiper {
       max-height: 77.6rem;
+      @include bp(tablet) {
+        overflow: initial;
+        max-height: unset;
+      }
       &-slide {
         .award-image {
           opacity: 0;
@@ -448,11 +472,16 @@
       height: 100%;
       max-width: 80rem;
       margin: auto;
-
+      @include bp(tablet) {
+        max-width: unset;
+      }
       &__image {
         width: 100%;
         height: 50rem;
         position: relative;
+        @include bp(tablet-small) {
+          height: 40rem;
+        }
         .award-image {
           position: absolute;
           right: -2rem;
@@ -460,6 +489,12 @@
           width: 15rem;
           max-height: 25rem;
           z-index: 1;
+          @include bp(tablet-small) {
+            width: 10rem;
+          }
+          @include bp(mobile) {
+            width: 8rem;
+          }
           img {
             width: 100%;
             height: 100%;
