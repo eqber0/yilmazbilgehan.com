@@ -11,6 +11,7 @@
   "dependencies": {
     "@nuxtjs/svg-sprite": "^0.5.2",
     "core-js": "^3.25.3",
+    "gsap": "^3.11.3",
     "nuxt": "^2.15.8",
     "particles.vue": "^3.5.3",
     "swiper": "^8.4.4",

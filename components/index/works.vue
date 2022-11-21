@@ -2,7 +2,7 @@
   <section class="section index-works">
     <div class="container">
       <div class="index-works__wrapper">
-        <div ref="indexWorksSlider" id="home-work" class="index-works__slider">
+        <div ref="indexWorksSlider" class="index-works__slider">
           <div
             class="work-carousel animResize tc"
             data-min="900"
@@ -46,6 +46,35 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="index-works__mobile">
+            <NuxtLink
+              v-for="(item, index) in carouselSlider.slice(0, 3)"
+              :key="index"
+              :to="{
+                path: `work-detail/${item.title
+                  .toLowerCase()
+                  .replace(/ /g, '-')}`,
+              }"
+              class="index-works__slider-item"
+            >
+              <div class="index-works__slider-item__image">
+                <img :src="item.img" alt="" />
+              </div>
+              <div class="index-works__slider-item__content">
+                <div class="index-works__slider-item__content-title">
+                  <h3 class="txt txt--rem32 txt--font900 c-white">
+                    {{ item.title }}
+                  </h3>
+                  <p class="txt txt--rem20 txt--font300 c-white">
+                    {{ item.type }}
+                  </p>
+                </div>
+                <div class="index-works__slider-item__content-button">
+                  <svg-icon name="iconArrow" />
+                </div>
+              </div>
+            </NuxtLink>
           </div>
           <v-button
             color=""
@@ -110,7 +139,7 @@ export default {
 
       // set position of thumbs around carousel
 
-      $("#home-work")
+      $(".index-works__slider")
         .find(".thumb-wrap")
         .each(function (i) {
           gsap.set($(this), { rotation: cRot * i });

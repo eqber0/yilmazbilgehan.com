@@ -27,6 +27,7 @@
               <div class="index-about__skills-progress__item-line progress">
                 <div
                   class="progress-bar"
+                  ref="progressItem"
                   role="progressbar"
                   :style="'width:' + item.percent + '%'"
                   aria-valuenow="0"
@@ -36,7 +37,6 @@
               </div>
             </div>
           </div>
-
           <div class="index-about__skills-image">
             <img src="~/static/images/bilgehan.png" alt="" />
           </div>
@@ -78,6 +78,17 @@ export default {
       ],
     };
   },
-  mounted() {},
+  mounted() {
+    this.$gsap.from(this.$refs.progressItem, {
+      scrollTrigger: {
+        trigger: this.$refs.progressItem,
+        start: "center-=100 center",
+        end: "center-=100 center",
+      },
+      width: 0,
+      ease: "power2",
+      duration: 1,
+    });
+  },
 };
 </script>

@@ -8,6 +8,57 @@
   --txt-rem24: 2.4rem;
   --txt-rem20: 2rem;
   --txt-rem18: 1.8rem;
+
+  @include bp(laptop) {
+    --txt-rem128: 10.8rem;
+    --txt-rem64: 5.6rem;
+    --txt-rem48: 3.8rem;
+    --txt-rem32: 3.2rem;
+    --txt-rem30: 3rem;
+    --txt-rem28: 2.8rem;
+    --txt-rem24: 2.4rem;
+    --txt-rem20: 2rem;
+    --txt-rem18: 1.8rem;
+  }
+
+  @include bp(desktop) {
+    --txt-rem128: 8.6rem;
+    --txt-rem64: 4.8rem;
+    --txt-rem48: 3.6rem;
+    --txt-rem32: 3.2rem;
+    --txt-rem30: 3rem;
+    --txt-rem28: 2.8rem;
+    --txt-rem24: 2.4rem;
+    --txt-rem20: 2rem;
+    --txt-rem18: 1.8rem;
+  }
+
+  @include bp(tablet) {
+    --txt-rem128: 7.2rem;
+    --txt-rem64: 3.6rem;
+    --txt-rem48: 3.2rem;
+    --txt-rem32: 3rem;
+    --txt-rem30: 2.8rem;
+    --txt-rem28: 2.4rem;
+    --txt-rem24: 2.2rem;
+    --txt-rem20: 2rem;
+    --txt-rem18: 1.8rem;
+  }
+  @include bp(tablet-small) {
+    --txt-rem128: 6.4rem;
+  }
+
+  @include bp(mobile) {
+    --txt-rem128: 4.8rem;
+    --txt-rem64: 3.2rem;
+    --txt-rem48: 3rem;
+    --txt-rem32: 2.8rem;
+    --txt-rem30: 2.4rem;
+    --txt-rem28: 2.2rem;
+    --txt-rem24: 2rem;
+    --txt-rem20: 1.8rem;
+    --txt-rem18: 1.6rem;
+  }
 }
 .txt {
   &--rem {
