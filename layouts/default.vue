@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div style="position: relative; z-index: 1">
     <appHeader />
     <Nuxt />
-    <!-- <appFooter /> -->
+    <appFooter />
     <div class="cursor">
       <div class="cursor__txt"></div>
       <div class="cursor__icon"></div>
@@ -22,6 +22,7 @@ import appHeader from "../components/common/appHeader.vue";
 import appFooter from "../components/common/appFooter.vue";
 import Particles from "particles.vue";
 import { loadFull } from "tsparticles";
+import gsap from "gsap";
 Vue.use(Particles);
 export default {
   components: {
@@ -30,6 +31,7 @@ export default {
   },
   data() {
     return {
+      particles: true,
       particleOptions: {
         particles: {
           number: {
@@ -99,6 +101,11 @@ export default {
     };
   },
   mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      setTimeout(() => this.$nuxt.$loading.finish(), 1000);
+    });
+
     const dragMoveField = document.querySelectorAll(".js-drag-move-field");
     const linkField = document.querySelectorAll(".js-link-field");
     const cursor = document.querySelector(".cursor");
@@ -144,7 +151,7 @@ export default {
       loadFull(engine);
     },
     particlesLoaded(container) {
-      console.log("Particles container loaded", container);
+      console.log(container);
     },
   },
 };

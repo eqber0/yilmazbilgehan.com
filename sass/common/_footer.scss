@@ -6,12 +6,44 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 0.3rem solid var(--c-paragraph);
+    @include bp(tablet) {
+      flex-direction: column;
+      border-bottom: 0;
+    }
     &__item {
       width: calc(50%);
       min-height: 60rem;
       display: flex;
       position: relative;
       overflow: hidden;
+      @include bp(tablet) {
+        width: 100%;
+        border-bottom: 0.3rem solid var(--c-paragraph);
+        min-height: 50rem;
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+      @include bp(tablet-small) {
+        max-height: 30rem;
+      }
+
+      &:hover {
+        .footer__profiles__item {
+          @include bp(r-tablet) {
+            &-author {
+              opacity: 0;
+              pointer-events: none;
+              visibility: hidden;
+            }
+            &-button {
+              transform: translate(-50%, 0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+
       &-bg {
         position: absolute;
         top: 0;
@@ -29,15 +61,25 @@
         position: relative;
         z-index: 1;
         img {
-          // width: 100%;
           object-fit: contain;
         }
       }
       &-author {
         margin-top: auto;
-        padding-bottom: 20rem;
-        position: relative;
+        position: absolute;
+        bottom: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 1;
+        white-space: nowrap;
+        text-align: center;
+        padding: 1.5rem;
+        background-color: rgba(12, 12, 12, 0.8);
+        border-radius: 1.5rem;
+        transition: var(--transition);
+        @include bp(tablet) {
+          bottom: calc(4rem + 5.4rem + 2rem);
+        }
         &__name {
           line-height: 1em;
           span {
@@ -46,32 +88,35 @@
         }
       }
       &-button {
+        width: 100%;
         position: absolute;
         bottom: 4rem;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, 100%);
+        opacity: 0;
         z-index: 1;
+        transition: var(--transition);
+        @include bp(tablet) {
+          transform: translate(-50%, 0);
+          opacity: 1;
+        }
       }
       &--left {
         padding-right: 4.5rem;
         border-right: 0.15rem solid var(--c-paragraph);
-        .footer__profiles__item {
-          &-author {
-            margin-left: 4rem;
-          }
+        @include bp(tablet) {
+          border-right: unset;
         }
       }
       &--right {
         padding-left: 4.5rem;
         border-left: 0.15rem solid var(--c-paragraph);
+        border-left: unset;
         flex-direction: row-reverse;
         .footer__profiles__item {
           &-bg {
             left: unset;
             right: 0;
-          }
-          &-author {
-            // margin-right: 4rem;
           }
         }
       }
@@ -80,12 +125,20 @@
 
   &__info {
     height: 60rem;
+    @include bp(tablet) {
+      height: unset;
+    }
     &-logo {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100%;
       border-right: 0.3rem solid var(--c-paragraph);
+      @include bp(tablet) {
+        border-right: 0;
+        border-bottom: 0.3rem solid var(--c-paragraph);
+        padding: 4rem 0;
+      }
       img {
         max-width: 20rem;
         width: 100%;
@@ -102,8 +155,20 @@
       width: max-content;
       margin-left: auto;
       margin-right: auto;
+      @include bp(tablet) {
+        margin-top: 0;
+        padding: 4rem 0;
+      }
+      @include bp(tablet-small) {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      @include bp(mobile) {
+        gap: 2rem;
+        padding: 2rem 0;
+      }
       &__item {
-        width: max-content;
+        width: 100%;
         height: max-content;
         line-height: 1em;
         &-title {
@@ -113,10 +178,8 @@
         &-socials {
           display: flex;
           justify-content: space-between;
+          width: 100%;
           &__item {
-            &:not(:last-child) {
-              margin-right: 6rem;
-            }
             .icon {
               font-size: 2rem;
             }
@@ -129,6 +192,9 @@
   &__rights {
     background-color: var(--c-primary);
     padding: 3rem;
+    @include bp(tablet) {
+      padding: 1.5rem;
+    }
     &-text {
       text-align: center;
       span {

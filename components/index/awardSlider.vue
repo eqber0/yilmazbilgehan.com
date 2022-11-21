@@ -12,8 +12,12 @@
                 :key="index"
                 class="swiper-slide"
               >
-                <a
-                  href="#0"
+                <NuxtLink
+                  :to="{
+                    path: `work-detail/${slide.title
+                      .toLowerCase()
+                      .replace(/ /g, '-')}`,
+                  }"
                   class="award-slider__text-item js-link-field"
                   data-cursor-text="View Project"
                 >
@@ -27,7 +31,7 @@
                   >
                     {{ slide.subTitle }}
                   </div>
-                </a>
+                </NuxtLink>
               </div>
             </div>
           </div>

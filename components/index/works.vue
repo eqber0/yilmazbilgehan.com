@@ -76,13 +76,15 @@
               </div>
             </NuxtLink>
           </div>
-          <v-button
-            color=""
-            icon="iconArrow"
-            hover="primary"
-            text="More Work"
-            type="centered"
-          />
+          <nuxtLink to="works">
+            <v-button
+              color=""
+              icon="iconArrow"
+              hover="primary"
+              text="More Work"
+              type="centered"
+            />
+          </nuxtLink>
         </div>
       </div>
     </div>
@@ -90,6 +92,7 @@
 </template>
 
 <script>
+import gsap from "gsap";
 export default {
   data() {
     return {

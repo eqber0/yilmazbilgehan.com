@@ -47,6 +47,10 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
     return {
@@ -79,7 +83,7 @@ export default {
     };
   },
   mounted() {
-    this.$gsap.from(this.$refs.progressItem, {
+    gsap.from(this.$refs.progressItem, {
       scrollTrigger: {
         trigger: this.$refs.progressItem,
         start: "center-=100 center",

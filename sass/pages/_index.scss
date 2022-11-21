@@ -1,9 +1,12 @@
 .hero {
   width: 100%;
-  height: calc(100vh - 10rem);
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include bp(tablet) {
+    height: 50vh;
+  }
   &__text {
     max-width: 120rem;
     text-align: center;
@@ -256,7 +259,7 @@
         }
       }
       &:hover {
-        @include bp(tablet-small) {
+        @include bp(r-tablet-small) {
           &::after {
             opacity: 1;
           }
