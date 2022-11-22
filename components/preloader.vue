@@ -1,12 +1,17 @@
 <template>
-  <div v-if="loading" class="preloader">LOADING...</div>
+  <div
+    v-if="this.loading"
+    class="preloader"
+    ref="preloader"
+    :class="this.loading == false ? 'loaded' : ''"
+  ></div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      loading: true,
+      loading: null,
     };
   },
   methods: {
@@ -14,7 +19,10 @@ export default {
       this.loading = true;
     },
     finish() {
-      this.loading = false;
+      this.$refs.preloader.classList.add("loaded");
+      setTimeout(() => {
+        this.loading = false;
+      }, 1000);
     },
   },
 };
@@ -27,10 +35,13 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: radial-gradient(circle at center, transparent 0.1%, #000000 0.1%);
   text-align: center;
-  font-size: 30px;
   font-family: sans-serif;
   z-index: 99;
+  transition: var(--transition);
+  &.loaded {
+    transform: scale(1000);
+  }
 }
 </style>
