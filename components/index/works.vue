@@ -11,7 +11,11 @@
           >
             <div id="mod-swiper" class="carousel-spinner" style="">
               <div ref="carouselGroup" class="carousel-group">
-                <div v-for="(item, i) in workList" :key="i" class="thumb-wrap">
+                <div
+                  v-for="(item, i) in yilmazbilgehan.works"
+                  :key="i"
+                  class="thumb-wrap"
+                >
                   <div class="work-thumb">
                     <NuxtLink
                       :to="{
@@ -22,7 +26,7 @@
                       class="index-works__slider-item"
                     >
                       <div class="index-works__slider-item__image">
-                        <img :src="item.img" alt="" />
+                        <img :src="item.image" alt="" />
                       </div>
                       <div class="index-works__slider-item__content">
                         <div class="index-works__slider-item__content-title">
@@ -45,7 +49,7 @@
           </div>
           <div class="index-works__mobile">
             <NuxtLink
-              v-for="(item, index) in workList.slice(0, 3)"
+              v-for="(item, index) in yilmazbilgehan.works?.slice(0, 3)"
               :key="index"
               :to="{
                 path: `work-detail/${item.title
@@ -55,7 +59,7 @@
               class="index-works__slider-item"
             >
               <div class="index-works__slider-item__image">
-                <img :src="item.img" alt="" />
+                <img :src="item.image" alt="" />
               </div>
               <div class="index-works__slider-item__content">
                 <div class="index-works__slider-item__content-title">
@@ -88,15 +92,19 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
+
 import gsap from "gsap";
 export default {
   data() {
     return {
-      workList: this.$store.state.workList,
+      workList: [],
     };
   },
 
-  mounted() {
+  async mounted() {
+    await this.$store.dispatch("getData");
+
     var carouselOn = true;
     var carousel_tl;
     var startRot;
@@ -169,7 +177,15 @@ export default {
     }
     initHomeWork();
   },
-  methods: {},
+  computed: {
+    ...mapGetters(["yilmazbilgehan"]),
+  },
+  methods: {
+    ...mapState(["getData"]),
+  },
+  created() {
+    this.getData();
+  },
 };
 </script>
 

@@ -4,7 +4,9 @@ export const state = () => ({
   yilmazbilgehan: [],
 });
 
-export const getters = {};
+export const getters = {
+  yilmazbilgehan: (state) => state.yilmazbilgehan,
+};
 
 export const mutations = {
   updateData(state, data) {
@@ -14,9 +16,9 @@ export const mutations = {
 
 export const actions = {
   getData({ commit }) {
-    axios
+    return axios
       .get(
-        "https://yilmazbilgehan-7c443-default-rtdb.firebaseio.com/yilmazbilgehan/-NHUQnv4RDXCVtDw6iKo.json"
+        "https://yilmazbilgehan-7c443-default-rtdb.firebaseio.com/yilmazbilgehan/-NHW0SDu2bup2hyGqNoa.json"
       )
       .then((res) => {
         commit("updateData", res.data);

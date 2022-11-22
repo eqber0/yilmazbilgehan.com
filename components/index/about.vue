@@ -13,7 +13,7 @@
           </h4>
         </div>
         <div class="index-about__skills">
-          <div class="index-about__skills-progress">
+          <div class="index-about__skills-progress" v-if="aboutDatas">
             <div
               v-for="(item, index) in aboutDatas?.skills"
               :key="index"
@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -56,24 +56,28 @@ export default {
   data() {
     return {};
   },
-  mounted() {
-    this.$store.dispatch("getData");
-    if (this.aboutDatas) {
-      gsap.from(this.$refs.progressItem, {
-        scrollTrigger: {
-          trigger: this.$refs.progressItem,
-          start: "center-=100 center",
-          end: "center-=100 center",
-          markers: true,
-        },
-        width: 0,
-        ease: "power2",
-        duration: 1,
-      });
-    }
+  created() {
+    this.getData();
+  },
+  async mounted() {
+    await this.$store.dispatch("getData");
+
+    gsap.from(this.$refs.progressItem, {
+      scrollTrigger: {
+        trigger: this.$refs.progressItem,
+        start: "center-=100 center",
+        end: "center-=100 center",
+      },
+      width: 0,
+      ease: "power2",
+      duration: 1,
+    });
+  },
+  methods: {
+    ...mapState(["getData"]),
   },
   computed: {
-    ...mapState(["getData"]),
+    ...mapGetters(["yilmazbilgehan"]),
     aboutDatas() {
       return this.$store.state.yilmazbilgehan.about;
     },

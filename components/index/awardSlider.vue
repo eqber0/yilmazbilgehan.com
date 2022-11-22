@@ -29,7 +29,7 @@
                   <div
                     class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
                   >
-                    {{ slide.subTitle }}
+                    {{ slide.awardType }}
                   </div>
                 </NuxtLink>
               </div>
@@ -50,9 +50,9 @@
                 <div class="award-slider__right-item">
                   <div class="award-slider__right-item__image">
                     <div class="award-image">
-                      <img :src="slide.awardImg" alt="" />
+                      <img :src="slide.awardImage" alt="" />
                     </div>
-                    <img :src="slide.img" alt="" />
+                    <img :src="slide.image" alt="" />
                   </div>
                 </div>
               </div>
@@ -65,35 +65,23 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
+
 import { Swiper, Thumbs, Autoplay } from "swiper";
 export default {
   data() {
     return {
-      awardSlider: [
-        {
-          title: "Chace people",
-          subTitle: "KRİSTAL ELMA SILVER AWARD",
-          img: "/images/work-chace.jpg",
-          awardImg: "/images/kristal.png",
-        },
-        {
-          title: "Latro",
-          subTitle: "Horizon Silver Winner",
-          img: "/images/work-latro.jpg",
-          awardImg: "/images/horizon.png",
-        },
-        {
-          title: "Trowas",
-          subTitle: "Altin Orumcek Finalist",
-          img: "/images/work-trowas.jpg",
-          awardImg: "/images/orumcek.png",
-        },
-      ],
+      awardSlider: [],
     };
   },
   async mounted() {
+    await this.$store.dispatch("getData");
+    const datas = this.yilmazbilgehan.works.filter((item) => {
+      return item.awarded;
+    });
+    this.awardSlider = datas;
     Swiper.use([Thumbs, Autoplay]);
-    await this.$nextTick();
+
     const swiperText = new Swiper(this.$refs.textSlider, {
       loop: true,
       direction: "vertical",
@@ -138,6 +126,15 @@ export default {
         },
       },
     });
+  },
+  computed: {
+    ...mapGetters(["yilmazbilgehan"]),
+  },
+  methods: {
+    ...mapState(["getData"]),
+  },
+  created() {
+    this.getData();
   },
 };
 </script>
