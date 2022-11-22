@@ -110,7 +110,6 @@ export default {
   async mounted() {
     await this.$store.dispatch("getData");
     this.profiles = this.yilmazbilgehan.profiles;
-    console.log(this.profiles);
   },
   computed: {
     ...mapGetters(["yilmazbilgehan"]),

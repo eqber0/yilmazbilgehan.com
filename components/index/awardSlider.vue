@@ -18,7 +18,8 @@
                       .toLowerCase()
                       .replace(/ /g, '-')}`,
                   }"
-                  class="award-slider__text-item js-link-field"
+                  class="award-slider__text-item"
+                  :class="slide ? 'js-link-field' : ''"
                   data-cursor-text="View Project"
                 >
                   <div
@@ -76,55 +77,57 @@ export default {
   },
   async mounted() {
     await this.$store.dispatch("getData");
-    const datas = this.yilmazbilgehan.works.filter((item) => {
-      return item.awarded;
-    });
-    this.awardSlider = datas;
-    Swiper.use([Thumbs, Autoplay]);
+    this.$nextTick(() => {
+      const datas = this.yilmazbilgehan.works.filter((item) => {
+        return item.awarded;
+      });
+      this.awardSlider = datas;
+      Swiper.use([Thumbs, Autoplay]);
 
-    const swiperText = new Swiper(this.$refs.textSlider, {
-      loop: true,
-      direction: "vertical",
-      slidesPerView: 1,
-      speed: 1000,
-      watchSlidesProgress: true,
-      watchSlidesVisibility: true,
-      onlyExternal: true,
-      breakpoints: {
-        320: {
-          direction: "horizontal",
-          spaceBetween: 75,
-          slidesPerView: 1,
+      const swiperText = new Swiper(this.$refs.textSlider, {
+        loop: true,
+        direction: "vertical",
+        slidesPerView: 1,
+        speed: 1000,
+        watchSlidesProgress: true,
+        watchSlidesVisibility: true,
+        onlyExternal: true,
+        breakpoints: {
+          320: {
+            direction: "horizontal",
+            spaceBetween: 75,
+            slidesPerView: 1,
+          },
+          991: {
+            direction: "vertical",
+          },
         },
-        991: {
-          direction: "vertical",
-        },
-      },
-    });
+      });
 
-    const swiperThumb = new Swiper(this.$refs.thumbSlider, {
-      loop: true,
-      modules: [Thumbs, Autoplay],
-      slidesPerView: 1,
-      speed: 1000,
-      direction: "vertical",
-      autoplay: {
-        delay: 2500,
-        pauseOnMouseEnter: true,
-      },
-      thumbs: {
-        swiper: swiperText,
-      },
-      breakpoints: {
-        320: {
-          direction: "horizontal",
-          spaceBetween: 75,
-          slidesPerView: 1,
+      const swiperThumb = new Swiper(this.$refs.thumbSlider, {
+        loop: true,
+        modules: [Thumbs, Autoplay],
+        slidesPerView: 1,
+        speed: 1000,
+        direction: "vertical",
+        autoplay: {
+          delay: 2500,
+          pauseOnMouseEnter: true,
         },
-        991: {
-          direction: "vertical",
+        thumbs: {
+          swiper: swiperText,
         },
-      },
+        breakpoints: {
+          320: {
+            direction: "horizontal",
+            spaceBetween: 75,
+            slidesPerView: 1,
+          },
+          991: {
+            direction: "vertical",
+          },
+        },
+      });
     });
   },
   computed: {

@@ -10,7 +10,6 @@
     <Particles
       id="tsparticles"
       :particlesInit="particlesInit"
-      :particlesLoaded="particlesLoaded"
       :options="particleOptions"
     />
   </div>
@@ -21,7 +20,7 @@ import appHeader from "../components/common/appHeader.vue";
 import appFooter from "../components/common/appFooter.vue";
 
 import Vue from "vue";
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 
 import Particles from "particles.vue";
 import { loadFull } from "tsparticles";
@@ -105,17 +104,18 @@ export default {
       },
     };
   },
-  mounted() {
+  created() {
+    this.getData();
+  },
+  async mounted() {
+    await this.$store.dispatch("getData");
     this.$nextTick(() => {
       this.$nuxt.$loading.start();
       setTimeout(() => this.$nuxt.$loading.finish(), 1000);
     });
-
-    this.$store.dispatch("getData");
-
+    const cursor = document.querySelector(".cursor");
     const dragMoveField = document.querySelectorAll(".js-drag-move-field");
     const linkField = document.querySelectorAll(".js-link-field");
-    const cursor = document.querySelector(".cursor");
 
     dragMoveField.forEach((e) => {
       e.addEventListener("mouseenter", () => {
@@ -128,6 +128,7 @@ export default {
       });
     });
     linkField.forEach((e) => {
+      console.log(e);
       e.addEventListener("mouseenter", () => {
         cursor.classList.add("is-link");
         let cursorText = e.getAttribute("data-cursor-text");
@@ -153,12 +154,14 @@ export default {
       });
     }
   },
-  computed: mapState(["datas"]),
+  computed: {
+    ...mapGetters(["yilmazbilgehan"]),
+  },
   methods: {
+    ...mapState(["getData"]),
     particlesInit(engine) {
       loadFull(engine);
     },
-    particlesLoaded(container) {},
   },
 };
 </script>
