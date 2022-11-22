@@ -155,6 +155,9 @@
       width: max-content;
       margin-left: auto;
       margin-right: auto;
+      @include bp(dekstop) {
+        gap: 8rem 10rem;
+      }
       @include bp(tablet) {
         margin-top: 0;
         padding: 4rem 0;

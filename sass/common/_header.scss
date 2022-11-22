@@ -103,6 +103,10 @@
     visibility: hidden;
     pointer-events: none;
     transition: var(--transition);
+    @include bp(mobile) {
+      flex-direction: column;
+    }
+
     &.opened {
       opacity: 1;
       transform: translateY(0);
@@ -111,6 +115,11 @@
     }
     &__item {
       transition: var(--transition);
+      @include bp(mobile) {
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
       &:hover {
         color: var(--c-primary) !important;
       }
