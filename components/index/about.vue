@@ -15,7 +15,7 @@
         <div class="index-about__skills">
           <div class="index-about__skills-progress">
             <div
-              v-for="(item, index) in progressItems"
+              v-for="(item, index) in aboutDatas?.skills"
               :key="index"
               class="index-about__skills-progress__item"
             >
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="index-about__skills-image">
-            <img src="~/static/images/bilgehan.png" alt="" />
+            <img :src="aboutDatas?.image" alt="" />
           </div>
         </div>
       </div>
@@ -47,52 +47,36 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
-    return {
-      progressItems: [
-        {
-          title: "HTML 5",
-          percent: "90",
-        },
-        {
-          title: "CSS",
-          percent: "85",
-        },
-        {
-          title: "Javascript",
-          percent: "60",
-        },
-        {
-          title: "VueJs",
-          percent: "60",
-        },
-        {
-          title: "Javascript",
-          percent: "60",
-        },
-        {
-          title: "VueJs",
-          percent: "60",
-        },
-      ],
-    };
+    return {};
   },
   mounted() {
-    gsap.from(this.$refs.progressItem, {
-      scrollTrigger: {
-        trigger: this.$refs.progressItem,
-        start: "center-=100 center",
-        end: "center-=100 center",
-      },
-      width: 0,
-      ease: "power2",
-      duration: 1,
-    });
+    this.$store.dispatch("getData");
+    if (this.aboutDatas) {
+      gsap.from(this.$refs.progressItem, {
+        scrollTrigger: {
+          trigger: this.$refs.progressItem,
+          start: "center-=100 center",
+          end: "center-=100 center",
+          markers: true,
+        },
+        width: 0,
+        ease: "power2",
+        duration: 1,
+      });
+    }
+  },
+  computed: {
+    ...mapState(["getData"]),
+    aboutDatas() {
+      return this.$store.state.yilmazbilgehan.about;
+    },
   },
 };
 </script>

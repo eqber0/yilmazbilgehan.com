@@ -11,11 +11,7 @@
           >
             <div id="mod-swiper" class="carousel-spinner" style="">
               <div ref="carouselGroup" class="carousel-group">
-                <div
-                  v-for="(item, i) in carouselSlider"
-                  :key="i"
-                  class="thumb-wrap"
-                >
+                <div v-for="(item, i) in workList" :key="i" class="thumb-wrap">
                   <div class="work-thumb">
                     <NuxtLink
                       :to="{
@@ -49,7 +45,7 @@
           </div>
           <div class="index-works__mobile">
             <NuxtLink
-              v-for="(item, index) in carouselSlider.slice(0, 3)"
+              v-for="(item, index) in workList.slice(0, 3)"
               :key="index"
               :to="{
                 path: `work-detail/${item.title
@@ -96,35 +92,10 @@ import gsap from "gsap";
 export default {
   data() {
     return {
-      carouselSlider: [
-        {
-          img: "/images/work-trowas.jpg",
-          title: "Trowas",
-          type: "E-Commerce Website",
-        },
-        {
-          img: "/images/work-latro.jpg",
-          title: "Latro",
-          type: "Business & Corporate Website",
-        },
-        {
-          img: "/images/work-chace.jpg",
-          title: "Chace People",
-          type: "Business & Corporate Website",
-        },
-        {
-          img: "/images/work-fcb.jpg",
-          title: "FCB Interiors",
-          type: "Business & Corporate Website",
-        },
-        {
-          img: "/images/work-pingame.jpg",
-          title: "Pin & Game",
-          type: "E-Commerce Website",
-        },
-      ],
+      workList: this.$store.state.workList,
     };
   },
+
   mounted() {
     var carouselOn = true;
     var carousel_tl;

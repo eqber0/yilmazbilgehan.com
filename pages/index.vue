@@ -1,9 +1,9 @@
 <template>
   <main>
     <hero />
-    <works />
+    <!-- <works /> -->
     <about />
-    <awardSlider />
+    <!-- <awardSlider /> -->
   </main>
 </template>
 

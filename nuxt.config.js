@@ -49,7 +49,27 @@ export default {
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    "@nuxtjs/axios",
+    [
+      "@nuxtjs/firebase",
+      {
+        config: {
+          apiKey: "AIzaSyBjH14q0799lylSn_5cj1bhnjA7i7sCXe8",
+          authDomain: "yilmazbilgehan-7c443.firebaseapp.com",
+          projectId: "yilmazbilgehan-7c443",
+          storageBucket: "yilmazbilgehan-7c443.appspot.com",
+          messagingSenderId: "979495837599",
+          appId: "1:979495837599:web:8877a697908c5c053227aa",
+          measurementId: "G-213S54WXN0",
+        },
+        services: {
+          auth: false, // Just as example. Can be any other service.
+          firestore: true,
+        },
+      },
+    ],
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

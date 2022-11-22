@@ -17,13 +17,18 @@
 </template>
 
 <script>
-import Vue from "vue";
 import appHeader from "../components/common/appHeader.vue";
 import appFooter from "../components/common/appFooter.vue";
+
+import Vue from "vue";
+import { mapState } from "vuex";
+
 import Particles from "particles.vue";
 import { loadFull } from "tsparticles";
 import gsap from "gsap";
+
 Vue.use(Particles);
+
 export default {
   components: {
     appHeader,
@@ -106,6 +111,8 @@ export default {
       setTimeout(() => this.$nuxt.$loading.finish(), 1000);
     });
 
+    this.$store.dispatch("getData");
+
     const dragMoveField = document.querySelectorAll(".js-drag-move-field");
     const linkField = document.querySelectorAll(".js-link-field");
     const cursor = document.querySelector(".cursor");
@@ -146,13 +153,12 @@ export default {
       });
     }
   },
+  computed: mapState(["datas"]),
   methods: {
     particlesInit(engine) {
       loadFull(engine);
     },
-    particlesLoaded(container) {
-      console.log(container);
-    },
+    particlesLoaded(container) {},
   },
 };
 </script>
