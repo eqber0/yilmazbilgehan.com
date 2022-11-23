@@ -69,6 +69,7 @@
 import { mapState, mapGetters } from "vuex";
 
 import { Swiper, Thumbs, Autoplay } from "swiper";
+Swiper.use([Thumbs, Autoplay]);
 export default {
   data() {
     return {
@@ -82,16 +83,14 @@ export default {
         return item.awarded;
       });
       this.awardSlider = datas;
-      Swiper.use([Thumbs, Autoplay]);
 
       const swiperText = new Swiper(this.$refs.textSlider, {
-        loop: true,
+        loop: false,
         direction: "vertical",
         slidesPerView: 1,
         speed: 1000,
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
-        onlyExternal: true,
         breakpoints: {
           320: {
             direction: "horizontal",
@@ -105,15 +104,11 @@ export default {
       });
 
       const swiperThumb = new Swiper(this.$refs.thumbSlider, {
-        loop: true,
-        modules: [Thumbs, Autoplay],
+        loop: false,
+        modules: [Thumbs],
         slidesPerView: 1,
         speed: 1000,
         direction: "vertical",
-        autoplay: {
-          delay: 2500,
-          pauseOnMouseEnter: true,
-        },
         thumbs: {
           swiper: swiperText,
         },
