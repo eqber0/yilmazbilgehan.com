@@ -59,7 +59,7 @@
               class="index-works__slider-item"
             >
               <div class="index-works__slider-item__image">
-                <img :src="item.image" alt="" />
+                <nuxt-img quality="80" format="webp" :src="item.image" />
               </div>
               <div class="index-works__slider-item__content">
                 <div class="index-works__slider-item__content-title">
@@ -111,7 +111,6 @@ export default {
     var cTot;
     var cSpeed;
     var rotLoop;
-
     function initHomeWork() {
       var cRot = 13;
       var startRot = -26;
@@ -163,17 +162,8 @@ export default {
     function moveCarousel() {
       carousel_tl.play();
     }
-
     function stopCarousel() {
       carousel_tl.pause();
-    }
-
-    function initHomeCarousel() {
-      moveCarousel();
-    }
-
-    function resetHomeCarousel() {
-      stopCarousel();
     }
     initHomeWork();
   },
