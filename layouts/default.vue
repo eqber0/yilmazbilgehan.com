@@ -7,11 +7,6 @@
       <div class="cursor__txt"></div>
       <div class="cursor__icon"></div>
     </div>
-    <Particles
-      id="tsparticles"
-      :particlesInit="particlesInit"
-      :options="particleOptions"
-    />
   </div>
 </template>
 
@@ -22,11 +17,7 @@ import appFooter from "../components/common/appFooter.vue";
 import Vue from "vue";
 import { mapState, mapGetters } from "vuex";
 
-import Particles from "particles.vue";
-import { loadFull } from "tsparticles";
 import gsap from "gsap";
-
-Vue.use(Particles);
 
 export default {
   components: {
@@ -39,7 +30,7 @@ export default {
       particleOptions: {
         particles: {
           number: {
-            value: 500,
+            value: 250,
             density: {
               enable: true,
               value_area: 1000,
@@ -69,7 +60,7 @@ export default {
             },
           },
           size: {
-            value: 3,
+            value: 4,
             random: true,
             anim: {
               enable: true,
@@ -100,7 +91,6 @@ export default {
             },
           },
         },
-        detectRetina: true,
       },
     };
   },
@@ -128,7 +118,6 @@ export default {
       });
     });
     linkField.forEach((e) => {
-      console.log(e);
       e.addEventListener("mouseenter", () => {
         cursor.classList.add("is-link");
         let cursorText = e.getAttribute("data-cursor-text");
