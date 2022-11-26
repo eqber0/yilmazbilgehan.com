@@ -25,6 +25,9 @@
               <NuxtLink to="/">Home</NuxtLink>
             </div>
             <div class="header__menu__item c-white txt txt--rem24 txt--font400">
+              <NuxtLink to="/about">About</NuxtLink>
+            </div>
+            <div class="header__menu__item c-white txt txt--rem24 txt--font400">
               <NuxtLink to="/works">Works</NuxtLink>
             </div>
             <div class="header__menu__item c-white txt txt--rem24 txt--font400">

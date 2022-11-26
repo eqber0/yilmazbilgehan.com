@@ -57,3 +57,10 @@ main {
 .c-none {
   cursor: none;
 }
+
+.subheader {
+  margin: 12rem;
+  &__title {
+    text-align: center;
+  }
+}
