@@ -1,7 +1,14 @@
 <template>
-  <main>
+  <main class="detail-page">
     <div class="container">
-      <div class="c-white py-5" style="height: 100vh">{{ routeId }}</div>
+      <div class="subheader">
+        <div class="subheader__title txt txt--rem128 txt--font900 c-white">
+          <h1>Work <span class="c-primary">Detail</span></h1>
+          <div class="mt-5 c-secondary">
+            {{ routeId }}
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </template>

@@ -1,5 +1,12 @@
 <template>
-  <main>
+  <main class="detail-page">
+    <div class="container">
+      <div class="subheader">
+        <div class="subheader__title txt txt--rem128 txt--font900 c-white">
+          <h1>Works <span class="c-primary">Page</span></h1>
+        </div>
+      </div>
+    </div>
     <section class="section works">
       <div class="container">
         <div class="row g-4 g-md-5">
