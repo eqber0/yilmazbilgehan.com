@@ -1,11 +1,9 @@
 .footer {
-  margin-top: 10rem;
   position: relative;
   z-index: 1;
   &__profiles {
     display: flex;
     justify-content: space-between;
-    border-bottom: 0.3rem solid var(--c-paragraph);
     @include bp(tablet) {
       flex-direction: column;
       border-bottom: 0;
@@ -125,6 +123,8 @@
 
   &__info {
     height: 60rem;
+    border-top: 0.3rem solid var(--c-paragraph);
+
     @include bp(tablet) {
       height: unset;
     }

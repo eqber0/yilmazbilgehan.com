@@ -11,11 +11,7 @@
           >
             <div id="mod-swiper" class="carousel-spinner" style="">
               <div ref="carouselGroup" class="carousel-group">
-                <div
-                  v-for="(item, i) in yilmazbilgehan.works"
-                  :key="i"
-                  class="thumb-wrap"
-                >
+                <div v-for="(item, i) in workList" :key="i" class="thumb-wrap">
                   <div class="work-thumb">
                     <NuxtLink
                       :to="{
@@ -49,7 +45,7 @@
           </div>
           <div class="index-works__mobile">
             <NuxtLink
-              v-for="(item, index) in yilmazbilgehan.works?.slice(0, 3)"
+              v-for="(item, index) in workList.slice(0, 3)"
               :key="index"
               :to="{
                 path: `work-detail/${item.title
@@ -92,18 +88,39 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+// import { mapState, mapGetters } from "vuex";
 
 import gsap from "gsap";
 export default {
   data() {
     return {
-      workList: [],
+      workList: [
+        {
+          title: "Chace People",
+          type: "Business & Corporate Website",
+          image: "images/work-chace.jpg",
+        },
+        {
+          title: "Latro",
+          type: "Business & Corporate Website",
+          image: "images/work-latro.jpg",
+        },
+        {
+          title: "Trowas",
+          type: "E-Commerce Website",
+          image: "images/work-trowas.jpg",
+        },
+        {
+          title: "FCB Interiors",
+          type: "Business & Corporate Website",
+          image: "images/work-fcb.jpg",
+        },
+      ],
     };
   },
 
-  async mounted() {
-    await this.$store.dispatch("getData");
+  mounted() {
+    // await this.$store.dispatch("getData");
 
     var carouselOn = true;
     var carousel_tl;
@@ -168,13 +185,13 @@ export default {
     initHomeWork();
   },
   computed: {
-    ...mapGetters(["yilmazbilgehan"]),
+    // ...mapGetters(["yilmazbilgehan"]),
   },
   methods: {
-    ...mapState(["getData"]),
+    // ...mapState(["getData"]),
   },
   created() {
-    this.getData();
+    // this.getData();
   },
 };
 </script>

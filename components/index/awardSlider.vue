@@ -30,7 +30,7 @@
                   <div
                     class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
                   >
-                    {{ slide.awardType }}
+                    {{ slide.type }}
                   </div>
                 </NuxtLink>
               </div>
@@ -66,23 +66,42 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+// import { mapState, mapGetters } from "vuex";
 
 import { Swiper, Thumbs, Autoplay } from "swiper";
 Swiper.use([Thumbs, Autoplay]);
 export default {
   data() {
     return {
-      awardSlider: [],
+      awardSlider: [
+        {
+          title: "Trowas",
+          type: "Altın Örümcek Finalist",
+          awardImage: "images/orumcek.png",
+          image: "images/work-trowas.jpg",
+        },
+        {
+          title: "Chace People",
+          type: "Kristal Elma Silver Award",
+          awardImage: "images/kristal.png",
+          image: "images/work-chace.jpg",
+        },
+        {
+          title: "Latro",
+          type: "Horizon Silver Award",
+          awardImage: "images/horizon.png",
+          image: "images/work-latro.jpg",
+        },
+      ],
     };
   },
-  async mounted() {
-    await this.$store.dispatch("getData");
+  mounted() {
+    // await this.$store.dispatch("getData");
     this.$nextTick(() => {
-      const datas = this.yilmazbilgehan.works.filter((item) => {
-        return item.awarded;
-      });
-      this.awardSlider = datas;
+      // const datas = this.yilmazbilgehan.works.filter((item) => {
+      //   return item.awarded;
+      // });
+      // this.awardSlider = datas;
 
       const swiperText = new Swiper(this.$refs.textSlider, {
         loop: false,
@@ -126,13 +145,13 @@ export default {
     });
   },
   computed: {
-    ...mapGetters(["yilmazbilgehan"]),
+    // ...mapGetters(["yilmazbilgehan"]),
   },
   methods: {
-    ...mapState(["getData"]),
+    // ...mapState(["getData"]),
   },
   created() {
-    this.getData();
+    // this.getData();
   },
 };
 </script>

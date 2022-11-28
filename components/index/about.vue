@@ -13,9 +13,9 @@
           </h4>
         </div>
         <div class="index-about__skills">
-          <div class="index-about__skills-progress" v-if="aboutDatas">
+          <div class="index-about__skills-progress" v-if="about.skills">
             <div
-              v-for="(item, index) in aboutDatas?.skills"
+              v-for="(item, index) in about.skills"
               :key="index"
               class="index-about__skills-progress__item"
             >
@@ -38,7 +38,7 @@
             </div>
           </div>
           <div class="index-about__skills-image">
-            <img :src="aboutDatas?.image" alt="" />
+            <img :src="about.image" alt="" />
           </div>
         </div>
       </div>
@@ -54,13 +54,24 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
-    return {};
+    return {
+      about: {
+        image: "images/bilgehan.png",
+        skills: [
+          { title: "HTML 5", percent: 87 },
+          { title: "CSS", percent: 93 },
+          { title: "Javascript", percent: 76 },
+          { title: "Vue.js", percent: 66 },
+          { title: "Nuxt.js", percent: 57 },
+        ],
+      },
+    };
   },
   created() {
-    this.getData();
+    // this.getData();
   },
-  async mounted() {
-    await this.$store.dispatch("getData");
+  mounted() {
+    // await this.$store.dispatch("getData");
 
     gsap.from(this.$refs.progressItem, {
       scrollTrigger: {
@@ -74,13 +85,13 @@ export default {
     });
   },
   methods: {
-    ...mapState(["getData"]),
+    // ...mapState(["getData"]),
   },
   computed: {
-    ...mapGetters(["yilmazbilgehan"]),
-    aboutDatas() {
-      return this.$store.state.yilmazbilgehan.about;
-    },
+    // ...mapGetters(["yilmazbilgehan"]),
+    // aboutDatas() {
+    //   return this.$store.state.yilmazbilgehan.about;
+    // },
   },
 };
 </script>
