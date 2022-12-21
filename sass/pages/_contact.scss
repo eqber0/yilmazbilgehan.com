@@ -1,0 +1,9 @@
+.contact {
+  &__info {
+    &-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+    }
+  }
+}

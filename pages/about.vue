@@ -80,7 +80,7 @@
                   </div>
                 </div>
               </div>
-              <div class="about__info-languages">
+              <div class="about__info-languages mt-5">
                 <div class="about__info-languages__item">
                   Turkish <span>Native Languages</span>
                 </div>
@@ -226,6 +226,9 @@
 </template>
 
 <script>
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
     return {
@@ -255,6 +258,18 @@ export default {
         { title: "Nuxt.js", percent: 57 },
       ],
     };
+  },
+  mounted() {
+    gsap.from(this.$refs.progressItem, {
+      scrollTrigger: {
+        trigger: this.$refs.progressItem,
+        start: "center-=100 center",
+        end: "center-=100 center",
+      },
+      width: 0,
+      ease: "power2",
+      duration: 1,
+    });
   },
 };
 </script>

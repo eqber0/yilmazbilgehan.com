@@ -47,7 +47,7 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+// import { mapState, mapGetters } from "vuex";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

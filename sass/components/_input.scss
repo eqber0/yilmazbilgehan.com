@@ -3,9 +3,10 @@
     width: 100%;
     position: relative;
     transition: var(--transition);
-    background: var(--ui-bg);
-    border-radius: 0.6rem;
-    border: 0.1rem solid transparent;
+    // background: red;
+    border-radius: 1.5rem;
+    border: 0.2rem solid var(--c-border-color);
+    color: var(--c-white);
 
     &--textarea {
       .input-item__placeholder {
@@ -88,6 +89,7 @@
       transform: translateY(-50%);
       transition: var(--transition);
       pointer-events: none;
+      color: var(--c-paragraph);
       strong {
         color: red;
       }

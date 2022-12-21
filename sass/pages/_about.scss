@@ -8,12 +8,12 @@
   }
   &__sticky {
     position: sticky;
-    top: 16rem;
+    top: 10rem;
   }
   &__image {
     border: 0.1rem solid var(--c-white);
     border-radius: 1.5rem;
-    height: 58rem;
+    height: 45rem;
     position: relative;
     img {
       position: absolute;
@@ -22,6 +22,7 @@
       left: 0;
       padding: 0 2rem;
       object-fit: contain;
+      max-height: 50rem;
     }
   }
   &__info {
@@ -46,6 +47,7 @@
         font-size: var(--txt-rem32);
         span {
           font-size: var(--txt-rem24);
+          color: var(--c-paragraph);
         }
       }
     }

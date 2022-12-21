@@ -22,6 +22,8 @@ $c-black: #000000;
   --c-primary: #7d26cd;
   --c-secondary: #ae062c;
   --c-paragraph: #aaaaaa;
+  --c-paragraph-alt: #484848;
+  --c-border-color: #7a7b7f;
 
   // About Skills Border Animation Variables
   --d: 2500ms;
@@ -49,6 +51,9 @@ $c-black: #000000;
 }
 .c-paragraph {
   color: var(--c-paragraph);
+}
+.c-paragraph-alt {
+  color: var(--c-paragraph-alt);
 }
 
 // About Skills Border Animation Properties

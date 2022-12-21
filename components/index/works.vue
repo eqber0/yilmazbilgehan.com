@@ -33,7 +33,9 @@
                             {{ item.type }}
                           </p>
                         </div>
-                        <div class="index-works__slider-item__content-button">
+                        <div
+                          class="index-works__slider-item__content-button c-white"
+                        >
                           <svg-icon name="iconArrow" />
                         </div>
                       </div>
@@ -66,7 +68,7 @@
                     {{ item.type }}
                   </p>
                 </div>
-                <div class="index-works__slider-item__content-button">
+                <div class="index-works__slider-item__content-button c-white">
                   <svg-icon name="iconArrow" />
                 </div>
               </div>

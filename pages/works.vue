@@ -1,14 +1,43 @@
 <template>
   <main class="detail-page">
-    <div class="container">
+    <div class="container container--fluid">
       <div class="subheader">
         <div class="subheader__title txt txt--rem128 txt--font900 c-white">
-          <h1>Works <span class="c-primary">Page</span></h1>
+          <h1>My <span class="c-primary">Works</span></h1>
         </div>
       </div>
     </div>
     <section class="section works">
-      <div class="container">
+      <div class="container container--fluid">
+        <div class="works__tab">
+          <div class="works__tab-filter">
+            <div
+              class="works__tab-filter__item txt txt--rem64 txt--font400 active"
+            >
+              All
+            </div>
+            <div class="works__tab-filter__item txt txt--rem64 txt--font400">
+              Website
+            </div>
+            <div class="works__tab-filter__item txt txt--rem64 txt--font400">
+              Mobile
+            </div>
+          </div>
+          <div class="works__tab-sort">
+            <div
+              class="works__tab-sort__item txt txt--rem32 txt--font400 active"
+            >
+              Date
+              <svg-icon name="iconArrow" />
+            </div>
+            <div class="works__tab-sort__item txt txt--rem32 txt--font400">
+              Alphabetical
+              <svg-icon name="iconArrow" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container container--fluid">
         <div class="row g-4 g-md-5">
           <div
             class="col-12 col-lg-6 col-xl-4"
@@ -21,13 +50,13 @@
                   .toLowerCase()
                   .replace(/ /g, '-')}`,
               }"
-              class="index-works__slider-item"
+              class="works-card"
             >
-              <div class="index-works__slider-item__image">
+              <div class="works-card__image">
                 <img :src="item.image" alt="" />
               </div>
-              <div class="index-works__slider-item__content">
-                <div class="index-works__slider-item__content-title">
+              <div class="works-card__content">
+                <div class="works-card__content-title">
                   <h3 class="txt txt--rem32 txt--font900 c-white">
                     {{ item.title }}
                   </h3>
@@ -35,7 +64,7 @@
                     {{ item.type }}
                   </p>
                 </div>
-                <div class="index-works__slider-item__content-button">
+                <div class="works-card__content-button c-white">
                   <svg-icon name="iconArrow" />
                 </div>
               </div>
@@ -55,22 +84,22 @@ export default {
         {
           title: "Chace People",
           type: "Business & Corporate Website",
-          image: "images/work-chace.jpg",
+          image: "images/chace-banner.png",
         },
         {
           title: "Latro",
           type: "Business & Corporate Website",
-          image: "images/work-latro.jpg",
+          image: "images/dakar-cover.jpg",
         },
         {
           title: "Trowas",
           type: "E-Commerce Website",
-          image: "images/work-trowas.jpg",
+          image: "images/chace-banner.png",
         },
         {
           title: "FCB Interiors",
           type: "Business & Corporate Website",
-          image: "images/work-fcb.jpg",
+          image: "images/chace-banner.png",
         },
       ],
     };
