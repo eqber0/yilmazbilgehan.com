@@ -78,19 +78,10 @@
         </div>
       </div>
     </section>
-    <section class="section section--pt0">
-      <div class="container">
-        <div class="work-detail__compare">
-          <div class="txt txt--rem48 c-primary txt--font900 text-center">
-            Work Detail Compare Section
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="work-detail__info">
       <div class="container">
         <div class="row g-4 g-md-5">
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="work-detail__info-card">
               <div
                 class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
@@ -104,7 +95,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="work-detail__info-card">
               <div
                 class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
@@ -118,7 +109,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="work-detail__info-card">
               <div
                 class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
@@ -132,7 +123,7 @@
               </div>
             </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="work-detail__info-card">
               <div
                 class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
@@ -220,6 +211,11 @@ export default {
       speed: 1500,
       autoplay: {
         delay: 3000,
+      },
+      breakpoints: {
+        320: { slidesPerView: 1 },
+        569: { slidesPerView: 2 },
+        991: { slidesPerView: 3 },
       },
     });
   },

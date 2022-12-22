@@ -123,7 +123,7 @@
 
   &__info {
     height: 60rem;
-    border-top: 0.3rem solid var(--c-paragraph);
+    // border-top: 0.3rem solid var(--c-paragraph);
 
     @include bp(tablet) {
       height: unset;

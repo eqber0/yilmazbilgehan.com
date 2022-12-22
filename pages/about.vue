@@ -82,7 +82,7 @@
               </div>
               <div class="about__info-languages mt-5">
                 <div class="about__info-languages__item">
-                  Turkish <span>Native Languages</span>
+                  Turkish <span>Native</span>
                 </div>
                 <div class="about__info-languages__item">
                   Deutch <span>Fluent</span>
@@ -128,8 +128,7 @@
                 </div>
                 <div class="about__education-item__content">
                   <div class="txt txt--rem32 txt--font700 c-white">
-                    BACHELORS DEGREE
-                    <br />
+                    <p>BACHELORS DEGREE</p>
                     <span class="txt txt--rem24 txt--font400 c-paragraph">
                       Atatürk University / Advertising Managament
                     </span>
@@ -144,8 +143,7 @@
                 </div>
                 <div class="about__education-item__content">
                   <div class="txt txt--rem32 txt--font700 c-white">
-                    HIGH SCHOOL GRADUATE
-                    <br />
+                    <p>HIGH SCHOOL GRADUATE</p>
                     <span class="txt txt--rem24 txt--font400 c-paragraph">
                       Süleyman Çelebi High School
                     </span>

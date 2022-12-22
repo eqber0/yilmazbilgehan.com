@@ -53,7 +53,9 @@
                     <div class="award-image">
                       <img :src="slide.awardImage" alt="" />
                     </div>
-                    <img :src="slide.image" alt="" />
+                    <div class="award-slider__right-item__image-wrapper">
+                      <img :src="slide.image" alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -78,19 +80,19 @@ export default {
           title: "Trowas",
           type: "Altın Örümcek Finalist",
           awardImage: "images/orumcek.png",
-          image: "images/work-trowas.jpg",
+          image: "images/work-trowas.png",
         },
         {
           title: "Chace People",
           type: "Kristal Elma Silver Award",
           awardImage: "images/kristal.png",
-          image: "images/work-chace.jpg",
+          image: "images/work-chace.png",
         },
         {
           title: "Latro",
           type: "Horizon Silver Award",
           awardImage: "images/horizon.png",
-          image: "images/work-latro.jpg",
+          image: "images/work-latro.png",
         },
       ],
     };

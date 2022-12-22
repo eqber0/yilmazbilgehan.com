@@ -9,38 +9,9 @@
     </div>
     <section class="section works">
       <div class="container container--fluid">
-        <div class="works__tab">
-          <div class="works__tab-filter">
-            <div
-              class="works__tab-filter__item txt txt--rem64 txt--font400 active"
-            >
-              All
-            </div>
-            <div class="works__tab-filter__item txt txt--rem64 txt--font400">
-              Website
-            </div>
-            <div class="works__tab-filter__item txt txt--rem64 txt--font400">
-              Mobile
-            </div>
-          </div>
-          <div class="works__tab-sort">
-            <div
-              class="works__tab-sort__item txt txt--rem32 txt--font400 active"
-            >
-              Date
-              <svg-icon name="iconArrow" />
-            </div>
-            <div class="works__tab-sort__item txt txt--rem32 txt--font400">
-              Alphabetical
-              <svg-icon name="iconArrow" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container container--fluid">
         <div class="row g-4 g-md-5">
           <div
-            class="col-12 col-lg-6 col-xl-4"
+            class="col-12 col-lg-6 col-xxl-4"
             v-for="(item, index) in workList"
             :key="index"
           >
@@ -87,19 +58,39 @@ export default {
           image: "images/chace-banner.png",
         },
         {
-          title: "Latro",
-          type: "Business & Corporate Website",
-          image: "images/dakar-cover.jpg",
+          title: "Trowas Exe",
+          type: "QR Generator & Card Desing Application",
+          image: "images/trowas-exe-cover.png",
         },
         {
           title: "Trowas",
           type: "E-Commerce Website",
-          image: "images/chace-banner.png",
+          image: "images/trowas-cover.png",
         },
         {
-          title: "FCB Interiors",
-          type: "Business & Corporate Website",
-          image: "images/chace-banner.png",
+          title: "Alfamak CMS",
+          type: "Website CMS",
+          image: "images/alfamak-panel-cover.png",
+        },
+        {
+          title: "Latro",
+          type: "Corporate Website",
+          image: "images/latro-cover.png",
+        },
+        {
+          title: "Trowas Digital Card",
+          type: "Digital Business Card Website",
+          image: "images/trowas-mobile-cover.png",
+        },
+        {
+          title: "Tansu Yacht",
+          type: "Corporate Website",
+          image: "images/tansu-cover.png",
+        },
+        {
+          title: "Yasalar",
+          type: "Corporate Website",
+          image: "images/yasalar-cover.png",
         },
       ],
     };

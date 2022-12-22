@@ -72,6 +72,9 @@
         &__image {
           img {
             transform: scale(1.2) translateY(-2rem);
+            @include bp(tablet) {
+              transform: scale(1) translateY(-1rem);
+            }
           }
         }
         &__content {
@@ -83,6 +86,9 @@
     &__image {
       width: 100%;
       height: 45rem;
+      @include bp(tablet) {
+        height: auto;
+      }
 
       img {
         width: 100%;
@@ -90,6 +96,10 @@
         object-fit: cover;
         transform: scale(1.2);
         transition: var(--transition);
+        @include bp(tablet) {
+          object-fit: contain;
+          transform: scale(1);
+        }
       }
     }
     &__content {
@@ -105,6 +115,16 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @include bp(tablet) {
+        bottom: 3rem;
+        left: 3rem;
+        width: calc(100% - 6rem);
+      }
+      @include bp(mobile) {
+        bottom: 2rem;
+        left: 2rem;
+        width: calc(100% - 4rem);
+      }
       &-button {
         margin-left: 2rem;
       }
@@ -118,11 +138,17 @@
     height: 72rem;
     overflow: hidden;
     border-radius: 1.6rem;
-    background-image: url("/images/work-chace.jpg");
+    background-image: url("/images/work-chace.png");
     background-repeat: repeat-y;
     animation: workHero 150s 2s linear forwards infinite;
     transition: var(--transition);
     background-size: 100%;
+    @include bp(tablet) {
+      height: 52rem;
+    }
+    @include bp(mobile) {
+      height: 42rem;
+    }
   }
   &__slider {
     max-width: 128rem;
@@ -130,11 +156,25 @@
     position: relative;
     top: -12.5rem;
     margin-bottom: -12.5rem;
+    @include bp(laptop) {
+      max-width: 96rem;
+    }
+    @include bp(desktop) {
+      max-width: var(--container-width);
+    }
+    @include bp(tablet) {
+      top: -5rem;
+      margin-bottom: -5rem;
+    }
     &-item {
+      display: block;
       height: 25rem;
       border-radius: 0.9rem;
       overflow: hidden;
       box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.1);
+      @include bp(tablet) {
+        height: auto;
+      }
       img {
         width: 100%;
         object-fit: contain;
@@ -162,6 +202,19 @@
       height: 75rem;
       border-radius: 0.6rem;
       overflow: hidden;
+      @include bp(laptop) {
+        height: 65rem;
+      }
+      @include bp(desktop) {
+        height: 55rem;
+      }
+      @include bp(tablet) {
+        height: auto;
+        width: calc(50% - 1rem) !important;
+      }
+      @include bp(tablet-small) {
+        width: 100% !important;
+      }
       &:nth-child(n) {
         width: calc(45% - 1rem);
       }
@@ -179,6 +232,9 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        @include bp(tablet) {
+          object-fit: contain;
+        }
       }
     }
   }

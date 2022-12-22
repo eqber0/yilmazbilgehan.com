@@ -22,38 +22,38 @@
                 Frontend Developer
               </div>
               <div class="contact__info-cards mt-5">
-                <div class="about__info-cards__item">
+                <div class="contact__info-cards__item">
                   <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
+                    class="contact__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
                   >
                     mail
                   </div>
                   <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
+                    class="contact__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
                   >
                     eqber@gmail.com
                   </div>
                 </div>
-                <div class="about__info-cards__item">
+                <div class="contact__info-cards__item">
                   <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
+                    class="contact__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
                   >
                     address
                   </div>
                   <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
+                    class="contact__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
                   >
                     Bursa / Nilüfer
                   </div>
                 </div>
-                <div class="about__info-cards__item">
+                <div class="contact__info-cards__item">
                   <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
+                    class="contact__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
                   >
                     socials
                   </div>
                   <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
+                    class="contact__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
                   >
                     <div
                       v-if="socials"
@@ -71,14 +71,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="about__info-cards__item">
+                <div class="contact__info-cards__item">
                   <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
+                    class="contact__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
                   >
                     phone
                   </div>
                   <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
+                    class="contact__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
                   >
                     0555 685 77 45
                   </div>

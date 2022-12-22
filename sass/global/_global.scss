@@ -59,7 +59,13 @@ main {
 }
 
 .subheader {
-  margin: 12rem;
+  margin: 12rem 0;
+  @include bp(tablet) {
+    margin: 8rem 0;
+  }
+  @include bp(mobile) {
+    margin: 6rem 0;
+  }
   &__title {
     text-align: center;
     text-transform: capitalize;

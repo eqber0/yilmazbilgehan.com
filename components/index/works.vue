@@ -100,22 +100,27 @@ export default {
         {
           title: "Chace People",
           type: "Business & Corporate Website",
-          image: "images/work-chace.jpg",
-        },
-        {
-          title: "Latro",
-          type: "Business & Corporate Website",
-          image: "images/work-latro.jpg",
+          image: "images/work-chace.png",
         },
         {
           title: "Trowas",
           type: "E-Commerce Website",
-          image: "images/work-trowas.jpg",
+          image: "images/work-trowas.png",
         },
         {
-          title: "FCB Interiors",
-          type: "Business & Corporate Website",
-          image: "images/work-fcb.jpg",
+          title: "Latro",
+          type: "Corporate Website",
+          image: "images/work-latro.png",
+        },
+        {
+          title: "Tansu Yacht",
+          type: "Corporate Website",
+          image: "images/work-tansu.png",
+        },
+        {
+          title: "Yasalar",
+          type: "Corporate Website",
+          image: "images/work-yasalar.png",
         },
       ],
     };
