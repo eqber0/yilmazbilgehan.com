@@ -67,12 +67,7 @@ export default {
       },
     };
   },
-  created() {
-    // this.getData();
-  },
   mounted() {
-    // await this.$store.dispatch("getData");
-
     gsap.from(this.$refs.progressItem, {
       scrollTrigger: {
         trigger: this.$refs.progressItem,
@@ -83,15 +78,6 @@ export default {
       ease: "power2",
       duration: 1,
     });
-  },
-  methods: {
-    // ...mapState(["getData"]),
-  },
-  computed: {
-    // ...mapGetters(["yilmazbilgehan"]),
-    // aboutDatas() {
-    //   return this.$store.state.yilmazbilgehan.about;
-    // },
   },
 };
 </script>

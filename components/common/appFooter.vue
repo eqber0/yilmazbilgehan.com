@@ -112,18 +112,5 @@ export default {
       ],
     };
   },
-  created() {
-    // this.getData();
-  },
-  mounted() {
-    // await this.$store.dispatch("getData");
-    // this.profiles = this.yilmazbilgehan.profiles;
-  },
-  computed: {
-    // ...mapGetters(["yilmazbilgehan"]),
-  },
-  methods: {
-    // ...mapState(["getData"]),
-  },
 };
 </script>

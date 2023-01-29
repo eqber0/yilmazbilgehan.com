@@ -45,20 +45,16 @@
             :key="index"
           >
             <NuxtLink
-              :to="{
-                path: `work-detail/${item.title
-                  .toLowerCase()
-                  .replace(/ /g, '-')}`,
-              }"
+              :to="{ path: 'work-detail/' + item.slug }"
               class="works-card"
             >
               <div class="works-card__image">
-                <img :src="item.image" alt="" />
+                <img :src="item.cover_img" alt="" />
               </div>
               <div class="works-card__content">
                 <div class="works-card__content-title">
                   <h3 class="txt txt--rem32 txt--font900 c-white">
-                    {{ item.title }}
+                    {{ item.name }}
                   </h3>
                   <p class="txt txt--rem20 txt--font300 c-white">
                     {{ item.type }}
@@ -80,29 +76,12 @@
 export default {
   data() {
     return {
-      workList: [
-        {
-          title: "Chace People",
-          type: "Business & Corporate Website",
-          image: "images/chace-banner.png",
-        },
-        {
-          title: "Latro",
-          type: "Business & Corporate Website",
-          image: "images/dakar-cover.jpg",
-        },
-        {
-          title: "Trowas",
-          type: "E-Commerce Website",
-          image: "images/chace-banner.png",
-        },
-        {
-          title: "FCB Interiors",
-          type: "Business & Corporate Website",
-          image: "images/chace-banner.png",
-        },
-      ],
+      workList: [],
     };
+  },
+
+  async mounted() {
+    this.workList = await this.$store.state.works;
   },
 };
 </script>

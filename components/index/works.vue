@@ -122,8 +122,6 @@ export default {
   },
 
   mounted() {
-    // await this.$store.dispatch("getData");
-
     var carouselOn = true;
     var carousel_tl;
     var startRot;
@@ -185,15 +183,6 @@ export default {
       carousel_tl.pause();
     }
     initHomeWork();
-  },
-  computed: {
-    // ...mapGetters(["yilmazbilgehan"]),
-  },
-  methods: {
-    // ...mapState(["getData"]),
-  },
-  created() {
-    // this.getData();
   },
 };
 </script>

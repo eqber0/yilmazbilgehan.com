@@ -96,13 +96,7 @@ export default {
     };
   },
   mounted() {
-    // await this.$store.dispatch("getData");
     this.$nextTick(() => {
-      // const datas = this.yilmazbilgehan.works.filter((item) => {
-      //   return item.awarded;
-      // });
-      // this.awardSlider = datas;
-
       const swiperText = new Swiper(this.$refs.textSlider, {
         loop: false,
         direction: "vertical",
@@ -143,15 +137,6 @@ export default {
         },
       });
     });
-  },
-  computed: {
-    // ...mapGetters(["yilmazbilgehan"]),
-  },
-  methods: {
-    // ...mapState(["getData"]),
-  },
-  created() {
-    // this.getData();
   },
 };
 </script>

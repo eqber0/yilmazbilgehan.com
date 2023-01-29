@@ -1,5 +1,7 @@
 <template>
-  <div
+  <component
+    :is="element == 'a' ? 'a' : 'div'"
+    :href="href"
     :class="[
       'btn',
       color == 'primary' ? 'btn--primary' : '',
@@ -15,11 +17,11 @@
     <div class="btn-icon">
       <svg-icon class="icon icon-font" :name="icon" />
     </div>
-  </div>
+  </component>
 </template>
 
 <script>
 export default {
-  props: ["color", "icon", "hover", "text", "type"],
+  props: ["color", "icon", "hover", "text", "type", "href", "element"],
 };
 </script>

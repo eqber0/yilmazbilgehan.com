@@ -94,11 +94,7 @@ export default {
       },
     };
   },
-  created() {
-    this.getData();
-  },
-  async mounted() {
-    await this.$store.dispatch("getData");
+  mounted() {
     this.$nextTick(() => {
       this.$nuxt.$loading.start();
       setTimeout(() => this.$nuxt.$loading.finish(), 1000);
@@ -143,11 +139,7 @@ export default {
       });
     }
   },
-  computed: {
-    ...mapGetters(["yilmazbilgehan"]),
-  },
   methods: {
-    ...mapState(["getData"]),
     particlesInit(engine) {
       loadFull(engine);
     },

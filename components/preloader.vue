@@ -19,10 +19,12 @@ export default {
       this.loading = true;
     },
     finish() {
-      this.$refs.preloader.classList.add("loaded");
-      setTimeout(() => {
-        this.loading = false;
-      }, 1000);
+      if (this.$refs.preloader) {
+        this.$refs.preloader.classList.add("loaded");
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
+      }
     },
   },
 };

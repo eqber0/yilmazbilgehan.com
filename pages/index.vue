@@ -18,5 +18,3 @@ export default {
   components: { hero, works, about, awardSlider, footerTop },
 };
 </script>
-
-<style lang="scss"></style>

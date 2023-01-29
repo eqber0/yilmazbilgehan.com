@@ -81,14 +81,13 @@
                 </div>
               </div>
               <div class="about__info-languages mt-5">
-                <div class="about__info-languages__item">
-                  Turkish <span>Native Languages</span>
-                </div>
-                <div class="about__info-languages__item">
-                  Deutch <span>Fluent</span>
-                </div>
-                <div class="about__info-languages__item">
-                  English <span>Very Good</span>
+                <div
+                  class="about__info-languages__item"
+                  v-for="(item, index) in languages"
+                  :key="index"
+                >
+                  {{ item.language }}
+                  <span v-if="item.level">{{ item.level }}</span>
                 </div>
               </div>
             </div>
@@ -256,6 +255,20 @@ export default {
         { title: "Javascript", percent: 76 },
         { title: "Vue.js", percent: 66 },
         { title: "Nuxt.js", percent: 57 },
+      ],
+      languages: [
+        {
+          language: "Turkish",
+          level: "Native",
+        },
+        {
+          language: "English",
+          level: "B2",
+        },
+        {
+          language: "Deutch",
+          level: "Fluent",
+        },
       ],
     };
   },

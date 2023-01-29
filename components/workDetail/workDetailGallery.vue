@@ -1,0 +1,20 @@
+<template>
+  <section class="section">
+    <div class="container">
+      <div class="work-detail__gallery">
+        <div
+          class="work-detail__gallery-item"
+          v-for="(image, index) in imageList"
+          :key="index"
+        >
+          <img :src="image" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+  props: ["imageList"],
+};
+</script>
