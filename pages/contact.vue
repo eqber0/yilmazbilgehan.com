@@ -2,8 +2,8 @@
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title txt txt--rem128 txt--font900 c-white">
-          <h1>Contact <span class="c-primary">Us</span></h1>
+        <div class="subheader__title">
+          <mainTitle title="Contact Us" />
         </div>
       </div>
     </div>
@@ -141,7 +141,11 @@
 </template>
 
 <script>
+import mainTitle from "../components/mainTitle.vue";
 export default {
+  components: {
+    mainTitle,
+  },
   data() {
     return {
       socials: [

@@ -2,8 +2,8 @@
   <main class="detail-page">
     <div class="container container--fluid">
       <div class="subheader">
-        <div class="subheader__title txt txt--rem128 txt--font900 c-white">
-          <h1>My <span class="c-primary">Works</span></h1>
+        <div class="subheader__title">
+          <mainTitle title="My Works" />
         </div>
       </div>
     </div>
@@ -73,7 +73,11 @@
 </template>
 
 <script>
+import mainTitle from "../components/mainTitle.vue";
 export default {
+  components: {
+    mainTitle,
+  },
   data() {
     return {
       workList: [],

@@ -21,18 +21,38 @@
             <div class="header__menu-btn-line"></div>
           </div>
           <div ref="headerMenu" class="header__menu">
-            <div class="header__menu__item c-white txt txt--rem24 txt--font400">
-              <NuxtLink to="/">Home</NuxtLink>
-            </div>
-            <div class="header__menu__item c-white txt txt--rem24 txt--font400">
-              <NuxtLink to="/about">About</NuxtLink>
-            </div>
-            <div class="header__menu__item c-white txt txt--rem24 txt--font400">
-              <NuxtLink to="/works">Works</NuxtLink>
-            </div>
-            <div class="header__menu__item c-white txt txt--rem24 txt--font400">
-              <NuxtLink to="/contact">Contact</NuxtLink>
-            </div>
+            <NuxtLink to="/">
+              <div
+                class="header__menu__item c-white txt txt--rem24 txt--font400"
+                @click="closeMenu"
+              >
+                Home
+              </div>
+            </NuxtLink>
+            <NuxtLink to="/about">
+              <div
+                class="header__menu__item c-white txt txt--rem24 txt--font400"
+                @click="closeMenu"
+              >
+                About
+              </div>
+            </NuxtLink>
+            <NuxtLink to="/works">
+              <div
+                class="header__menu__item c-white txt txt--rem24 txt--font400"
+                @click="closeMenu"
+              >
+                Works
+              </div>
+            </NuxtLink>
+            <NuxtLink to="/contact">
+              <div
+                class="header__menu__item c-white txt txt--rem24 txt--font400"
+                @click="closeMenu"
+              >
+                Contact
+              </div>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -49,8 +69,14 @@ export default {
     openMenu(e) {
       const header = this.$refs.header;
       const headerMenu = this.$refs.headerMenu;
-      headerMenu.classList.toggle("opened");
-      header.classList.toggle("menu-opened");
+      headerMenu.classList.add("opened");
+      header.classList.add("menu-opened");
+    },
+    closeMenu(e) {
+      const header = this.$refs.header;
+      const headerMenu = this.$refs.headerMenu;
+      headerMenu.classList.remove("opened");
+      header.classList.remove("menu-opened");
     },
   },
 };

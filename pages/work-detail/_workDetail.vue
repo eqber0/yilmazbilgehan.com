@@ -2,11 +2,8 @@
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title txt txt--rem128 txt--font900 c-white">
-          <h1>
-            {{ workData.name }}
-            <!-- TODO: 2.eleman renklencek şekilde js ayarlanıcak. -->
-          </h1>
+        <div class="subheader__title">
+          <mainTitle v-if="workData?.name" :title="workData?.name" />
         </div>
       </div>
     </div>
@@ -57,7 +54,11 @@
 </template>
 
 <script>
+import mainTitle from "../../components/mainTitle.vue";
 export default {
+  components: {
+    mainTitle,
+  },
   data() {
     return {
       routeId: this.$route.params.workDetail,
@@ -66,6 +67,7 @@ export default {
     };
   },
   async mounted() {
+    this.$nextTick();
     this.workData = await this.$store.state.works.filter(
       (item) => this.routeId === item.slug
     )[0];

@@ -115,6 +115,9 @@
     }
     &__item {
       transition: var(--transition);
+      &.nuxt-link-exact-active {
+        color: var(--c-primary);
+      }
       @include bp(mobile) {
         &:not(:last-child) {
           margin-bottom: 1rem;

@@ -2,8 +2,8 @@
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title txt txt--rem128 txt--font900 c-white">
-          <h1>About <span class="c-primary">Me</span></h1>
+        <div class="subheader__title">
+          <mainTitle title="About Us" />
         </div>
       </div>
       <div class="about__wrapper row g-4 g-md-5">
@@ -225,10 +225,14 @@
 </template>
 
 <script>
+import mainTitle from "../components/mainTitle.vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 export default {
+  components: {
+    mainTitle,
+  },
   data() {
     return {
       socials: [
