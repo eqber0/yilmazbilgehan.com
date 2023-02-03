@@ -43,6 +43,20 @@ export default {
       autoplay: {
         delay: 3000,
       },
+      breakpoints: {
+        320: {
+          slidesPerView: 1.25,
+        },
+        569: {
+          slidesPerView: 1.5,
+        },
+        768: {
+          slidesPerView: 2.25,
+        },
+        991: {
+          slidesPerView: 3,
+        },
+      },
     });
   },
 };

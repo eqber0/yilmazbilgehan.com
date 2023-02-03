@@ -57,6 +57,9 @@
     transition: var(--transition);
     position: relative;
     // overflow: hidden;
+    @include bp(tablet) {
+      padding: 2rem 1rem;
+    }
     &::after {
       content: "";
       position: absolute;
@@ -103,6 +106,9 @@
     visibility: hidden;
     pointer-events: none;
     transition: var(--transition);
+    @include bp(tablet) {
+      width: calc(100% - 2rem);
+    }
     @include bp(mobile) {
       flex-direction: column;
     }
@@ -115,9 +121,6 @@
     }
     &__item {
       transition: var(--transition);
-      &.nuxt-link-exact-active {
-        color: var(--c-primary);
-      }
       @include bp(mobile) {
         &:not(:last-child) {
           margin-bottom: 1rem;
@@ -125,6 +128,11 @@
       }
       &:hover {
         color: var(--c-primary) !important;
+      }
+    }
+    .nuxt-link-exact-active {
+      .header__menu__item {
+        color: var(--c-primary);
       }
     }
 

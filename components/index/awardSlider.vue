@@ -49,10 +49,10 @@
                 class="swiper-slide"
               >
                 <div class="award-slider__right-item">
+                  <div class="award-image">
+                    <img :src="slide.awardImage" alt="" />
+                  </div>
                   <div class="award-slider__right-item__image">
-                    <div class="award-image">
-                      <img :src="slide.awardImage" alt="" />
-                    </div>
                     <img :src="slide.image" alt="" />
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export default {
         breakpoints: {
           320: {
             direction: "horizontal",
-            spaceBetween: 75,
+            spaceBetween: 40,
             slidesPerView: 1,
           },
           991: {
@@ -128,7 +128,7 @@ export default {
         breakpoints: {
           320: {
             direction: "horizontal",
-            spaceBetween: 75,
+            spaceBetween: 40,
             slidesPerView: 1,
           },
           991: {

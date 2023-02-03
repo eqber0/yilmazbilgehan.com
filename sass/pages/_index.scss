@@ -221,11 +221,14 @@
           height: 50rem;
         }
         @include bp(tablet) {
-          height: 40rem;
+          height: 45rem;
+        }
+        @include bp(tablet-small) {
+          height: 30rem;
         }
         img {
           width: 100%;
-          height: 100%;
+          height: auto;
         }
       }
       &__content {
@@ -250,6 +253,12 @@
           visibility: visible;
           pointer-events: all;
           transform: translateX(0);
+          padding: 2rem 3rem;
+          min-height: 13rem;
+        }
+        @include bp(mobile) {
+          padding: 1.5rem 2rem;
+          min-height: 10rem;
         }
         &-button {
           flex-shrink: 0;
@@ -278,8 +287,6 @@
 }
 
 .index-about {
-  &__wrapper {
-  }
   &__text {
     max-width: 140rem;
     margin-left: auto;
@@ -324,6 +331,9 @@
       height: 58rem;
       margin-top: 10rem;
     }
+    @include bp(tablet-small) {
+      height: 46rem;
+    }
 
     &-progress {
       width: 100%;
@@ -331,15 +341,19 @@
       overflow-y: auto;
       overscroll-behavior: contain;
       padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      @include bp(tablet) {
+        gap: 2rem;
+        padding: 2rem;
+      }
 
       &::-webkit-scrollbar {
         display: none;
         width: 0;
       }
       &__item {
-        &:not(:last-child) {
-          margin-bottom: 4rem;
-        }
         &-line {
           margin-top: 2rem;
           height: 0.5rem !important;
@@ -357,11 +371,11 @@
       @include bp(tablet) {
         max-width: 20rem;
         margin-top: -4rem;
-        margin-bottom: -4rem;
         margin-left: 0;
       }
       @include bp(tablet-small) {
         max-width: 25rem;
+        height: auto;
       }
 
       img {
@@ -371,6 +385,9 @@
         right: 0;
         @include bp(tablet) {
           position: unset;
+          width: auto;
+          max-width: 100%;
+          height: auto;
         }
       }
     }
@@ -475,34 +492,37 @@
       height: 100%;
       max-width: 80rem;
       margin: auto;
+      position: relative;
       @include bp(tablet) {
         max-width: unset;
+      }
+      .award-image {
+        position: absolute;
+        right: -2rem;
+        bottom: -2rem;
+        width: 15rem;
+        max-height: 25rem;
+        z-index: 1;
+        @include bp(tablet-small) {
+          width: 10rem;
+        }
+        @include bp(mobile) {
+          width: 8rem;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
       &__image {
         width: 100%;
         height: 50rem;
-        position: relative;
+        // position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
         @include bp(tablet-small) {
           height: 40rem;
-        }
-        .award-image {
-          position: absolute;
-          right: -2rem;
-          bottom: -2rem;
-          width: 15rem;
-          max-height: 25rem;
-          z-index: 1;
-          @include bp(tablet-small) {
-            width: 10rem;
-          }
-          @include bp(mobile) {
-            width: 8rem;
-          }
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-          }
         }
 
         &::after {
@@ -518,7 +538,7 @@
         }
         img {
           width: 100%;
-          height: 100%;
+          // height: 100%;
           object-fit: cover;
           border-radius: 1.5rem;
         }

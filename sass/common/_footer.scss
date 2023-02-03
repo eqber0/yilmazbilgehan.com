@@ -23,9 +23,9 @@
         }
       }
       @include bp(tablet-small) {
-        max-height: 30rem;
+        min-height: unset;
+        max-height: 45rem;
       }
-
       &:hover {
         .footer__profiles__item {
           @include bp(r-tablet) {
@@ -78,6 +78,9 @@
         @include bp(tablet) {
           bottom: calc(4rem + 5.4rem + 2rem);
         }
+        @include bp(tablet-small) {
+          bottom: calc(4rem + 5.4rem);
+        }
         &__name {
           line-height: 1em;
           span {
@@ -97,6 +100,9 @@
         @include bp(tablet) {
           transform: translate(-50%, 0);
           opacity: 1;
+        }
+        @include bp(tablet-small) {
+          bottom: 2rem;
         }
       }
       &--left {
@@ -197,6 +203,10 @@
     padding: 3rem;
     @include bp(tablet) {
       padding: 1.5rem;
+    }
+    @include bp(mobile) {
+      font-size: 1.6rem;
+      padding: 1rem 0;
     }
     &-text {
       text-align: center;

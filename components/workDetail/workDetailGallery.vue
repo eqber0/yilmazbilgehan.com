@@ -2,13 +2,15 @@
   <section class="section">
     <div class="container">
       <div class="work-detail__gallery">
-        <div
+        <a
+          :href="image"
+          data-fancybox="gallery"
           class="work-detail__gallery-item"
           v-for="(image, index) in imageList"
           :key="index"
         >
           <img :src="image" alt="" />
-        </div>
+        </a>
       </div>
     </div>
   </section>

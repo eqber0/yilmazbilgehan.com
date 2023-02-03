@@ -2,6 +2,12 @@
   &__wrapper {
     margin-bottom: 18rem;
     position: relative;
+    @include bp(tablet) {
+      margin-bottom: 8rem;
+    }
+    @include bp(mobile) {
+      margin-bottom: 4rem;
+    }
   }
   .col-lg-4 {
     position: relative;
@@ -15,6 +21,9 @@
     border-radius: 1.5rem;
     height: 45rem;
     position: relative;
+    @include bp(tablet) {
+      height: 30rem;
+    }
     img {
       position: absolute;
       width: 100%;
@@ -23,14 +32,20 @@
       padding: 0 2rem;
       object-fit: contain;
       max-height: 50rem;
+      @include bp(tablet) {
+        max-height: 35rem;
+      }
     }
   }
   &__info {
     &-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      @include bp(tablet) {
+        gap: 2rem;
+      }
       &__item {
-        &:not(:last-child) {
-          margin-bottom: 4rem;
-        }
         &-title {
           text-transform: uppercase;
         }

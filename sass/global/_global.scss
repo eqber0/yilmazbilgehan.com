@@ -31,6 +31,10 @@ body {
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;
+    @include bp(tablet) {
+      background-size: contain;
+      background-repeat: repeat-y;
+    }
   }
 }
 main {
@@ -48,6 +52,9 @@ main {
   @include bp(tablet-small) {
     padding: 5rem 0;
   }
+  @include bp(mobile) {
+    padding: 2.5rem 0;
+  }
 
   &--pt0 {
     padding-top: 0;
@@ -60,6 +67,15 @@ main {
 
 .subheader {
   margin: 12rem;
+  @include bp(desktop) {
+    margin: 8rem;
+  }
+  @include bp(tablet) {
+    margin: 6rem;
+  }
+  @include bp(tablet-small) {
+    margin: 6rem 0rem;
+  }
   &__title {
     text-align: center;
     text-transform: capitalize;

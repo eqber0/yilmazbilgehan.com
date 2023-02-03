@@ -16,7 +16,7 @@
           <div class="header__logo">
             <img src="~/static/images/qbr-logo.svg" alt="" />
           </div>
-          <div @click="openMenu" class="header__menu-btn">
+          <div @click="toggleMenu" class="header__menu-btn">
             <div class="header__menu-btn-line"></div>
             <div class="header__menu-btn-line"></div>
           </div>
@@ -66,11 +66,11 @@ import { headroom } from "vue-headroom";
 export default {
   components: { headroom },
   methods: {
-    openMenu(e) {
+    toggleMenu(e) {
       const header = this.$refs.header;
       const headerMenu = this.$refs.headerMenu;
-      headerMenu.classList.add("opened");
-      header.classList.add("menu-opened");
+      headerMenu.classList.toggle("opened");
+      header.classList.toggle("menu-opened");
     },
     closeMenu(e) {
       const header = this.$refs.header;

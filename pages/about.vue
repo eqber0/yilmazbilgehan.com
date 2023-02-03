@@ -3,7 +3,7 @@
     <div class="container">
       <div class="subheader">
         <div class="subheader__title">
-          <mainTitle title="About Us" />
+          <mainTitle title="About Me" />
         </div>
       </div>
       <div class="about__wrapper row g-4 g-md-5">
