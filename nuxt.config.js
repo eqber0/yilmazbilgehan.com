@@ -2,6 +2,7 @@ export default {
   loading: "~/components/preloader.vue",
 
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target: "static",
   head: {
     title: "Personel Website - Bilgehan Yilmaz",
     htmlAttrs: {
