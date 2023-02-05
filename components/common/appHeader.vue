@@ -13,9 +13,11 @@
     <header ref="header" class="header">
       <div class="container">
         <div class="header__wrapper">
-          <div class="header__logo">
-            <img src="~/static/images/qbr-logo.svg" alt="" />
-          </div>
+          <NuxtLink to="/">
+            <div class="header__logo">
+              <img src="~/static/images/qbr-logo.svg" alt="" />
+            </div>
+          </NuxtLink>
           <div @click="toggleMenu" class="header__menu-btn">
             <div class="header__menu-btn-line"></div>
             <div class="header__menu-btn-line"></div>

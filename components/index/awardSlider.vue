@@ -16,19 +16,22 @@
                   :to="{
                     path: `work-detail/${slide.slug}`,
                   }"
-                  class="award-slider__text-item"
-                  :class="slide ? 'js-link-field' : ''"
-                  data-cursor-text="View Project"
                 >
                   <div
-                    class="award-slider__text-item__title txt txt--rem64 txt--font900 c-white"
+                    ref="linkCursor"
+                    class="award-slider__text-item"
+                    data-cursor-text="View Project"
                   >
-                    {{ slide.name }}
-                  </div>
-                  <div
-                    class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
-                  >
-                    {{ slide.awardText }}
+                    <div
+                      class="award-slider__text-item__title txt txt--rem64 txt--font900 c-white"
+                    >
+                      {{ slide.name }}
+                    </div>
+                    <div
+                      class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
+                    >
+                      {{ slide.awardText }}
+                    </div>
                   </div>
                 </NuxtLink>
               </div>
@@ -36,6 +39,7 @@
           </div>
         </div>
         <div
+          ref="dragCursor"
           class="award-slider__right col-12 col-lg-7 js-drag-move-field c-none"
           data-cursor-text="Drag"
         >
@@ -130,7 +134,37 @@ export default {
           nextEl: ".award-slider__buttons-next",
         },
       });
+      this.cursorFn();
     });
+  },
+  methods: {
+    cursorFn() {
+      const cursor = document.querySelector(".cursor");
+      const dragMoveField = this.$refs.dragCursor;
+      const linkField = this.$refs.linkCursor;
+
+      dragMoveField.addEventListener("mouseenter", () => {
+        cursor.classList.add("is-drag");
+        let cursorText = dragMoveField.getAttribute("data-cursor-text");
+        cursor.querySelector(".cursor__txt").innerHTML = cursorText;
+      });
+      dragMoveField.addEventListener("mouseleave", () => {
+        cursor.classList.remove("is-drag");
+        cursor.querySelector(".cursor__txt").innerHTML = "";
+      });
+      console.log(linkField);
+      linkField.map((item) => {
+        item.addEventListener("mouseenter", () => {
+          cursor.classList.add("is-link");
+          let cursorText = item.getAttribute("data-cursor-text");
+          cursor.querySelector(".cursor__txt").innerHTML = cursorText;
+        });
+        item.addEventListener("mouseleave", () => {
+          cursor.classList.remove("is-link");
+          cursor.querySelector(".cursor__txt").innerHTML = "";
+        });
+      });
+    },
   },
 };
 </script>

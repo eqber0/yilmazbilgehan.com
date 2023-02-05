@@ -20,30 +20,15 @@ export default {
     },
     finish() {
       if (this.$refs.preloader) {
-        this.$refs.preloader.classList.add("loaded");
+        this.$refs.preloader.classList.add("loading");
+        setTimeout(() => {
+          this.$refs.preloader.classList.add("loaded");
+        }, 250);
         setTimeout(() => {
           this.loading = false;
-        }, 1000);
+        }, 750);
       }
     },
   },
 };
 </script>
-
-<style scoped lang="scss">
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, transparent 0.1%, #000000 0.1%);
-  text-align: center;
-  font-family: sans-serif;
-  z-index: 99;
-  transition: var(--transition);
-  &.loaded {
-    transform: scale(1000);
-  }
-}
-</style>
