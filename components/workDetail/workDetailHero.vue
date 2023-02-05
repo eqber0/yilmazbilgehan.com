@@ -1,7 +1,7 @@
 <template>
   <section class="work-detail">
     <div class="container">
-      <div class="work-detail-image"></div>
+      <div ref="workDetailImg" class="work-detail-image"></div>
       <div class="work-detail__slider">
         <div ref="workSlider" class="swiper">
           <div class="swiper-wrapper">
@@ -29,12 +29,16 @@ export default {
       type: Array,
       default: () => [],
     },
-    heroImg: {
+    heroImage: {
       type: String,
       default: "",
     },
   },
   mounted() {
+    if (this.heroImage) {
+      this.$refs.workDetailImg.style.backgroundImage =
+        "url(" + this.heroImage + ")";
+    }
     const workSlider = new Swiper(this.$refs.workSlider, {
       loop: true,
       slidesPerView: 3,

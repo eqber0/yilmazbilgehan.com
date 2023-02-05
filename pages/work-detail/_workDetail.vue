@@ -8,10 +8,12 @@
       </div>
     </div>
     <work-detail-hero
+      v-if="workData?.sliderImgs && workData?.heroImg"
       :sliderImages="workData?.sliderImgs"
       :heroImage="workData?.heroImg"
     />
     <work-detail-about
+      v-if="workData?.website && workData?.desc && workData?.name"
       :websiteHref="workData?.website"
       :aboutDesc="workData?.desc"
       :aboutName="workData?.name"
@@ -19,12 +21,21 @@
 
     <work-detail-compare />
     <work-detail-info
+      v-if="
+        workData?.name &&
+        workData?.country &&
+        workData?.duration &&
+        workData?.type
+      "
       :infoName="workData?.name"
       :infoCountry="workData?.country"
       :infoDuration="workData?.duration"
       :infoType="workData?.type"
     />
-    <work-detail-gallery :imageList="workData?.gallery" />
+    <work-detail-gallery
+      v-if="workData?.gallery"
+      :imageList="workData?.gallery"
+    />
     <section class="section">
       <div class="container">
         <h2 class="txt txt--rem48 txt--font300 c-white text-center">
@@ -39,7 +50,7 @@
         </p>
         <br />
         <br />
-        <nuxtLink to="works">
+        <nuxtLink to="/contact">
           <v-button
             color=""
             icon="iconArrow"
@@ -54,11 +65,7 @@
 </template>
 
 <script>
-import mainTitle from "../../components/mainTitle.vue";
 export default {
-  components: {
-    mainTitle,
-  },
   data() {
     return {
       routeId: this.$route.params.workDetail,

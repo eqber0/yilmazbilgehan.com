@@ -51,7 +51,7 @@
                     <img :src="slide.awardImage" alt="" />
                   </div>
                   <div class="award-slider__right-item__image">
-                    <img :src="slide.image" alt="" />
+                    <img :src="slide.heroImg" alt="" />
                   </div>
                 </div>
               </div>
@@ -84,7 +84,6 @@ export default {
     this.awardSlider = await this.$store.state.works.filter(
       (item) => item.awarded === true
     );
-    console.log(this.awardSlider);
     this.$nextTick(() => {
       const swiperText = new Swiper(this.$refs.textSlider, {
         loop: false,

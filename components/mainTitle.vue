@@ -45,7 +45,6 @@ export default {
   },
   mounted() {
     this.mainTitle = this.$refs.mainTitle;
-    console.log(this.type);
     if (this.type == "bold") {
       this.makeLastWordBold();
     } else {

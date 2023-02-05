@@ -15,19 +15,17 @@
                   <div class="work-thumb">
                     <NuxtLink
                       :to="{
-                        path: `work-detail/${item.title
-                          .toLowerCase()
-                          .replace(/ /g, '-')}`,
+                        path: `work-detail/${item.slug}`,
                       }"
                       class="index-works__slider-item"
                     >
                       <div class="index-works__slider-item__image">
-                        <img :src="item.image" alt="" />
+                        <img :src="item.heroImg" alt="" />
                       </div>
                       <div class="index-works__slider-item__content">
                         <div class="index-works__slider-item__content-title">
                           <h3 class="txt txt--rem32 txt--font900 c-white">
-                            {{ item.title }}
+                            {{ item.name }}
                           </h3>
                           <p class="txt txt--rem20 txt--font300 c-white">
                             {{ item.type }}
@@ -50,19 +48,17 @@
               v-for="(item, index) in workList.slice(0, 3)"
               :key="index"
               :to="{
-                path: `work-detail/${item.title
-                  .toLowerCase()
-                  .replace(/ /g, '-')}`,
+                path: `work-detail/${item.slug}`,
               }"
               class="index-works__slider-item"
             >
               <div class="index-works__slider-item__image">
-                <nuxt-img quality="80" format="webp" :src="item.image" />
+                <nuxt-img quality="80" format="webp" :src="item.heroImg" />
               </div>
               <div class="index-works__slider-item__content">
                 <div class="index-works__slider-item__content-title">
                   <h3 class="txt txt--rem32 txt--font900 c-white">
-                    {{ item.title }}
+                    {{ item.name }}
                   </h3>
                   <p class="txt txt--rem20 txt--font300 c-white">
                     {{ item.type }}
@@ -96,32 +92,12 @@ import gsap from "gsap";
 export default {
   data() {
     return {
-      workList: [
-        {
-          title: "Chace People",
-          type: "Business & Corporate Website",
-          image: "images/work-chace.jpg",
-        },
-        {
-          title: "Latro",
-          type: "Business & Corporate Website",
-          image: "images/work-latro.jpg",
-        },
-        {
-          title: "Trowas",
-          type: "E-Commerce Website",
-          image: "images/work-trowas.jpg",
-        },
-        {
-          title: "FCB Interiors",
-          type: "Business & Corporate Website",
-          image: "images/work-fcb.jpg",
-        },
-      ],
+      workList: [],
     };
   },
 
-  mounted() {
+  async mounted() {
+    this.workList = await this.$store.state.works;
     var carouselOn = true;
     var carousel_tl;
     var startRot;
