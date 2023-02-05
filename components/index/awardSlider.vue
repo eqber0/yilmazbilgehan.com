@@ -14,9 +14,7 @@
               >
                 <NuxtLink
                   :to="{
-                    path: `work-detail/${slide.title
-                      .toLowerCase()
-                      .replace(/ /g, '-')}`,
+                    path: `work-detail/${slide.slug}`,
                   }"
                   class="award-slider__text-item"
                   :class="slide ? 'js-link-field' : ''"
@@ -25,12 +23,12 @@
                   <div
                     class="award-slider__text-item__title txt txt--rem64 txt--font900 c-white"
                   >
-                    {{ slide.title }}
+                    {{ slide.name }}
                   </div>
                   <div
                     class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
                   >
-                    {{ slide.type }}
+                    {{ slide.awardText }}
                   </div>
                 </NuxtLink>
               </div>
@@ -61,41 +59,32 @@
           </div>
         </div>
       </div>
+      <div class="award-slider__buttons">
+        <div class="award-slider__buttons-prev">
+          <svg-icon name="iconArrow" />
+        </div>
+        <div class="award-slider__buttons-next">
+          <svg-icon name="iconArrow" />
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-// import { mapState, mapGetters } from "vuex";
-
-import { Swiper, Thumbs, Autoplay } from "swiper";
-Swiper.use([Thumbs, Autoplay]);
+import { Swiper, Thumbs, Autoplay, Navigation } from "swiper";
+Swiper.use([Thumbs, Autoplay, Navigation]);
 export default {
   data() {
     return {
-      awardSlider: [
-        {
-          title: "Trowas",
-          type: "Altın Örümcek Finalist",
-          awardImage: "images/orumcek.png",
-          image: "images/work-trowas.jpg",
-        },
-        {
-          title: "Chace People",
-          type: "Kristal Elma Silver Award",
-          awardImage: "images/kristal.png",
-          image: "images/work-chace.jpg",
-        },
-        {
-          title: "Latro",
-          type: "Horizon Silver Award",
-          awardImage: "images/horizon.png",
-          image: "images/work-latro.jpg",
-        },
-      ],
+      awardSlider: [],
     };
   },
-  mounted() {
+  async mounted() {
+    this.awardSlider = await this.$store.state.works.filter(
+      (item) => item.awarded === true
+    );
+    console.log(this.awardSlider);
     this.$nextTick(() => {
       const swiperText = new Swiper(this.$refs.textSlider, {
         loop: false,
@@ -109,16 +98,16 @@ export default {
             direction: "horizontal",
             spaceBetween: 40,
             slidesPerView: 1,
+            loop: true,
           },
           991: {
+            loop: false,
             direction: "vertical",
           },
         },
       });
-
       const swiperThumb = new Swiper(this.$refs.thumbSlider, {
         loop: false,
-        modules: [Thumbs],
         slidesPerView: 1,
         speed: 1000,
         direction: "vertical",
@@ -130,10 +119,16 @@ export default {
             direction: "horizontal",
             spaceBetween: 40,
             slidesPerView: 1,
+            loop: true,
           },
           991: {
+            loop: false,
             direction: "vertical",
           },
+        },
+        navigation: {
+          prevEl: ".award-slider__buttons-prev",
+          nextEl: ".award-slider__buttons-next",
         },
       });
     });

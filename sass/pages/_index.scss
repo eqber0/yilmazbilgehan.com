@@ -498,12 +498,17 @@
       }
       .award-image {
         position: absolute;
-        right: -2rem;
+        right: 0rem;
         bottom: 0rem;
         width: 15rem;
         max-height: 25rem;
         height: 100%;
         z-index: 1;
+        @include bp(tablet) {
+          height: auto;
+          right: -2rem;
+          bottom: -2rem;
+        }
         @include bp(tablet-small) {
           width: 10rem;
         }
@@ -525,6 +530,9 @@
         @include bp(tablet-small) {
           height: 40rem;
         }
+        @include bp(mobile) {
+          height: 30rem;
+        }
 
         &::after {
           content: "";
@@ -543,6 +551,26 @@
           object-fit: cover;
           border-radius: 1.5rem;
         }
+      }
+    }
+  }
+  &__buttons {
+    @include bp(r-tablet) {
+      display: none;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    &-prev {
+      transform: rotate(180deg);
+    }
+    &-prev,
+    &-next {
+      .icon {
+        color: var(--c-white);
+        font-size: 3.2rem;
       }
     }
   }
