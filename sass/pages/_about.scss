@@ -15,6 +15,11 @@
   &__sticky {
     position: sticky;
     top: 10rem;
+    @include bp(tablet) {
+      position: unset;
+      top: unset;
+      margin-bottom: 4rem;
+    }
   }
   &__image {
     border: 0.1rem solid var(--c-white);
@@ -45,21 +50,19 @@
       @include bp(tablet) {
         gap: 2rem;
       }
-      &__item {
-        &-title {
-          text-transform: uppercase;
-        }
-      }
     }
     &-languages {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
       &__item {
-        &:not(:last-child) {
-          margin-bottom: 2rem;
-        }
         padding: 2rem;
         border: 0.3rem solid rgba(#ffffff, 0.2);
         border-radius: 1.5rem;
         font-size: var(--txt-rem32);
+        @include bp(tablet) {
+          padding: 1rem;
+        }
         span {
           font-size: var(--txt-rem24);
           color: var(--c-paragraph);
@@ -77,23 +80,22 @@
       }
     }
   }
-  &__education {
-    padding: 5rem 0;
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     border-bottom: 0.3rem solid rgba(#ffffff, 0.2);
-    &-item {
-      &:not(:last-child) {
-        margin-bottom: 6rem;
-      }
-      &__date {
-        margin-right: 10rem;
-      }
+    padding: 3rem 0;
+    &--pb0 {
+      padding-top: 0;
     }
-  }
-  &__skills {
-    padding: 5rem 0;
-    border-bottom: 0.3rem solid rgba(#ffffff, 0.2);
-  }
-  &__experience {
-    padding: 5rem 0;
+    &--bb0 {
+      border-bottom: none;
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 }

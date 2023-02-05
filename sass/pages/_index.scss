@@ -466,7 +466,7 @@
   }
   &__right {
     .swiper {
-      max-height: 77.6rem;
+      max-height: 67.6rem;
       @include bp(tablet) {
         overflow: initial;
         max-height: unset;
@@ -499,9 +499,10 @@
       .award-image {
         position: absolute;
         right: -2rem;
-        bottom: -2rem;
+        bottom: 0rem;
         width: 15rem;
         max-height: 25rem;
+        height: 100%;
         z-index: 1;
         @include bp(tablet-small) {
           width: 10rem;
@@ -518,7 +519,7 @@
       &__image {
         width: 100%;
         height: 50rem;
-        // position: relative;
+        position: relative;
         border-radius: 1.5rem;
         overflow: hidden;
         @include bp(tablet-small) {

@@ -10,36 +10,14 @@
           </div>
           <div class="col-12 col-lg-9">
             <div class="footer__info-content">
-              <div
+              <infoCard
                 v-for="(item, index) in profiles[0]?.items"
                 :key="index"
-                class="footer__info-content__item"
-              >
-                <div
-                  class="footer__info-content__item-title txt txt--rem28 txt--font300 c-paragraph"
-                >
-                  {{ item.title }}
-                </div>
-                <div
-                  class="footer__info-content__item-text txt txt--rem28 txt--font900 c-white"
-                >
-                  {{ item.text }}
-                </div>
-                <div
-                  v-if="item.socials"
-                  class="footer__info-content__item-socials"
-                >
-                  <div
-                    v-for="(social, index) in item.socials"
-                    :key="index"
-                    class="footer__info-content__item-socials__item"
-                  >
-                    <a target="_blank" :href="social.link">
-                      <svg-icon :name="social.icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+                :title="item.title"
+                :value="item.text"
+                :type="item.socials ? 'socials' : undefined"
+                :socials="item.socials"
+              />
             </div>
           </div>
         </div>
@@ -56,8 +34,6 @@
 </template>
 
 <script>
-// import { mapState, mapGetters } from "vuex";
-
 export default {
   data() {
     return {

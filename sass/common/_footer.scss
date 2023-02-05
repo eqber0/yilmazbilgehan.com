@@ -4,6 +4,7 @@
   &__profiles {
     display: flex;
     justify-content: space-between;
+    margin-top: 10rem;
     @include bp(tablet) {
       flex-direction: column;
       border-bottom: 0;
@@ -134,6 +135,11 @@
     @include bp(tablet) {
       height: unset;
     }
+    .col-lg-9 {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
     &-logo {
       display: flex;
       align-items: center;
@@ -152,18 +158,13 @@
       }
     }
     &-content {
-      margin-top: 20rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8rem 20rem;
       grid-template-rows: 1fr 1fr;
+      gap: 8rem;
       justify-self: center;
-      width: max-content;
       margin-left: auto;
       margin-right: auto;
-      @include bp(dekstop) {
-        gap: 8rem 10rem;
-      }
       @include bp(tablet) {
         margin-top: 0;
         padding: 4rem 0;

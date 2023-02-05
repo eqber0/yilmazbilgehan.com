@@ -9,6 +9,9 @@ html.is-animating .transition-fade {
 
 html {
   font-size: 10px;
+  @include bp(tablet-small) {
+    font-size: 9px;
+  }
 }
 
 body {
@@ -79,5 +82,19 @@ main {
   &__title {
     text-align: center;
     text-transform: capitalize;
+  }
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  @include bp(desktop) {
+    gap: 2rem;
+  }
+  &__item {
+    &-title {
+      text-transform: uppercase;
+    }
   }
 }
