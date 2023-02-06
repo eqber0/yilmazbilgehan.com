@@ -152,7 +152,6 @@ export default {
         cursor.classList.remove("is-drag");
         cursor.querySelector(".cursor__txt").innerHTML = "";
       });
-      console.log(linkField);
       linkField.map((item) => {
         item.addEventListener("mouseenter", () => {
           cursor.classList.add("is-link");

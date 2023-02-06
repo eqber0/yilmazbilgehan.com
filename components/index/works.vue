@@ -96,21 +96,25 @@ export default {
     };
   },
 
-  async mounted() {
-    this.workList = await this.$store.state.works;
-    var carouselOn = true;
-    var carousel_tl;
-    var startRot;
-    var cTot;
-    var cSpeed;
-    var rotLoop;
-    function initHomeWork() {
+  mounted() {
+    this.workList = this.$store.state.works;
+    this.$nextTick(() => {
+      this.initHomeWork();
+    });
+  },
+  methods: {
+    initHomeWork() {
+      var carouselOn = true;
+      var carousel_tl;
+      var startRot;
+      var cTot;
+      var cSpeed;
+      var rotLoop;
       var cRot = 13;
       var startRot = -26;
       var cTot = $(".carousel-spinner").find(".work-thumb").length;
       var cSpeed = 25;
       var rotLoop = -cTot * cRot;
-
       // set position of thumbs around carousel
 
       $(".index-works__slider")
@@ -151,16 +155,13 @@ export default {
           moveCarousel();
         }
       });
-    }
-    function moveCarousel() {
-      carousel_tl.play();
-    }
-    function stopCarousel() {
-      carousel_tl.pause();
-    }
-    initHomeWork();
+      function moveCarousel() {
+        carousel_tl.play();
+      }
+      function stopCarousel() {
+        carousel_tl.pause();
+      }
+    },
   },
 };
 </script>
-
-<style></style>

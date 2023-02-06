@@ -138,7 +138,7 @@
     overflow: hidden;
     border-radius: 1.6rem;
     background-repeat: repeat-y;
-    animation: workHero 150s 2s linear forwards infinite;
+    animation: workHero 100s 2s linear forwards infinite;
     transition: var(--transition);
     background-size: 100%;
     @include bp(desktop) {
