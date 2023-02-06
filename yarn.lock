@@ -9378,6 +9378,11 @@ vue-hot-reload-api@^2.3.0:
   resolved "https://registry.npmjs.org/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz"
   integrity sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==
 
+vue-image-compare2@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-image-compare2/-/vue-image-compare2-1.0.0.tgz#94403936265f2f3ba33906207606e599386decad"
+  integrity sha512-3ms4stlciLdo4IHbjPE1LiTQL09ys40EDrYfyJmvpL/ZLLiCPzdQlOjwWvTyeGSWjMBms9xNA+dbo+ihzLPdZw==
+
 vue-loader@^15.9.7:
   version "15.10.1"
   resolved "https://registry.npmjs.org/vue-loader/-/vue-loader-15.10.1.tgz"

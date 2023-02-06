@@ -19,7 +19,10 @@
       :aboutName="workData?.name"
     />
 
-    <work-detail-compare />
+    <work-detail-compare
+      v-if="workData?.compareImgs"
+      :compareImgs="workData?.compareImgs"
+    />
     <work-detail-info
       v-if="
         workData?.name &&

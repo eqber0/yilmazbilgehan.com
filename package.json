@@ -21,6 +21,7 @@
     "swiper": "^8.4.4",
     "vue": "^2.7.10",
     "vue-headroom": "^0.10.1",
+    "vue-image-compare2": "^1.0.0",
     "vue-server-renderer": "^2.7.10",
     "vue-template-compiler": "^2.7.10"
   },

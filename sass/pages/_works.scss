@@ -1,5 +1,7 @@
 .works {
   &__tab {
+    display: none;
+    //
     margin-bottom: 8rem;
     display: flex;
     align-items: center;
@@ -189,6 +191,38 @@
       &__value {
         padding-bottom: 2rem;
       }
+    }
+  }
+  &__compare {
+    height: 80rem;
+    overflow: hidden;
+    .image-compare {
+      height: 100%;
+    }
+    .handle {
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8rem;
+        height: 8rem;
+        background-color: var(--c-primary);
+        border-radius: 50%;
+        z-index: -1;
+      }
+    }
+    &-arrowL,
+    &-arrowR {
+      color: var(--c-white);
+      font-size: 1.4rem;
+    }
+    &-arrowL {
+      transform: rotate(-135deg);
+    }
+    &-arrowR {
+      transform: rotate(45deg);
     }
   }
   &__gallery {
