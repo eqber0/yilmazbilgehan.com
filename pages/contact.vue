@@ -3,7 +3,7 @@
     <div class="container">
       <div class="subheader">
         <div class="subheader__title">
-          <mainTitle title="Contact Us" />
+          <mainTitle title="Contact Me" />
         </div>
       </div>
     </div>
@@ -17,72 +17,12 @@
           </div>
           <div class="col-12 col-lg-8">
             <div class="about__info c-white">
-              <div class="txt txt--rem48 txt--font300">Bilgehan Yılmaz</div>
-              <div class="txt txt--rem24 txt--font300 c-paragraph">
-                Frontend Developer
-              </div>
+              <authorCard name="Bilgehan Yılmaz" title="Frontend Developer" />
               <div class="contact__info-cards mt-5">
-                <div class="about__info-cards__item">
-                  <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
-                  >
-                    mail
-                  </div>
-                  <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
-                  >
-                    eqber@gmail.com
-                  </div>
-                </div>
-                <div class="about__info-cards__item">
-                  <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
-                  >
-                    address
-                  </div>
-                  <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
-                  >
-                    Bursa / Nilüfer
-                  </div>
-                </div>
-                <div class="about__info-cards__item">
-                  <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
-                  >
-                    socials
-                  </div>
-                  <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
-                  >
-                    <div
-                      v-if="socials"
-                      class="footer__info-content__item-socials justify-content-start"
-                    >
-                      <div
-                        v-for="(social, index) in socials"
-                        :key="index"
-                        class="footer__info-content__item-socials__item me-5"
-                      >
-                        <a target="_blank" :href="social.link">
-                          <svg-icon :name="social.icon" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="about__info-cards__item">
-                  <div
-                    class="about__info-cards__item-title txt txt--rem28 txt--font300 c-primary"
-                  >
-                    phone
-                  </div>
-                  <div
-                    class="about__info-cards__item-subtitle txt txt--rem32 txt--font700 c-white"
-                  >
-                    0555 685 77 45
-                  </div>
-                </div>
+                <infoCard title="email" value="eqber00@gmail.com" />
+                <infoCard title="adress" value="Bursa / Nilüfer" />
+                <infoCard type="socials" title="socials" :socials="socials" />
+                <infoCard title="phone" value="0555 685 77 45" />
               </div>
             </div>
           </div>
@@ -95,44 +35,84 @@
           <h2 class="txt txt--rem48 txt--font300 c-white text-center mb-5">
             Tell me about your Dream <b>Website</b>
           </h2>
-          <div class="row g-4 g-md-5">
+          <form
+            ref="contactForm"
+            class="row g-4 g-md-5"
+            id="contactForm"
+            @submit.prevent="onSubmit"
+          >
             <div class="col-12 col-lg-6">
               <div class="input-item">
-                <input type="text" placeholder="Name Surname" />
+                <input
+                  type="text"
+                  placeholder="Name Surname"
+                  id="name"
+                  name="name"
+                  v-model="name"
+                  required
+                />
               </div>
             </div>
             <div class="col-12 col-lg-6">
               <div class="input-item">
-                <input type="text" placeholder="Company Name" />
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  id="company"
+                  name="company"
+                  v-model="company"
+                />
               </div>
             </div>
             <div class="col-12 col-lg-6">
               <div class="input-item">
-                <input type="text" placeholder="Phone" />
+                <input
+                  type="text"
+                  placeholder="Email"
+                  v-model="email"
+                  id="email"
+                  name="email"
+                  required
+                />
               </div>
             </div>
             <div class="col-12 col-lg-6">
               <div class="input-item">
-                <input type="text" placeholder="Name Surname" />
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  v-model="phoneNumber"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  required
+                />
               </div>
             </div>
             <div class="col-12">
               <div class="input-item input-item--textarea">
-                <textarea name="" cols="30" rows="10" placeholder="Message">
+                <textarea
+                  cols="30"
+                  rows="10"
+                  placeholder="Message"
+                  id="message"
+                  name="message"
+                  v-model="message"
+                >
                 </textarea>
               </div>
             </div>
-            <div class="col-12">
-              <nuxtLink to="works">
-                <v-button
-                  color=""
-                  icon="iconArrow"
-                  hover="primary"
-                  text="submit"
-                  type="centered"
-                />
-              </nuxtLink>
-            </div>
+          </form>
+          <div class="col-12">
+            <v-button
+              color=""
+              icon="iconArrow"
+              hover="primary"
+              text="submit"
+              type="centered"
+              element="button"
+              :submit="true"
+              form="contactForm"
+            />
           </div>
         </div>
       </div>
@@ -141,11 +121,8 @@
 </template>
 
 <script>
-import mainTitle from "../components/mainTitle.vue";
+import emailjs from "emailjs-com";
 export default {
-  components: {
-    mainTitle,
-  },
   data() {
     return {
       socials: [
@@ -166,7 +143,46 @@ export default {
           link: "https://www.instagram.com/eqber_/",
         },
       ],
+      name: "",
+      email: "",
+      phoneNumber: "",
+      company: "",
+      message: "",
+      submitSuccess: false,
     };
+  },
+  methods: {
+    onSubmit(e) {
+      try {
+        emailjs
+          .sendForm(
+            "service_ns9zwo9",
+            "template_6ekpnv9",
+            this.$refs.contactForm,
+            "YoA8yYQZfRNA85jP6"
+          )
+          .then(
+            (result) => {
+              if (result.status == 200) {
+                this.submitSuccess = true;
+                this.name = "";
+                this.email = "";
+                this.company = "";
+                this.phoneNumber = "";
+                this.message = "";
+                setTimeout(() => {
+                  alert("Your message sent succesfully.");
+                }, 1000);
+              }
+            },
+            (error) => {
+              // console.log("FAILED...", error.text);
+            }
+          );
+      } catch (error) {
+        console.log({ error });
+      }
+    },
   },
 };
 </script>

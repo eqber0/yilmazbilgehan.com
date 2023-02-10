@@ -1,7 +1,9 @@
 <template>
   <component
-    :is="element == 'a' ? 'a' : 'div'"
+    :is="element"
     :href="href"
+    :type="submit ? 'submit' : undefined"
+    :form="form ? form : undefined"
     :class="[
       'btn',
       color == 'primary' ? 'btn--primary' : '',
@@ -22,6 +24,16 @@
 
 <script>
 export default {
-  props: ["color", "icon", "hover", "text", "type", "href", "element"],
+  props: [
+    "color",
+    "icon",
+    "hover",
+    "text",
+    "type",
+    "href",
+    "element",
+    "submit",
+    "form",
+  ],
 };
 </script>

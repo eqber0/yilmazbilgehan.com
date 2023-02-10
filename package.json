@@ -15,6 +15,7 @@
     "@nuxtjs/firebase": "^8.2.2",
     "@nuxtjs/svg-sprite": "^0.5.2",
     "core-js": "^3.25.3",
+    "emailjs-com": "^3.2.0",
     "firebase": "^9.14.0",
     "gsap": "^3.11.3",
     "nuxt": "^2.15.8",
@@ -23,7 +24,8 @@
     "vue-headroom": "^0.10.1",
     "vue-image-compare2": "^1.0.0",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vue-toast-notification": "^0.6"
   },
   "devDependencies": {
     "sass": "^1.56.1",

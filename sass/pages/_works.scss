@@ -1,15 +1,15 @@
 .works {
   &__tab {
     display: none;
-    //
-    margin-bottom: 8rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    // margin-bottom: 8rem;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
     &-filter {
       display: flex;
       align-items: center;
       gap: 4rem;
+
       &__item {
         text-transform: uppercase;
         color: var(--c-paragraph-alt);
