@@ -8,7 +8,7 @@
       </div>
     </div>
     <section class="section works">
-      <div class="container container--fluid">
+      <!-- <div class="container container--fluid">
         <div class="works__tab">
           <div class="works__tab-filter">
             <div
@@ -36,11 +36,11 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="container container--fluid">
         <div class="row g-4 g-md-5">
           <div
-            class="col-12 col-lg-6 col-xl-4"
+            class="col-12 col-md-6 col-xl-4"
             v-for="(item, index) in workList"
             :key="index"
           >

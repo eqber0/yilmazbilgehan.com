@@ -28,7 +28,10 @@ export const state = () => ({
       ],
       website: "https://chacepeople.com/en",
       content: "",
-      compareImgs: [{ image: "" }, { image: "" }],
+      compareImgs: [
+        { image: "/images/chace-fullpage.jpg" },
+        { image: "/images/trowas-fullpage.jpg" },
+      ],
       gallery: [
         "/images/chace-banner.png",
         "/images/chace-banner.png",
@@ -263,10 +266,37 @@ export const state = () => ({
       ],
     },
   ],
+  socials: [
+    {
+      icon: "iconLinkedin",
+      link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
+    },
+    {
+      icon: "iconGithub",
+      link: "https://github.com/eqber0",
+    },
+    {
+      icon: "iconTwitter",
+      link: "https://twitter.com/eqbeR_",
+    },
+    {
+      icon: "iconInstagram",
+      link: "https://www.instagram.com/eqber_/",
+    },
+  ],
+  skills: [
+    { title: "HTML 5", percent: 87 },
+    { title: "CSS", percent: 93 },
+    { title: "Javascript", percent: 76 },
+    { title: "Vue.js", percent: 66 },
+    { title: "Nuxt.js", percent: 57 },
+  ],
 });
 
 export const getters = {
   works: (state) => state.works,
+  socials: (state) => state.socials,
+  skills: (state) => state.skills,
 };
 
 export const mutations = {};

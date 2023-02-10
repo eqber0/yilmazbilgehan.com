@@ -36,6 +36,7 @@
             :text="index == 0 ? 'contact me' : ' contact him'"
             icon="iconArrow"
             type="centered"
+            element="div"
           />
         </div>
       </div>
@@ -52,41 +53,6 @@ export default {
           author: "Frontend Developer",
           bgImage: "images/qbr-footer.svg",
           image: "images/bilgehan-footer.png",
-          items: [
-            {
-              text: "eqber00@gmail.com",
-              title: "mail",
-            },
-            {
-              text: "Bursa / Nilüfer",
-              title: "address",
-            },
-            {
-              text: "0 555 685 7745",
-              title: "Phone",
-            },
-            {
-              socials: [
-                {
-                  icon: "iconLinkedin",
-                  link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
-                },
-                {
-                  icon: "iconGithub",
-                  link: "https://github.com/eqber0",
-                },
-                {
-                  icon: "iconTwitter",
-                  link: "https://twitter.com/eqbeR_",
-                },
-                {
-                  icon: "iconInstagram",
-                  link: "https://www.instagram.com/eqber_/",
-                },
-              ],
-              title: "socials",
-            },
-          ],
           name: "Bilgehan Yılmaz",
         },
         {

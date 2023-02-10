@@ -12,7 +12,7 @@
             here, <span>welcome</span>.
           </h4>
         </div>
-        <div class="index-about__skills">
+        <div v-if="about.skills" class="index-about__skills">
           <div class="index-about__skills-progress" v-if="about.skills">
             <div
               v-for="(item, index) in about.skills"
@@ -47,8 +47,6 @@
 </template>
 
 <script>
-// import { mapState, mapGetters } from "vuex";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -57,26 +55,24 @@ export default {
     return {
       about: {
         image: "images/bilgehan.png",
-        skills: [
-          { title: "HTML 5", percent: 87 },
-          { title: "CSS", percent: 93 },
-          { title: "Javascript", percent: 76 },
-          { title: "Vue.js", percent: 66 },
-          { title: "Nuxt.js", percent: 57 },
-        ],
+        skills: [],
       },
     };
   },
-  mounted() {
-    gsap.from(this.$refs.progressItem, {
-      scrollTrigger: {
-        trigger: this.$refs.progressItem,
-        start: "center-=100 center",
-        end: "center-=100 center",
-      },
-      width: 0,
-      ease: "power2",
-      duration: 1,
+  props: ["skillData"],
+  async mounted() {
+    this.about.skills = await this.$store.state.skills;
+    this.$nextTick(() => {
+      gsap.from(this.$refs.progressItem, {
+        scrollTrigger: {
+          trigger: this.$refs.progressItem,
+          start: "center-=100 center",
+          end: "center-=100 center",
+        },
+        width: 0,
+        ease: "power2",
+        duration: 1,
+      });
     });
   },
 };

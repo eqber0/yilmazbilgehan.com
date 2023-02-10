@@ -9,7 +9,7 @@
     </div>
     <section>
       <div class="container">
-        <div class="contact__info row g-4 g-md-5">
+        <div class="contact__info row g-4 g-md-5 align-items-center">
           <div class="col-12 col-lg-4">
             <div class="about__image">
               <img src="~/static/images/bilgehan.png" alt="" />
@@ -102,7 +102,7 @@
               </div>
             </div>
           </form>
-          <div class="col-12">
+          <div class="col-12 mt-5">
             <v-button
               color=""
               icon="iconArrow"
@@ -125,24 +125,7 @@ import emailjs from "emailjs-com";
 export default {
   data() {
     return {
-      socials: [
-        {
-          icon: "iconLinkedin",
-          link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
-        },
-        {
-          icon: "iconGithub",
-          link: "https://github.com/eqber0",
-        },
-        {
-          icon: "iconTwitter",
-          link: "https://twitter.com/eqbeR_",
-        },
-        {
-          icon: "iconInstagram",
-          link: "https://www.instagram.com/eqber_/",
-        },
-      ],
+      socials: [],
       name: "",
       email: "",
       phoneNumber: "",
@@ -150,6 +133,9 @@ export default {
       message: "",
       submitSuccess: false,
     };
+  },
+  async mounted() {
+    this.socials = await this.$store.state.socials;
   },
   methods: {
     onSubmit(e) {

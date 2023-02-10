@@ -56,24 +56,7 @@ export default {
               title: "Phone",
             },
             {
-              socials: [
-                {
-                  icon: "iconLinkedin",
-                  link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
-                },
-                {
-                  icon: "iconGithub",
-                  link: "https://github.com/eqber0",
-                },
-                {
-                  icon: "iconTwitter",
-                  link: "https://twitter.com/eqbeR_",
-                },
-                {
-                  icon: "iconInstagram",
-                  link: "https://www.instagram.com/eqber_/",
-                },
-              ],
+              socials: [],
               title: "socials",
             },
           ],
@@ -87,6 +70,11 @@ export default {
         },
       ],
     };
+  },
+  async mounted() {
+    this.profiles[0].items.filter(
+      (item) => item.title === "socials"
+    )[0].socials = await this.$store.state.socials;
   },
 };
 </script>

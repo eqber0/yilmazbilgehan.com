@@ -44,6 +44,7 @@
       }
     }
   }
+
   &-card {
     position: relative;
     border-radius: 1.5rem;
@@ -90,18 +91,24 @@
     &__image {
       width: 100%;
       height: 45rem;
-      @include bp(tablet) {
+      @include bp(laptop) {
         height: 40rem;
       }
-      @include bp(tablet-small) {
-        height: 35rem;
+      @include bp(desktop) {
+        height: unset;
       }
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transform: scale(1.2);
         transition: var(--transition);
+        @include bp(desktop) {
+          height: unset;
+          object-fit: contain;
+          height: auto;
+        }
         @include bp(tablet) {
           transform: scale(1.2) translateY(-2rem);
         }
@@ -196,6 +203,15 @@
   &__compare {
     height: 80rem;
     overflow: hidden;
+    @include bp(laptop) {
+      height: 70rem;
+    }
+    @include bp(tablet) {
+      height: 50rem;
+    }
+    @include bp(mobile) {
+      height: 35rem;
+    }
     .image-compare {
       height: 100%;
     }

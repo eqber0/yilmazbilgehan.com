@@ -2,7 +2,10 @@
   <section class="section section--pt0">
     <div class="container">
       <div class="work-detail__compare">
-        <image-compare :before="before" :after="after">
+        <image-compare
+          :before="compareImgs[0].image"
+          :after="compareImgs[1].image"
+        >
           <div slot="icon-left" class="work-detail__compare-arrowL">
             <svg-icon name="iconArrow" />
           </div>
@@ -11,7 +14,6 @@
           </div>
         </image-compare>
       </div>
-      {{ compareImgs }}
     </div>
   </section>
 </template>
@@ -21,12 +23,6 @@ import imageCompare from "vue-image-compare2";
 export default {
   components: {
     imageCompare,
-  },
-  data() {
-    return {
-      before: "/images/chace-fullpage.jpg",
-      after: "/images/trowas-fullpage.jpg",
-    };
   },
   props: ["compareImgs"],
 };

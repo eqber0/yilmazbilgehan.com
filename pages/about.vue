@@ -131,31 +131,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default {
   data() {
     return {
-      socials: [
-        {
-          icon: "iconLinkedin",
-          link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
-        },
-        {
-          icon: "iconGithub",
-          link: "https://github.com/eqber0",
-        },
-        {
-          icon: "iconTwitter",
-          link: "https://twitter.com/eqbeR_",
-        },
-        {
-          icon: "iconInstagram",
-          link: "https://www.instagram.com/eqber_/",
-        },
-      ],
-      skills: [
-        { title: "HTML 5", percent: 87 },
-        { title: "CSS", percent: 93 },
-        { title: "Javascript", percent: 76 },
-        { title: "Vue.js", percent: 66 },
-        { title: "Nuxt.js", percent: 57 },
-      ],
+      socials: [],
+      skills: [],
       languages: [
         {
           language: "Turkish",
@@ -172,16 +149,20 @@ export default {
       ],
     };
   },
-  mounted() {
-    gsap.from(this.$refs.progressItem, {
-      scrollTrigger: {
-        trigger: this.$refs.progressItem,
-        start: "center-=100 center",
-        end: "center-=100 center",
-      },
-      width: 0,
-      ease: "power2",
-      duration: 1,
+  async mounted() {
+    this.socials = await this.$store.state.socials;
+    this.skills = await this.$store.state.skills;
+    this.$nextTick(() => {
+      gsap.from(this.$refs.progressItem, {
+        scrollTrigger: {
+          trigger: this.$refs.progressItem,
+          start: "center-=100 center",
+          end: "center-=100 center",
+        },
+        width: 0,
+        ease: "power2",
+        duration: 1,
+      });
     });
   },
 };

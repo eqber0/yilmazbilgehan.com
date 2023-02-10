@@ -96,6 +96,7 @@ export default {
         speed: 1000,
         watchSlidesProgress: true,
         watchSlidesVisibility: true,
+        allowTouchMove: false,
         breakpoints: {
           320: {
             direction: "horizontal",
