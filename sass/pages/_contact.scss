@@ -4,6 +4,16 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 6rem;
+      @include bp(desktop) {
+        gap: 4rem;
+      }
+      @include bp(tablet) {
+        gap: 2rem;
+      }
+      @include bp(tablet-small) {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 }

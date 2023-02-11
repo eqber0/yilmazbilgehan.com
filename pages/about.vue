@@ -111,11 +111,6 @@
                 title=" BABEL AGENCY"
                 text="UX/UI Designer"
               />
-              <experienceItem
-                date="Now-2021"
-                title=" BABEL AGENCY"
-                text="UX/UI Designer"
-              />
             </div>
           </div>
         </div>
@@ -141,10 +136,6 @@ export default {
         {
           language: "English",
           level: "B2",
-        },
-        {
-          language: "Deutch",
-          level: "Fluent",
         },
       ],
     };
