@@ -53,15 +53,15 @@
         </p>
         <br />
         <br />
-        <nuxtLink to="/contact">
-          <v-button
-            color=""
-            icon="iconArrow"
-            hover="primary"
-            text="Get an Offer"
-            type="centered"
-          />
-        </nuxtLink>
+        <v-button
+          element="nuxt-link"
+          color=""
+          icon="iconArrow"
+          hover="primary"
+          text="Get an Offer"
+          type="centered"
+          href="/contact"
+        />
       </div>
     </section>
   </main>

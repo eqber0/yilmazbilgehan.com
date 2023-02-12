@@ -19,7 +19,7 @@
           type="centered"
           element="a"
           :href="websiteHref"
-          target="_blank"
+          :target="true"
         />
       </div>
     </div>

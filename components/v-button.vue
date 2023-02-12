@@ -4,6 +4,8 @@
     :href="href"
     :type="submit ? 'submit' : undefined"
     :form="form ? form : undefined"
+    :to="element == 'nuxt-link' ? href : undefined"
+    :target="target == true ? '_blank' : undefined"
     :class="[
       'btn',
       color == 'primary' ? 'btn--primary' : '',
@@ -34,6 +36,7 @@ export default {
     "element",
     "submit",
     "form",
+    "target",
   ],
 };
 </script>
