@@ -4,24 +4,35 @@
       <div class="hero__wrapper">
         <div class="hero__text">
           <h1 class="txt txt--rem128 txt--font900 c-white">
-            <div class="text-line">
-              <p class="text-line-inner">Good design is</p>
-            </div>
-            <div class="text-line">
-              <p class="text-line-inner">
-                about <span class="c-primary">process</span>,
+            <div class="text-line route-transition">
+              <p class="text-line-inner route-transition-inner">
+                Good design is
               </p>
             </div>
-            <div class="text-line">
-              <p class="text-line-inner">
+            <div class="text-line route-transition">
+              <p
+                class="text-line-inner route-transition-inner route-transition-inner--second"
+              >
+                about
+                <span class="c-primary">process</span>,
+              </p>
+            </div>
+            <div class="text-line route-transition">
+              <p
+                class="text-line-inner route-transition-inner route-transition-inner--third"
+              >
                 not
                 <span class="c-secondary">product</span>.
               </p>
             </div>
           </h1>
         </div>
-        <div class="hero__scroll">
-          <div class="hero__scroll-line"></div>
+        <div class="route-transition">
+          <div
+            class="hero__scroll route-transition-inner route-transition-inner--fourth"
+          >
+            <div class="hero__scroll-line"></div>
+          </div>
         </div>
       </div>
     </div>

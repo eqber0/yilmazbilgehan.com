@@ -2,27 +2,31 @@
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title">
-          <mainTitle title="Contact Me" />
+        <div class="subheader__title route-transition">
+          <mainTitle class="route-transition-inner" title="Contact Me" />
         </div>
       </div>
     </div>
     <section>
       <div class="container">
-        <div class="contact__info row g-4 g-md-5 align-items-center">
-          <div class="col-12 col-lg-4">
-            <div class="about__image">
-              <img src="~/static/images/bilgehan.png" alt="" />
+        <div class="contact__info route-transition">
+          <div
+            class="row g-4 g-md-5 align-items-center route-transition-inner route-transition-inner--second"
+          >
+            <div class="col-12 col-lg-4">
+              <div class="about__image">
+                <img src="~/static/images/bilgehan.png" alt="" />
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-lg-8">
-            <div class="about__info c-white">
-              <authorCard name="Bilgehan Yılmaz" title="Frontend Developer" />
-              <div class="contact__info-cards mt-5">
-                <infoCard title="email" value="eqber00@gmail.com" />
-                <infoCard title="adress" value="Bursa / Nilüfer" />
-                <infoCard type="socials" title="socials" :socials="socials" />
-                <infoCard title="phone" value="0555 685 77 45" />
+            <div class="col-12 col-lg-8">
+              <div class="about__info c-white">
+                <authorCard name="Bilgehan Yılmaz" title="Frontend Developer" />
+                <div class="contact__info-cards mt-5">
+                  <infoCard title="email" value="eqber00@gmail.com" />
+                  <infoCard title="adress" value="Bursa / Nilüfer" />
+                  <infoCard type="socials" title="socials" :socials="socials" />
+                  <infoCard title="phone" value="0555 685 77 45" />
+                </div>
               </div>
             </div>
           </div>

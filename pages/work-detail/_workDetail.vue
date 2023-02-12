@@ -1,18 +1,24 @@
 <template>
-  <main class="detail-page">
+  <main class="detail-page route-transition">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title">
-          <mainTitle v-if="workData?.name" :title="workData?.name" />
+        <div class="subheader__title route-transition">
+          <mainTitle
+            class="route-transition-inner"
+            v-if="workData?.name"
+            :title="workData?.name"
+          />
         </div>
       </div>
     </div>
     <work-detail-hero
+      class="route-transition-inner route-transition-inner--second"
       v-if="workData?.sliderImgs && workData?.heroImg"
       :sliderImages="workData?.sliderImgs"
       :heroImage="workData?.heroImg"
     />
     <work-detail-about
+      class="route-transition-inner route-transition-inner--fourth"
       v-if="workData?.website && workData?.desc && workData?.name"
       :websiteHref="workData?.website"
       :aboutDesc="workData?.desc"
@@ -20,10 +26,12 @@
     />
 
     <work-detail-compare
+      class="route-transition-inner route-transition-inner--fourth"
       v-if="workData?.compareImgs"
       :compareImgs="workData?.compareImgs"
     />
     <work-detail-info
+      class="route-transition-inner route-transition-inner--fourth"
       v-if="
         workData?.name &&
         workData?.country &&
@@ -36,10 +44,13 @@
       :infoType="workData?.type"
     />
     <work-detail-gallery
+      class="route-transition-inner route-transition-inner--fourth"
       v-if="workData?.gallery"
       :imageList="workData?.gallery"
     />
-    <section class="section">
+    <section
+      class="section route-transition-inner route-transition-inner--fourth"
+    >
       <div class="container">
         <h2 class="txt txt--rem48 txt--font300 c-white text-center">
           Do you want to same <b>Website?</b>

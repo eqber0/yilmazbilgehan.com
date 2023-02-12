@@ -2,13 +2,13 @@
   <main class="detail-page">
     <div class="container container--fluid">
       <div class="subheader">
-        <div class="subheader__title">
-          <mainTitle title="My Works" />
+        <div class="subheader__title route-transition">
+          <mainTitle class="route-transition-inner" title="My Works" />
         </div>
       </div>
     </div>
-    <section class="section works">
-      <!-- <div class="container container--fluid">
+    <section class="section works route-transition">
+      <!-- <div class="container container--fluid route-transition-inner route-transition-inner--second">
         <div class="works__tab">
           <div class="works__tab-filter">
             <div
@@ -37,7 +37,9 @@
           </div>
         </div>
       </div> -->
-      <div class="container container--fluid">
+      <div
+        class="container container--fluid route-transition-inner route-transition-inner--third"
+      >
         <div class="row g-4 g-md-5">
           <div
             class="col-12 col-md-6 col-xl-4"
