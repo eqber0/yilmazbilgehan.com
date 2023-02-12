@@ -70,15 +70,15 @@
               </div>
             </NuxtLink>
           </div>
-          <nuxtLink to="works">
-            <v-button
-              color=""
-              icon="iconArrow"
-              hover="primary"
-              text="More Work"
-              type="centered"
-            />
-          </nuxtLink>
+          <v-button
+            element="nuxt-link"
+            href="/works"
+            color=""
+            icon="iconArrow"
+            hover="primary"
+            text="More Work"
+            type="centered"
+          />
         </div>
       </div>
     </div>

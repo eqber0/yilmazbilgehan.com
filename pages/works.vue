@@ -83,9 +83,10 @@ export default {
       workList: [],
     };
   },
-
-  async mounted() {
-    this.workList = await this.$store.state.works;
+  async asyncData({ store }) {
+    return {
+      workList: store.state.works,
+    };
   },
 };
 </script>

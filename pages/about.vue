@@ -107,9 +107,9 @@
             </div>
             <div class="about__section-content">
               <experienceItem
-                date="Now-2021"
+                date="Now - July 2021"
                 title=" BABEL AGENCY"
-                text="UX/UI Designer"
+                text="Frontend Developer"
               />
             </div>
           </div>
@@ -135,7 +135,7 @@ export default {
         },
         {
           language: "English",
-          level: "B2",
+          level: "B1",
         },
       ],
     };
