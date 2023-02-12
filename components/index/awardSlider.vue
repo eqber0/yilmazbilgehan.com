@@ -134,7 +134,20 @@ export default {
           prevEl: ".award-slider__buttons-prev",
           nextEl: ".award-slider__buttons-next",
         },
+        on: {
+          touchStart: function (e) {
+            e.el.classList.add("award-slider-touch");
+            document.querySelector(".cursor").classList.add("is-drag-active");
+          },
+          touchEnd: function (e) {
+            e.el.classList.remove("award-slider-touch");
+            document
+              .querySelector(".cursor")
+              .classList.remove("is-drag-active");
+          },
+        },
       });
+
       this.cursorFn();
     });
   },
@@ -145,9 +158,13 @@ export default {
       const linkField = this.$refs.linkCursor;
 
       dragMoveField.addEventListener("mouseenter", () => {
-        cursor.classList.add("is-drag");
+        cursor.classList.add("is-drag-loading");
         let cursorText = dragMoveField.getAttribute("data-cursor-text");
         cursor.querySelector(".cursor__txt").innerHTML = cursorText;
+        setTimeout(() => {
+          cursor.classList.remove("is-drag-loading");
+          cursor.classList.add("is-drag");
+        }, 400);
       });
       dragMoveField.addEventListener("mouseleave", () => {
         cursor.classList.remove("is-drag");

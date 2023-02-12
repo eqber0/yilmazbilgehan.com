@@ -22,8 +22,6 @@
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
-    // transition: width var(--transition-slow), height var(--transition-slow),
-    //   background-color var(--transition-slow);
     transition: var(--transition-slow);
     filter: blur(5rem);
     opacity: 0.5;
@@ -69,9 +67,26 @@
       }
     }
   }
-
+  &.is-drag-loading {
+    &:before,
+    &:after {
+      width: 14.4rem;
+      height: 14.4rem;
+    }
+    &:before {
+      top: -4rem;
+      transform: scale(0.2) translateX(-50%);
+      width: 2rem;
+      height: 2rem;
+    }
+    &:after {
+      bottom: -4rem;
+      transform: scale(0.2) translateX(-50%) rotate(180deg);
+      width: 2rem;
+      height: 2rem;
+    }
+  }
   &.is-drag {
-    transition-delay: 0s;
     z-index: 3;
     border: 0.3rem solid var(--c-primary);
     &:before,
@@ -108,7 +123,7 @@
       &__txt {
         opacity: 1;
         visibility: visible;
-        transition-delay: 0.35s !important;
+        transition-delay: 0.15s !important;
         transition: var(--transition-slow);
         color: var(--c-primary);
         font-weight: 800;

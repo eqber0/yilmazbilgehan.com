@@ -397,6 +397,11 @@
 .award-slider {
   overflow: hidden;
   height: 100vh;
+  &-touch {
+    .award-slider__right-item {
+      transform: scale(0.95);
+    }
+  }
   @include bp(tablet) {
     height: unset;
   }
@@ -493,6 +498,7 @@
       max-width: 80rem;
       margin: auto;
       position: relative;
+      transition: var(--transition);
       @include bp(tablet) {
         max-width: unset;
       }
