@@ -151,6 +151,11 @@ export default {
       this.cursorFn();
     });
   },
+  destroyed() {
+    const cursor = document.querySelector(".cursor");
+    cursor.classList.remove("is-link");
+    cursor.querySelector(".cursor__txt").innerHTML = "";
+  },
   methods: {
     cursorFn() {
       const cursor = document.querySelector(".cursor");

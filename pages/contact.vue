@@ -33,9 +33,11 @@
         </div>
       </div>
     </section>
-    <section class="section">
+    <section class="section route-transition">
       <div class="container">
-        <div class="contact-form">
+        <div
+          class="contact-form route-transition-inner route-transition-inner--third"
+        >
           <h2 class="txt txt--rem48 txt--font300 c-white text-center mb-5">
             Tell me about your Dream <b>Website</b>
           </h2>

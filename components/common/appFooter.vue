@@ -1,9 +1,7 @@
 <template>
   <footer class="footer route-transition">
     <div class="container">
-      <div
-        class="footer-wrapper route-transition-inner route-transition-inner--fourth"
-      >
+      <div class="footer-wrapper route-transition-inner">
         <div class="footer__info row">
           <div class="col-12 col-lg-3">
             <div class="footer__info-logo">
@@ -25,9 +23,7 @@
         </div>
       </div>
     </div>
-    <div
-      class="footer__rights route-transition-inner route-transition-inner--fourth"
-    >
+    <div class="footer__rights route-transition-inner">
       <div class="container">
         <div class="footer__rights-text txt txt--rem24 txt--font300">
           ALL RIGHTS RESERVED BY <span>QBR</span> & TORE

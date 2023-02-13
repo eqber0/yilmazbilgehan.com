@@ -77,6 +77,9 @@ export default {
   transition: {
     name: "home",
     mode: "out-in",
-    duration: 1500,
+    duration: 1200,
+    beforeEnter(el) {
+      document.documentElement.scrollTop = 0;
+    },
   },
 };
