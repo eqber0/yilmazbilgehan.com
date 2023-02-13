@@ -77,9 +77,13 @@ export default {
   transition: {
     name: "home",
     mode: "out-in",
-    duration: 1200,
+    duration: 1750,
+    beforeLeave(el) {
+      document.querySelector(".footer").classList.remove("loaded");
+    },
     beforeEnter(el) {
       document.documentElement.scrollTop = 0;
+      document.querySelector(".footer").classList.add("loaded");
     },
   },
 };
