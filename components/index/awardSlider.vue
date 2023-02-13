@@ -158,16 +158,13 @@ export default {
       const linkField = this.$refs.linkCursor;
 
       dragMoveField.addEventListener("mouseenter", () => {
-        cursor.classList.add("is-drag-loading");
         let cursorText = dragMoveField.getAttribute("data-cursor-text");
         cursor.querySelector(".cursor__txt").innerHTML = cursorText;
-        setTimeout(() => {
-          cursor.classList.remove("is-drag-loading");
-          cursor.classList.add("is-drag");
-        }, 400);
+        cursor.classList.add("is-drag");
       });
       dragMoveField.addEventListener("mouseleave", () => {
         cursor.classList.remove("is-drag");
+        cursor.classList.remove("is-drag-loading");
         cursor.querySelector(".cursor__txt").innerHTML = "";
       });
       linkField.map((item) => {

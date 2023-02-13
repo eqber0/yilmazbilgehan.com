@@ -67,25 +67,6 @@
       }
     }
   }
-  &.is-drag-loading {
-    &:before,
-    &:after {
-      width: 14.4rem;
-      height: 14.4rem;
-    }
-    &:before {
-      top: -4rem;
-      transform: scale(0.2) translateX(-50%);
-      width: 2rem;
-      height: 2rem;
-    }
-    &:after {
-      bottom: -4rem;
-      transform: scale(0.2) translateX(-50%) rotate(180deg);
-      width: 2rem;
-      height: 2rem;
-    }
-  }
   &.is-drag {
     z-index: 3;
     border: 0.3rem solid var(--c-primary);
