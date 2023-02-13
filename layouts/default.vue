@@ -50,7 +50,6 @@ export default {
       }
     },
   },
-  scrollToTop: true,
 };
 </script>
 

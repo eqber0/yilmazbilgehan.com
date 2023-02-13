@@ -77,7 +77,7 @@ export default {
   transition: {
     name: "home",
     mode: "out-in",
-    duration: 1750,
+    duration: 1500,
     beforeLeave(el) {
       document.querySelector(".footer").classList.remove("loaded");
     },
