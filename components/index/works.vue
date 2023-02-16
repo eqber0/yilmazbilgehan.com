@@ -11,7 +11,11 @@
           >
             <div id="mod-swiper" class="carousel-spinner" style="">
               <div ref="carouselGroup" class="carousel-group">
-                <div v-for="(item, i) in workList" :key="i" class="thumb-wrap">
+                <div
+                  v-for="(item, i) in workList.slice(0, 5)"
+                  :key="i"
+                  class="thumb-wrap"
+                >
                   <div class="work-thumb">
                     <NuxtLink
                       :to="{
