@@ -41,13 +41,18 @@
 
 <script>
 export default {
+  props: ["isLoaded"],
   mounted() {
-    const heroText = document.querySelectorAll(".hero__text .text-line-inner");
-    setTimeout(() => {
-      heroText.forEach((e) => {
-        e.classList.add("loaded");
-      });
-    }, 1500);
+    if (this.isLoaded) {
+      const heroText = document.querySelectorAll(
+        ".hero__text .text-line-inner"
+      );
+      setTimeout(() => {
+        heroText.forEach((e) => {
+          e.classList.add("loaded");
+        });
+      }, 1500);
+    }
   },
 };
 </script>

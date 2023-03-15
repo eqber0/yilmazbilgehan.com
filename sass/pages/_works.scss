@@ -164,6 +164,7 @@
     position: relative;
     top: -12.5rem;
     margin-bottom: -12.5rem;
+    min-height: 25rem;
     @include bp(tablet) {
       top: -7.5rem;
       margin-bottom: -7.5rem;

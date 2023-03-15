@@ -24,7 +24,7 @@
                       class="index-works__slider-item"
                     >
                       <div class="index-works__slider-item__image">
-                        <img :src="item.heroImg" alt="" />
+                        <nuxt-img loading="lazy" :src="item.heroImg" alt="" />
                       </div>
                       <div class="index-works__slider-item__content">
                         <div class="index-works__slider-item__content-title">

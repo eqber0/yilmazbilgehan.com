@@ -45,7 +45,7 @@ export const state = () => ({
       website: "https://trowas.com",
       content: "",
       compareImgs: [],
-      gallery: ["/images/trowas/trowas-banner.png"],
+      gallery: ["/images/trowas/trowas-banner.jpg"],
       awarded: true,
       awardText: "Altın Örümcek Finalist",
       awardImage: "/images/trowas/trowas-award-img.png",
@@ -73,7 +73,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/latro/latro-banner.png"],
+      gallery: ["/images/latro/latro-banner.jpg"],
       awarded: true,
       awardText: "Horizon Silver Award",
       awardImage: "/images/latro/latro-award-img.png",
@@ -101,7 +101,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/dakar/dakar-banner.png"],
+      gallery: ["/images/dakar/dakar-banner.jpg"],
     },
     {
       id: "4",
@@ -126,7 +126,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/tansu/tansu-banner.png"],
+      gallery: ["/images/tansu/tansu-banner.jpg"],
     },
     {
       id: "5",
@@ -151,7 +151,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/trace/trace-banner.png"],
+      gallery: ["/images/trace/trace-banner.jpg"],
     },
     {
       id: "6",
@@ -176,7 +176,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/yasalar/yasalar-banner.png"],
+      gallery: ["/images/yasalar/yasalar-banner.jpg"],
     },
     {
       id: "7",
@@ -201,7 +201,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/nsk/nsk-banner.png"],
+      gallery: ["/images/nsk/nsk-banner.jpg"],
     },
     {
       id: "8",
@@ -226,7 +226,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/fcb/fcb-banner.png"],
+      gallery: ["/images/fcb/fcb-banner.jpg"],
     },
     {
       id: "9",
@@ -251,7 +251,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/elkon/elkon-banner.png"],
+      gallery: ["/images/elkon/elkon-banner.jpg"],
     },
     {
       id: "10",
@@ -276,7 +276,7 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/madamnica/madamnica-banner.png"],
+      gallery: ["/images/madamnica/madamnica-banner.jpg"],
     },
   ],
   socials: [

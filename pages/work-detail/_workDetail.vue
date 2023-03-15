@@ -24,12 +24,12 @@
       :aboutDesc="workData?.desc"
       :aboutName="workData?.name"
     />
-
     <work-detail-compare
       class="route-transition-inner route-transition-inner--fourth"
-      v-if="workData?.compareImgs"
+      v-if="workData?.compareImgs.length > 0"
       :compareImgs="workData?.compareImgs"
     />
+
     <work-detail-info
       class="route-transition-inner route-transition-inner--fourth"
       v-if="

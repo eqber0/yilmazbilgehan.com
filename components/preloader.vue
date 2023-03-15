@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="this.loading"
+    v-if="loading"
     class="preloader"
     ref="preloader"
     :class="this.loading == false ? 'loaded' : ''"
@@ -14,21 +14,22 @@ export default {
       loading: null,
     };
   },
-  methods: {
-    start() {
-      this.loading = true;
-    },
-    finish() {
-      if (this.$refs.preloader) {
-        this.$refs.preloader.classList.add("loading");
-        setTimeout(() => {
-          this.$refs.preloader.classList.add("loaded");
-        }, 250);
-        setTimeout(() => {
-          this.loading = false;
-        }, 750);
-      }
-    },
+  mounted() {
+    this.loading = true;
+    if (this.loading !== null) {
+      console.log("loading");
+      // this.$refs.preloader.classList.add("loading");
+      setTimeout(() => {
+        console.log("loaded");
+        console.log(this.$refs.preloader);
+        this.$refs.preloader.classList.add("loaded");
+      }, 250);
+      setTimeout(() => {
+        this.loading = false;
+        console.log("loaded");
+        console.log(this.$refs.preloader);
+      }, 750);
+    }
   },
 };
 </script>
