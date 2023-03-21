@@ -30,7 +30,7 @@
                     <div
                       class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
                     >
-                      {{ slide.awardText }}
+                      {{ slide.text }}
                     </div>
                   </div>
                 </NuxtLink>
@@ -55,7 +55,7 @@
                     <img :src="slide.awardImage" alt="" />
                   </div>
                   <div class="award-slider__right-item__image">
-                    <img :src="slide.heroImg" alt="" />
+                    <img :src="slide.image" alt="" />
                   </div>
                 </div>
               </div>
@@ -85,9 +85,7 @@ export default {
     };
   },
   async mounted() {
-    this.awardSlider = await this.$store.state.works.filter(
-      (item) => item.awarded === true
-    );
+    this.awardSlider = await this.$store.state.awardedWorks;
     this.$nextTick(() => {
       const swiperText = new Swiper(this.$refs.textSlider, {
         loop: false,
