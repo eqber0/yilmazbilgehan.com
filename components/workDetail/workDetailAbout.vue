@@ -2,11 +2,17 @@
   <section class="section">
     <div class="container">
       <div class="work-detail__about">
-        <h2 class="txt txt--rem48 txt--font300 c-white text-center">
-          About Chace <b>People</b>
-        </h2>
+        <!-- <h2 class="txt txt--rem48 txt--font300 c-white text-center">About</h2> -->
+        <mainTitle
+          class="text-center"
+          type="bold"
+          :title="'About ' + aboutName"
+        />
         <br />
-        <p class="txt txt--rem32 txt--font300 c-white text-center">
+        <p
+          v-if="aboutDesc"
+          class="txt txt--rem32 txt--font300 c-white text-center"
+        >
           {{ aboutDesc }}
         </p>
         <br />

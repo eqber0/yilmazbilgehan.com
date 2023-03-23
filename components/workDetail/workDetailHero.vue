@@ -2,7 +2,7 @@
   <section class="work-detail">
     <div class="container">
       <div ref="workDetailImg" class="work-detail-image"></div>
-      <div class="work-detail__slider">
+      <div v-if="sliderImages.length > 0" class="work-detail__slider">
         <div ref="workSlider" class="swiper">
           <div class="swiper-wrapper">
             <div
