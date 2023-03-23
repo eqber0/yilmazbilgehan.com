@@ -36,7 +36,9 @@
             :text="index == 0 ? 'contact me' : ' contact him'"
             icon="iconArrow"
             type="centered"
-            element="div"
+            :element="index == 0 ? 'div' : 'a'"
+            :href="index == 0 ? undefined : 'http://tolunaykurttutar.com'"
+            :target="true"
           />
         </div>
       </div>

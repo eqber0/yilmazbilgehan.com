@@ -23,8 +23,8 @@ export const state = () => ({
       website: "https://chacepeople.com/en",
       content: "",
       compareImgs: [
-        { image: "/images/chace/chace-fullpage.webp" },
-        { image: "/images/trowas/trowas-fullpage.webp" },
+        // { image: "/images/chace/chace-fullpage.webp" },
+        // { image: "/images/trowas/trowas-fullpage.webp" },
       ],
       gallery: [
         "/images/chace/chace-banner.png",
