@@ -35,9 +35,6 @@ export const state = () => ({
         "/images/chace/chace-mockup-6.png",
         "/images/chace/chace-mockup-7.png",
       ],
-      awarded: true,
-      awardText: "Kristal Elma Silver Award",
-      awardImage: "/images/chace/chace-award-img.png",
     },
     {
       id: "1",
@@ -62,31 +59,19 @@ export const state = () => ({
         "/images/trowas/trowas-mockup-6.png",
         "/images/trowas/trowas-mockup-7.png",
       ],
-      awarded: true,
-      awardText: "Altın Örümcek Finalist",
-      awardImage: "/images/trowas/trowas-award-img.png",
     },
     {
       id: "2",
       name: "Latro",
       slug: "latro",
       type: "Corporate",
-      country: "UK, England",
-      duration: "2 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      country: "Turkey",
+      duration: "3 Months",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/latro/latro-banner.jpg",
       heroImg: "/images/latro/latro-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "https://latro.com.tr/en",
       content: "",
       compareImgs: [],
       gallery: [
@@ -98,9 +83,6 @@ export const state = () => ({
         "/images/latro/latro-mockup-6.png",
         "/images/latro/latro-mockup-7.png",
       ],
-      awarded: true,
-      awardText: "Horizon Silver Award",
-      awardImage: "/images/latro/latro-award-img.png",
     },
     {
       id: "3",
@@ -109,20 +91,11 @@ export const state = () => ({
       type: "Corporate",
       country: "Senegal",
       duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/dakar/dakar-banner.jpg",
       heroImg: "/images/dakar/dakar-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "https://www.dakaraeroport.com/en",
       content: "",
       compareImgs: [],
       gallery: [
@@ -140,22 +113,13 @@ export const state = () => ({
       name: "Tansu Yacht",
       slug: "tansu-yacht",
       type: "Corporate",
-      country: "Senegal",
-      duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      country: "Turkey",
+      duration: "1 Month",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/tansu/tansu-banner.jpg",
       heroImg: "/images/tansu/tansu-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "#0",
       content: "",
       compareImgs: [],
       gallery: ["/images/tansu/tansu-banner.jpg"],
@@ -165,22 +129,13 @@ export const state = () => ({
       name: "Trace Aerospace",
       slug: "trace-aerospace",
       type: "Corporate",
-      country: "Senegal",
-      duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      country: "Turkey",
+      duration: "1.5 Months",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/trace/trace-banner.jpg",
       heroImg: "/images/trace/trace-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "https://tracesaerospace.com/",
       content: "",
       compareImgs: [],
       gallery: ["/images/trace/trace-banner.jpg"],
@@ -190,22 +145,13 @@ export const state = () => ({
       name: "Yaşalar",
       slug: "yasalar",
       type: "Corporate",
-      country: "Senegal",
-      duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      country: "Turkey",
+      duration: "2 Months",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/yasalar/yasalar-banner.jpg",
       heroImg: "/images/yasalar/yasalar-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "https://yasalar.com.tr/en",
       content: "",
       compareImgs: [],
       gallery: ["/images/yasalar/yasalar-banner.jpg"],
@@ -215,25 +161,24 @@ export const state = () => ({
       name: "NSK Group",
       slug: "nsk-group",
       type: "Corporate",
-      country: "Senegal",
+      country: "Turkey",
       duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/nsk/nsk-banner.jpg",
       heroImg: "/images/nsk/nsk-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "https://nskgroup.com.tr/en",
       content: "",
       compareImgs: [],
-      gallery: ["/images/nsk/nsk-banner.jpg"],
+      gallery: [
+        "/images/nsk/nsk-banner.jpg",
+        "/images/nsk/nsk-mockup-1.png",
+        "/images/nsk/nsk-mockup-2.png",
+        "/images/nsk/nsk-mockup-3.png",
+        "/images/nsk/nsk-mockup-4.png",
+        "/images/nsk/nsk-mockup-5.png",
+        "/images/nsk/nsk-mockup-6.png",
+      ],
     },
     {
       id: "8",
@@ -242,45 +187,35 @@ export const state = () => ({
       type: "Corporate",
       country: "Senegal",
       duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/fcb/fcb-banner.jpg",
       heroImg: "/images/fcb/fcb-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "http://www.fcbinteriors.com/tr",
       content: "",
       compareImgs: [],
-      gallery: ["/images/fcb/fcb-banner.jpg"],
+      gallery: [
+        "/images/fcb/fcb-banner.jpg",
+        "/images/fcb/fcb-mockup-1.png",
+        "/images/fcb/fcb-mockup-2.png",
+        "/images/fcb/fcb-mockup-3.png",
+        "/images/fcb/fcb-mockup-4.png",
+        "/images/fcb/fcb-mockup-5.png",
+        "/images/fcb/fcb-mockup-6.png",
+      ],
     },
     {
       id: "9",
       name: "Elkon",
       slug: "elkon",
       type: "Corporate",
-      country: "Senegal",
-      duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      country: "Turkey",
+      duration: "1 Month",
       cover_img: "/images/elkon/elkon-banner.jpg",
       heroImg: "/images/elkon/elkon-fullpage.webp",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "#0",
       content: "",
       compareImgs: [],
       gallery: ["/images/elkon/elkon-banner.jpg"],
@@ -291,21 +226,12 @@ export const state = () => ({
       slug: "madamnica",
       type: "Corporate",
       country: "Senegal",
-      duration: "3 Months",
-      desc: `Chace People is a leading specialist recruitment agency, placing
-      senior support staff with high profile clients around the world. They
-      connect and they match, creating the three cs of Chace; client,
-      consultant and candidate. Chace people works on a project basis
-      whereby our teams connect with the best candidates, creating
-      opportunities for our clients to work with the most respected talent
-      within their specific industries. with the use of technology and our
-      in-depth interview and vetting process, we work closely with our
-      clients and candidates to ensure that we match the right people with
-      the right people.`,
+      duration: "1.5 Months",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam expedita dolorum cumque, deleniti cum eum.`,
       cover_img: "/images/madamnica/madamnica-banner.jpg",
       heroImg: "/images/madamnica/madamnica-fullpage.webp",
       sliderImgs: [],
-      website: "https://chacepeople.com/en",
+      website: "#0",
       content: "",
       compareImgs: [],
       gallery: ["/images/madamnica/madamnica-banner.jpg"],
