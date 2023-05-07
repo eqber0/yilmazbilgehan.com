@@ -12,12 +12,14 @@
         <p
           v-if="aboutDesc"
           class="txt txt--rem32 txt--font300 c-white text-center"
+          v-html="aboutDesc"
         >
-          {{ aboutDesc }}
+          <!-- {{ aboutDesc }} -->
         </p>
         <br />
         <br />
         <v-button
+          v-if="websiteHref"
           color=""
           icon="iconArrow"
           hover="primary"

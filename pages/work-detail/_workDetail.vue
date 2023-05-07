@@ -19,7 +19,7 @@
     />
     <work-detail-about
       class="route-transition-inner route-transition-inner--fourth"
-      v-if="workData?.website && workData?.desc && workData?.name"
+      v-if="workData?.desc && workData?.name"
       :websiteHref="workData?.website"
       :aboutDesc="workData?.desc"
       :aboutName="workData?.name"
