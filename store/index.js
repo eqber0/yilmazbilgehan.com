@@ -334,6 +334,28 @@ export const state = () => ({
         "/images/madamnica/madamnica-mockup-6.png",
       ],
     },
+    {
+      id: "11",
+      name: "SKT",
+      slug: "skt",
+      type: "Corporate",
+      country: "Turkey",
+      duration: "2,5 Months",
+      desc: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, aliquid.`,
+      cover_img: "/images/skt/skt-mockup-1.png",
+      heroImg: "/images/skt/skt-fullpage.png",
+      sliderImgs: [],
+      website: "https://skt.com.tr",
+      content: "",
+      compareImgs: [],
+      gallery: [
+        "/images/skt/skt-mockup-1.png",
+        "/images/skt/skt-mockup-2.png",
+        "/images/skt/skt-mockup-3.png",
+        "/images/skt/skt-mockup-5.png",
+        "/images/skt/skt-mockup-7.png",
+      ],
+    },
   ],
   awardedWorks: [
     {
