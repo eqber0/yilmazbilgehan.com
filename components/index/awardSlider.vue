@@ -9,7 +9,6 @@ const textSliderBreakpoints = {
   loop: false,
   direction: "vertical",
 }
-
 const thumbSliderBreakpoints = {
   sm: 320,
   direction: "horizontal",
@@ -64,26 +63,25 @@ function onAwardSwiper(swiper) {
   awardSlider.value = swiper
 }
 
-onMounted(() => {
-  cursor.value = document.querySelector(".cursor")
-})
+// Cursor Functions
 const cursor = ref()
+const cursorText = ref()
 function dragMoveCursor(text, status) {
   if (status) {
     cursor.value.classList.add("is-drag")
-    cursor.value.querySelector(".cursor__txt").innerHTML = text
+    cursorText.value.innerHTML = text
   } else {
     cursor.value.classList.remove("is-drag")
-    cursor.value.querySelector(".cursor__txt").innerHTML = ""
+    cursorText.value.innerHTML = ""
   }
 }
 function linkFieldCursor(text, status) {
   if (status) {
     cursor.value.classList.add("is-link")
-    cursor.value.querySelector(".cursor__txt").innerHTML = text
+    cursorText.value.innerHTML = text
   } else {
     cursor.value.classList.remove("is-link")
-    cursor.value.querySelector(".cursor__txt").innerHTML = ""
+    cursorText.value.innerHTML = ""
   }
 }
 function touchStartFn() {
@@ -92,6 +90,16 @@ function touchStartFn() {
 function touchEndFn() {
   awardSlider.value.el.classList.remove("award-slider-touch")
 }
+
+onMounted(() => {
+  cursor.value = document.querySelector(".cursor")
+  cursorText.value = cursor.value.querySelector(".cursor__txt")
+})
+onUnmounted(() => {
+  cursor.value.classList.remove("is-drag")
+  cursor.value.classList.remove("is-link")
+  cursorText.value.innerHTML = ""
+})
 </script>
 
 <template>
@@ -156,6 +164,7 @@ function touchEndFn() {
             :direction="'vertical'"
             :thumbs="{ swiper: textSlider }"
             :speed="1000"
+            :breakpoints="thumbSliderBreakpoints"
             :navigation="{
               prevEl: '.award-slider__buttons-prev',
               nextEl: '.award-slider__buttons-next',
