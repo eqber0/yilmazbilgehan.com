@@ -1,6 +1,11 @@
+<script setup>
+import heroSection from "~/components/index/heroSection.vue"
+import awardSliderSection from "~/components/index/awardSlider.vue"
+</script>
+
 <template>
-  <div>
-    <h1>Welcome to the homepage</h1>
-    <TestComponent />
-  </div>
+  <main>
+    <heroSection />
+    <awardSliderSection />
+  </main>
 </template>
