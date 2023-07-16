@@ -139,7 +139,7 @@ function touchEndFn() {
           </Swiper>
         </div>
         <div
-          class="award-slider__right col-12 col-lg-7"
+          class="award-slider__right col-12 col-lg-7 c-none"
           @mouseenter="dragMoveCursor('Drag', true)"
           @mouseleave="dragMoveCursor('Drag', false)"
         >
