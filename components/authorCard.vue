@@ -6,8 +6,8 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: null
-  }
+    default: null,
+  },
 })
 </script>
 
@@ -19,4 +19,3 @@ const props = defineProps({
     </div>
   </div>
 </template>
-<script>

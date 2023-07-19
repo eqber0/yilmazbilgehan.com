@@ -2,8 +2,8 @@
 const mainTitle = ref()
 
 function makeLastWordColored() {
-  const words = mainTitle.value.innerText.split(" ")
-  const lastWord = mainTitle.value.innerText.split(" ").pop()
+  const words = mainTitle.value.innerHTML.split(" ")
+  const lastWord = mainTitle.value.innerHTML.split(" ").pop()
   mainTitle.value.innerHTML = ""
   words.forEach((item) => {
     if (item === lastWord) {
@@ -28,7 +28,6 @@ function makeLastWordBold() {
 }
 
 onMounted(() => {
-  console.log(mainTitle.value)
   if (props.type == "bold") {
     makeLastWordBold()
   } else {
@@ -50,6 +49,7 @@ const props = defineProps({
 
 <template>
   <h1
+    ref="mainTitle"
     :class="{
       'main-title txt txt--rem128 txt--font900 c-white': props.type !== 'bold',
       'main-title txt txt--rem48 txt--font300 c-white': props.type == 'bold',
