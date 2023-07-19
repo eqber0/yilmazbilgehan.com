@@ -3,17 +3,17 @@
   z-index: 1;
   overflow: hidden;
 
-  &.loaded {
-    opacity: 1;
-    transform: translateY(0);
-    .footer {
-      &__info,
-      &__rights {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  }
+  // &.loaded {
+  //   opacity: 1;
+  //   transform: translateY(0);
+  //   .footer {
+  //     &__info,
+  //     &__rights {
+  //       opacity: 1;
+  //       transform: translateY(0);
+  //     }
+  //   }
+  // }
   &__profiles {
     display: flex;
     justify-content: space-between;
@@ -145,8 +145,8 @@
     height: 60rem;
     border-top: 0.3rem solid var(--c-paragraph);
     transition: var(--transition);
-    transform: translateY(5rem);
-    opacity: 0;
+    // transform: translateY(5rem);
+    // opacity: 0;
     @include bp(tablet) {
       height: unset;
     }
@@ -218,8 +218,8 @@
     background-color: var(--c-primary);
     padding: 3rem;
     transition: var(--transition);
-    transform: translateY(5rem);
-    opacity: 0;
+    // transform: translateY(5rem);
+    // opacity: 0;
     @include bp(tablet) {
       padding: 1.5rem;
     }

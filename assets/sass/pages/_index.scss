@@ -355,9 +355,12 @@
       }
       &__item {
         &-line {
+          background-color: var(--c-white-alt);
+          border-radius: 0.375rem;
           margin-top: 2rem;
           height: 0.5rem !important;
           .progress-bar {
+            height: 100%;
             background-color: var(--c-primary) !important;
           }
         }

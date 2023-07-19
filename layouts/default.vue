@@ -1,4 +1,6 @@
 <script setup>
+import appHeader from "~/components/common/appHeader.vue"
+import appFooter from "~/components/common/appFooter.vue"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
@@ -30,7 +32,7 @@ onMounted(() => {
     <appHeader />
     <slot />
 
-    <!-- <AppFooter /> -->
+    <appFooter />
     <div class="cursor">
       <div class="cursor__txt"></div>
       <div class="cursor__icon"></div>
