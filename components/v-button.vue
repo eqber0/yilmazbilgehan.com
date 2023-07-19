@@ -64,7 +64,7 @@ const props = defineProps({
       {{ props.text }}
     </div>
     <div class="btn-icon">
-      <svg-icon class="icon icon-font" :name="props.icon" />
+      <nuxt-icon class="icon icon-font" :name="props.icon" />
     </div>
   </component>
 </template>

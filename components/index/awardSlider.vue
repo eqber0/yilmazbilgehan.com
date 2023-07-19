@@ -185,10 +185,10 @@ onUnmounted(() => {
             </SwiperSlide>
             <div class="award-slider__buttons">
               <div class="award-slider__buttons-prev">
-                <!-- <svg-icon name="iconArrow" /> -->
+                <nuxt-icon class="icon icon-font" name="iconArrow" />
               </div>
               <div class="award-slider__buttons-next">
-                <!-- <svg-icon name="iconArrow" /> -->
+                <nuxt-icon class="icon icon-font" name="iconArrow" />
               </div>
             </div>
           </Swiper>

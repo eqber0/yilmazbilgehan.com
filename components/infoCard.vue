@@ -41,7 +41,7 @@ const props = defineProps({
         class="footer__info-content__item-socials__item me-5"
       >
         <a target="_blank" :href="social.link">
-          <svg-icon :name="social.icon" />
+          <nuxt-icon class="icon icon-font" :name="social.icon" />
         </a>
       </div>
     </div>

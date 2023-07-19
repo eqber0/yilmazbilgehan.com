@@ -302,7 +302,7 @@ function stopCarousel() {
                         <div
                           class="index-works__slider-item__content-button c-white"
                         >
-                          <svg-icon name="iconArrow" />
+                          <nuxt-icon class="icon icon-font" name="iconArrow" />
                         </div>
                       </div>
                     </NuxtLink>
@@ -333,7 +333,7 @@ function stopCarousel() {
                   </p>
                 </div>
                 <div class="index-works__slider-item__content-button c-white">
-                  <svg-icon name="iconArrow" />
+                  <nuxt-icon class="icon icon-font" name="iconArrow" />
                 </div>
               </div>
             </NuxtLink>
