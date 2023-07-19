@@ -232,18 +232,18 @@
     gap: 2rem;
 
     &-item {
-      height: 75rem;
+      height: 55rem;
       border-radius: 0.6rem;
       overflow: hidden;
       width: calc(50% - 1rem);
       @include bp(laptop) {
-        height: 65rem;
+        height: 50rem;
       }
       @include bp(desktop) {
-        height: 55rem;
+        height: 45rem;
       }
       @include bp(tablet) {
-        height: 45rem;
+        height: 40rem;
         width: 100% !important;
       }
       @include bp(tablet) {

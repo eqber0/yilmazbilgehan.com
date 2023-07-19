@@ -1,15 +1,15 @@
 html {
   font-size: 10px;
-  @include bp(tablet-small) {
-    font-size: 9px;
-  }
-  @include bp(mobile) {
-    font-size: 8px;
-  }
+  // @include bp(tablet-small) {
+  //   font-size: 9px;
+  // }
+  // @include bp(mobile) {
+  //   font-size: 8px;
+  // }
 }
 
 body {
-  font-family: $font-family-base;
+  font-family: var(--font-family);
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

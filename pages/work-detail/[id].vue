@@ -86,7 +86,7 @@ onMounted(() => {
       :imageList="workData?.gallery"
     />
     <section
-      class="section route-transition-inner route-transition-inner--fourth"
+      class="section section--pt0 route-transition-inner route-transition-inner--fourth"
     >
       <div class="container">
         <h2 class="txt txt--rem48 txt--font300 c-white text-center">
