@@ -49,16 +49,14 @@ function onSubmit(e) {
     <div class="container">
       <div class="subheader">
         <div class="subheader__title route-transition">
-          <mainTitle class="route-transition-inner" title="Contact Me" />
+          <mainTitle title="Contact Me" />
         </div>
       </div>
     </div>
     <section>
       <div class="container">
         <div class="contact__info route-transition">
-          <div
-            class="row g-4 g-md-5 align-items-center route-transition-inner route-transition-inner--second"
-          >
+          <div class="row g-4 g-md-5 align-items-center">
             <div class="col-12 col-lg-4">
               <div class="about__image">
                 <img src="~/assets/images/bilgehan.png" alt="" />
@@ -81,9 +79,7 @@ function onSubmit(e) {
     </section>
     <section class="section route-transition">
       <div class="container">
-        <div
-          class="contact-form route-transition-inner route-transition-inner--third"
-        >
+        <div class="contact-form">
           <h2 class="txt txt--rem48 txt--font300 c-white text-center mb-5">
             Tell me about your Dream <b>Website</b>
           </h2>

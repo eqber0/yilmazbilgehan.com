@@ -1,8 +1,12 @@
 <script setup>
 const props = defineProps({
-  compareImgs: {
-    type: Array,
-    default: [],
+  compareLeft: {
+    type: String,
+    default: null,
+  },
+  compareRight: {
+    type: String,
+    default: null,
   },
 })
 </script>
@@ -12,8 +16,8 @@ const props = defineProps({
     <div class="container">
       <div class="work-detail__compare">
         <VueCompareImage
-          :leftImage="props.compareImgs[0]?.image"
-          :rightImage="props.compareImgs[1]?.image"
+          :leftImage="props.compareLeft"
+          :rightImage="props.compareRight"
         />
       </div>
     </div>

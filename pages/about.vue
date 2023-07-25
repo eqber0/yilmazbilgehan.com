@@ -55,13 +55,11 @@ onMounted(() => {
     <div class="container">
       <div class="subheader">
         <div class="subheader__title route-transition">
-          <mainTitle class="route-transition-inner" title="About Me" />
+          <mainTitle title="About Me" />
         </div>
       </div>
       <div class="about__wrapper route-transition">
-        <div
-          class="row g-4 g-md-5 route-transition-inner route-transition-inner--second"
-        >
+        <div class="row g-4 g-md-5">
           <div class="col-12 col-xl-4">
             <div class="about__sticky">
               <div class="about__image">

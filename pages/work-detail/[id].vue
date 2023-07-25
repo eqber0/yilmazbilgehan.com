@@ -1,39 +1,21 @@
 <script setup>
-import { onMounted } from "vue"
 import { storeToRefs } from "pinia"
 import { useProjectStore } from "/stores/project-store.js"
+
 const projectStore = useProjectStore()
+const { fetchProjects } = projectStore
 const { projects } = storeToRefs(projectStore)
 const route = useRoute()
 
 const routeId = ref(route.params.id)
-const workData = ref(null)
-const infoList = ref()
+const currentProject = ref()
 
+fetchProjects()
 onMounted(() => {
-  console.log(routeId.value)
-  console.log(projects.value)
-  workData.value = projects.value.filter(
-    (project) => project.slug === routeId.value
+  currentProject.value = projects.value.filter(
+    (item) => item.slug === routeId.value
   )[0]
-  console.log(workData.value)
 })
-
-// export default {
-//   data() {
-//     return {
-//       routeId: this.$route.params.workDetail,
-//       workData: null,
-//       infoList: [],
-//     }
-//   },
-//   async mounted() {
-//     this.$nextTick()
-//     this.workData = await this.$store.state.works.filter(
-//       (item) => this.routeId === item.slug
-//     )[0]
-//   },
-// }
 </script>
 <template>
   <main class="detail-page route-transition">
@@ -41,53 +23,46 @@ onMounted(() => {
       <div class="subheader">
         <div class="subheader__title route-transition">
           <mainTitle
-            class="route-transition-inner"
-            v-if="workData?.name"
-            :title="workData?.name"
+            v-if="currentProject?.name"
+            :title="currentProject?.name"
           />
         </div>
       </div>
     </div>
     <work-detail-hero
-      class="route-transition-inner route-transition-inner--second"
-      v-if="workData?.sliderImgs && workData?.heroImg"
-      :sliderImages="workData?.sliderImgs"
-      :heroImage="workData?.heroImg"
+      v-if="currentProject?.fullpage"
+      :sliderImages="currentProject?.sliderImgs"
+      :heroImage="currentProject?.fullpage"
     />
     <work-detail-about
-      class="route-transition-inner route-transition-inner--fourth"
-      v-if="workData?.desc && workData?.name"
-      :websiteHref="workData?.website"
-      :aboutDesc="workData?.desc"
-      :aboutName="workData?.name"
+      v-if="currentProject?.description && currentProject?.name"
+      :websiteHref="currentProject?.website"
+      :aboutDesc="currentProject?.description"
+      :aboutName="currentProject?.name"
     />
     <work-detail-compare
-      class="route-transition-inner route-transition-inner--fourth"
-      v-if="workData?.compareImgs.length > 0"
-      :compareImgs="workData?.compareImgs"
+      class=" "
+      v-if="currentProject?.compareImgs"
+      :compareLeft="currentProject?.compareLeft"
+      :compareRight="currentProject?.compareRight"
     />
-
     <work-detail-info
-      class="route-transition-inner route-transition-inner--fourth"
       v-if="
-        workData?.name &&
-        workData?.country &&
-        workData?.duration &&
-        workData?.type
+        currentProject?.name &&
+        currentProject?.country &&
+        currentProject?.duration &&
+        currentProject?.type
       "
-      :infoName="workData?.name"
-      :infoCountry="workData?.country"
-      :infoDuration="workData?.duration"
-      :infoType="workData?.type"
+      :infoName="currentProject?.name"
+      :infoCountry="currentProject?.country"
+      :infoDuration="currentProject?.duration"
+      :infoType="currentProject?.type"
     />
     <work-detail-gallery
-      class="route-transition-inner route-transition-inner--fourth"
-      v-if="workData?.gallery"
-      :imageList="workData?.gallery"
+      v-if="currentProject?.gallery"
+      :imageList="currentProject?.gallery"
     />
-    <section
-      class="section section--pt0 route-transition-inner route-transition-inner--fourth"
-    >
+    <section class="section section--pt0">
       <div class="container">
         <h2 class="txt txt--rem48 txt--font300 c-white text-center">
           Do you want to same <b>Website?</b>

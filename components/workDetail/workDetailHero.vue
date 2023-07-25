@@ -1,6 +1,7 @@
 <script setup>
 const workDetailImg = ref()
 onMounted(() => {
+  console.log(props.heroImage)
   if (props.heroImage) {
     console.log(workDetailImg.value)
     workDetailImg.value.style.backgroundImage = "url(" + props.heroImage + ")"

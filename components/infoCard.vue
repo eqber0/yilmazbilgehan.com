@@ -13,8 +13,8 @@ const props = defineProps({
     default: null,
   },
   socials: {
-    type: String,
-    default: null,
+    type: Array,
+    default: [],
   },
   color: {
     type: String,

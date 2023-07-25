@@ -18,7 +18,7 @@ onMounted(() => {
           <h1 class="txt txt--rem128 txt--font900 c-white">
             <div class="text-line route-transition">
               <p
-                class="text-line-inner route-transition-inner"
+                class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
               >
                 Good design is
@@ -26,7 +26,7 @@ onMounted(() => {
             </div>
             <div class="text-line route-transition">
               <p
-                class="text-line-inner route-transition-inner route-transition-inner--second"
+                class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
               >
                 about
@@ -35,7 +35,7 @@ onMounted(() => {
             </div>
             <div class="text-line route-transition">
               <p
-                class="text-line-inner route-transition-inner route-transition-inner--third"
+                class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
               >
                 not
@@ -45,9 +45,7 @@ onMounted(() => {
           </h1>
         </div>
         <div class="route-transition">
-          <div
-            class="hero__scroll route-transition-inner route-transition-inner--fourth"
-          >
+          <div class="hero__scroll">
             <div class="hero__scroll-line"></div>
           </div>
         </div>
