@@ -21,3 +21,5 @@ logs
 .env
 .env.*
 !.env.example
+
+yilmazbilgehan-7c443-firebase-adminsdk-a4wgu-6703266de4.json
