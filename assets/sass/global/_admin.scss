@@ -1,0 +1,30 @@
+.admin-page {
+  min-height: 100dvh;
+  padding-top: 6rem;
+  background-color: var(--c-paragraph);
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  &__item {
+    display: flex;
+    width: 100%;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--c-paragraph-alt);
+    color: var(--c-white);
+    transition: var(--transition);
+    &:hover {
+      color: var(--c-border-color);
+    }
+  }
+  &__form {
+    padding: 5rem 0;
+    .input-item {
+      input {
+        color: var(--c-black);
+      }
+    }
+  }
+}
