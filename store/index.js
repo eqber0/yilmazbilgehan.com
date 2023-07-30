@@ -67,36 +67,6 @@ export const state = () => ({
       ],
     },
     {
-      id: "2",
-      name: "Latro",
-      slug: "latro",
-      type: "Corporate",
-      country: "Turkey",
-      duration: "3 Months",
-      desc: `The Latro website stands as a testament to our dedication to creating an inclusive and sustainable ecosystem for teams to thrive with a high level of autonomy. Developed using a powerful tech stack of HTML, CSS, and Laravel backend, the website offers a visually engaging and responsive user interface that reflects Latro's commitment to purpose-driven collaboration and customer-centricity.
-      <br>
-      <br>
-      Key features of the Latro website include animated backgrounds that bring the platform to life, emphasizing our vibrant and adaptive ecosystem. With accessibility as a core focus, the website offers Dark Mode, High Contrast, and Greyscale settings, ensuring an inclusive experience for users with varying visual preferences and needs.
-      <br>
-      <br>
-      In line with our sustainability values, the Latro website has been designed with a low environmental impact in mind, demonstrating our commitment to reducing our digital carbon footprint. The Latro platform serves as a beacon for like-minded "explorers" who share our passion for purposeful collaboration and collective management principles, uniting them in our mission to create a positive impact on the world.`,
-      cover_img: "/images/latro/latro-banner.jpg",
-      heroImg: "/images/latro/latro-fullpage.webp",
-      sliderImgs: [],
-      website: "https://latro.com.tr/en",
-      content: "",
-      compareImgs: [],
-      gallery: [
-        "/images/latro/latro-banner.jpg",
-        "/images/latro/latro-mockup-2.png",
-        "/images/latro/latro-mockup-3.png",
-        "/images/latro/latro-mockup-4.png",
-        "/images/latro/latro-mockup-5.png",
-        "/images/latro/latro-mockup-6.png",
-        "/images/latro/latro-mockup-7.png",
-      ],
-    },
-    {
       id: "3",
       name: "Dakar Aeroport",
       slug: "dakar-airport",
@@ -359,15 +329,6 @@ export const state = () => ({
   ],
   awardedWorks: [
     {
-      id: 0,
-      name: "Latro",
-      slug: "latro",
-      text: "Kristal Elma Award",
-      image: "/images/latro/latro-banner.jpg",
-      awardImage: "/images/latro/latro-award-img.png",
-      awardImage: "/images/kristal-elma.png",
-    },
-    {
       id: 1,
       name: "Chace People",
       slug: "chace-people",
@@ -382,14 +343,6 @@ export const state = () => ({
       text: "Altın Örümcek Finalist",
       image: "/images/trowas/trowas-banner.jpg",
       awardImage: "/images/altin-orumcek.png",
-    },
-    {
-      id: 3,
-      name: "Latro",
-      slug: "latro",
-      text: "Horizon Silver Award",
-      image: "/images/latro/latro-banner.jpg",
-      awardImage: "/images/horizon.png",
     },
   ],
   socials: [
