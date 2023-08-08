@@ -210,12 +210,12 @@ export const useProjectStore = defineStore("projects", {
   }),
   actions: {
     async fetchProjects() {
-      const { data } = await useFetch("/api/projects", {
-        onResponse({ response, request, options }) {
-          console.log(response)
-        },
-      })
-      this.projects = data.value
+      // const { data } = await useFetch("/api/projects", {
+      //   onResponse({ response, request, options }) {
+      //     console.log(response)
+      //   },
+      // })
+      // this.projects = data.value
     },
   },
 })
