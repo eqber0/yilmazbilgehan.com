@@ -18,7 +18,7 @@ onMounted(() => {
     <div class="container container--fluid">
       <div class="subheader">
         <div class="subheader__title route-transition">
-          <mainTitle title="My Works" />
+          <mainTitle title="Projects" />
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@ onMounted(() => {
             :key="item.id"
           >
             <NuxtLink
-              :to="{ path: 'work-detail/' + item.slug }"
+              :to="{ path: 'project-detail/' + item.slug }"
               class="works-card"
             >
               <div class="works-card__image">

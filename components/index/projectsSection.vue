@@ -84,7 +84,7 @@ function stopCarousel() {
                   >
                     <NuxtLink
                       :to="{
-                        path: `work-detail/${item.slug}`,
+                        path: `project-detail/${item.slug}`,
                       }"
                       class="index-works__slider-item"
                     >
@@ -117,7 +117,7 @@ function stopCarousel() {
               v-for="(item, index) in projectList"
               :key="index"
               :to="{
-                path: `work-detail/${item.slug}`,
+                path: `project-detail/${item.slug}`,
               }"
               class="index-works__slider-item"
             >
@@ -141,7 +141,7 @@ function stopCarousel() {
           </div>
           <v-button
             element="nuxt-link"
-            href="/works"
+            href="/projects"
             color=""
             icon="iconArrow"
             hover="primary"

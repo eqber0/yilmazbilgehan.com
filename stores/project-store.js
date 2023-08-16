@@ -207,19 +207,20 @@ export const useProjectStore = defineStore("projects", {
     //   },
     // ],
     projects: null,
+    awardedProjects: null,
   }),
   actions: {
     async fetchProjects() {
       const nuxtApp = useNuxtApp()
-
-      this.projects = await nuxtApp.$projects
+      const projects = await nuxtApp.$projects
+      this.projects = projects
+      this.awardedProjects = projects.filter((item) => {
+        console.log(item.awarded == true)
+        if (item.awarded == true) {
+          return item
+        }
+      })
       console.log(this.projects)
-      // const { data } = await useFetch("/api/projects", {
-      //   onResponse({ response, request, options }) {
-      //     console.log(response)
-      //   },
-      // })
-      // this.projects = data.value
     },
   },
 })

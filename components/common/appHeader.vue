@@ -51,12 +51,12 @@ function toggleMenu(status) {
               About
             </div>
           </NuxtLink>
-          <NuxtLink to="/works">
+          <NuxtLink to="/projects">
             <div
               class="header__menu__item c-white txt txt--rem24 txt--font400"
               @click="toggleMenu(false)"
             >
-              Works
+              Projects
             </div>
           </NuxtLink>
           <NuxtLink to="/contact">

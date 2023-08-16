@@ -1,4 +1,14 @@
 <script setup>
+import { storeToRefs } from "pinia"
+import { useProjectStore } from "~/stores/project-store.js"
+
+const projectStore = useProjectStore()
+const { fetchProjects } = projectStore
+const { awardedProjects } = storeToRefs(projectStore)
+fetchProjects()
+
+const awardSliderData = ref([])
+
 const textSliderBreakpoints = {
   sm: 320,
   direction: "horizontal",
@@ -21,41 +31,6 @@ const thumbSliderBreakpoints = {
 }
 const textSlider = ref()
 const awardSlider = ref()
-const awardSliderData = ref([
-  {
-    id: 0,
-    name: "Latro",
-    slug: "latro",
-    text: "Kristal Elma Award",
-    image: "/assets/images/latro/latro-banner.jpg",
-    awardImage: "/assets/images/latro/latro-award-img.png",
-    awardImage: "/assets/images/kristal-elma.png",
-  },
-  {
-    id: 1,
-    name: "Chace People",
-    slug: "chace-people",
-    text: "Horizon Gold Award",
-    image: "/assets/images/chace/chace-banner.png",
-    awardImage: "/assets/images/horizon.png",
-  },
-  {
-    id: 2,
-    name: "Trowas",
-    slug: "trowas",
-    text: "Altın Örümcek Finalist",
-    image: "/assets/images/trowas/trowas-banner.jpg",
-    awardImage: "/assets/images/altin-orumcek.png",
-  },
-  {
-    id: 3,
-    name: "Latro",
-    slug: "latro",
-    text: "Horizon Silver Award",
-    image: "/assets/images/latro/latro-banner.jpg",
-    awardImage: "/assets/images/horizon.png",
-  },
-])
 function onSwiper(swiper) {
   textSlider.value = swiper
 }
@@ -94,6 +69,8 @@ function touchEndFn() {
 onMounted(() => {
   cursor.value = document.querySelector(".cursor")
   cursorText.value = cursor.value.querySelector(".cursor__txt")
+  awardSliderData.value = awardedProjects.value
+  console.log(awardSliderData.value)
 })
 onUnmounted(() => {
   cursor.value.classList.remove("is-drag")
@@ -123,7 +100,7 @@ onUnmounted(() => {
             <SwiperSlide v-for="slide in awardSliderData" :key="slide.id">
               <NuxtLink
                 :to="{
-                  path: `work-detail/${slide.slug}`,
+                  path: `project-detail/${slide.slug}`,
                 }"
               >
                 <div
@@ -139,7 +116,7 @@ onUnmounted(() => {
                   <div
                     class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
                   >
-                    {{ slide.text }}
+                    {{ slide.awardName }}
                   </div>
                 </div>
               </NuxtLink>
@@ -179,7 +156,7 @@ onUnmounted(() => {
                   <img :src="slide.awardImage" alt="" />
                 </div>
                 <div class="award-slider__right-item__image">
-                  <img :src="slide.image" alt="" />
+                  <img :src="slide.cover" alt="" />
                 </div>
               </div>
             </SwiperSlide>
