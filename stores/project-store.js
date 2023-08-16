@@ -210,6 +210,10 @@ export const useProjectStore = defineStore("projects", {
   }),
   actions: {
     async fetchProjects() {
+      const nuxtApp = useNuxtApp()
+
+      this.projects = await nuxtApp.$projects
+      console.log(this.projects)
       // const { data } = await useFetch("/api/projects", {
       //   onResponse({ response, request, options }) {
       //     console.log(response)

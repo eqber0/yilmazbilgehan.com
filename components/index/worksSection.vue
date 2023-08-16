@@ -1,21 +1,23 @@
 <script setup>
 import gsap from "gsap"
 import { storeToRefs } from "pinia"
+import { useProjectStore } from "~/stores/project-store.js"
 
-// const projectStore = useProjectStore()
-// const { fetchProjects } = projectStore
-// const { projects } = storeToRefs(projectStore)
-// fetchProjects()
+const projectStore = useProjectStore()
+const { fetchProjects } = projectStore
+const { projects } = storeToRefs(projectStore)
+fetchProjects()
 
-const nuxtApp = useNuxtApp()
-const projectList = ref(null)
+const projectList = ref([])
 
 onMounted(async () => {
-  projectList.value = await nuxtApp.$projects
+  projectList.value = projects.value
 
-  setTimeout(() => {
-    initHomeWork()
-  }, 250)
+  if (projectList.value.length > 0) {
+    setTimeout(() => {
+      initHomeWork()
+    }, 250)
+  }
 })
 
 const carousel_tl = ref()
