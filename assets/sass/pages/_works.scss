@@ -236,6 +236,7 @@
       border-radius: 0.6rem;
       overflow: hidden;
       width: calc(50% - 1rem);
+      cursor: pointer;
       @include bp(laptop) {
         height: 50rem;
       }

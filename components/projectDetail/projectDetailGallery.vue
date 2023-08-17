@@ -7,7 +7,9 @@ function startFancy(image, index) {
   gallery.value.map((item) => {
     fancyboxArr.push({ src: item })
   })
-  Fancybox.show(fancyboxArr, {})
+  Fancybox.show(fancyboxArr, {
+    startIndex: index,
+  })
 }
 
 const props = defineProps({
