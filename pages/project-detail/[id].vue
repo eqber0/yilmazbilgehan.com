@@ -29,24 +29,24 @@ onMounted(() => {
         </div>
       </div>
     </div>
-    <work-detail-hero
+    <project-detail-hero
       v-if="currentProject?.fullpage"
       :sliderImages="currentProject?.sliderImgs"
       :heroImage="currentProject?.fullpage"
     />
-    <work-detail-about
+    <project-detail-about
       v-if="currentProject?.description && currentProject?.name"
       :websiteHref="currentProject?.website"
       :aboutDesc="currentProject?.description"
       :aboutName="currentProject?.name"
     />
-    <work-detail-compare
+    <project-detail-compare
       class=" "
       v-if="currentProject?.compareImgs"
       :compareLeft="currentProject?.compareLeft"
       :compareRight="currentProject?.compareRight"
     />
-    <work-detail-info
+    <project-detail-info
       v-if="
         currentProject?.name &&
         currentProject?.country &&
@@ -58,7 +58,7 @@ onMounted(() => {
       :infoDuration="currentProject?.duration"
       :infoType="currentProject?.type"
     />
-    <work-detail-gallery
+    <project-detail-gallery
       v-if="currentProject?.gallery"
       :imageList="currentProject?.gallery"
     />
