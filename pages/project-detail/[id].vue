@@ -40,12 +40,6 @@ onMounted(() => {
       :aboutDesc="currentProject?.description"
       :aboutName="currentProject?.name"
     />
-    <project-detail-compare
-      class=" "
-      v-if="currentProject?.compareImgs"
-      :compareLeft="currentProject?.compareLeft"
-      :compareRight="currentProject?.compareRight"
-    />
     <project-detail-info
       v-if="
         currentProject?.name &&
