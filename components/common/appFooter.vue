@@ -1,4 +1,32 @@
 <script setup>
+import { usePersonalStore } from "~/stores/personal-info"
+
+const personalStore = usePersonalStore()
+
+const footerDatas = ref([
+  {
+    id: 0,
+    title: "Mail",
+    value: personalStore.mail,
+  },
+  {
+    id: 1,
+    title: "Address",
+    value: personalStore.address,
+  },
+  {
+    id: 2,
+    title: "Phone",
+    value: personalStore.phone,
+  },
+  {
+    id: 3,
+    title: "Socials",
+    value: personalStore.socials,
+    type: "socials",
+  },
+])
+
 const profiles = ref([
   {
     author: "Frontend Developer",
@@ -58,12 +86,12 @@ const profiles = ref([
           <div class="col-12 col-lg-9">
             <div class="footer__info-content">
               <infoCard
-                v-for="(item, index) in profiles[0]?.items"
+                v-for="(item, index) in footerDatas"
                 :key="index"
                 :title="item.title"
-                :value="item.text"
-                :type="item.socials ? 'socials' : undefined"
-                :socials="item.socials"
+                :value="item.value"
+                :type="item.type"
+                :socials="item.value"
               />
             </div>
           </div>

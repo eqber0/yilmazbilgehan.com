@@ -1,21 +1,4 @@
-<script setup>
-const profiles = ref([
-  {
-    author: "Frontend Developer",
-    bgImage: "/assets/images/qbr-footer.svg",
-    image: "/assets/images/bilgehan-footer.png",
-    name: "Bilgehan Yılmaz",
-  },
-  {
-    author: "UI / UX Designer",
-    bgImage: "/assets/images/tore-footer.svg",
-    image: "/assets/images/tore-footer.png",
-    name: "Tolunay Kurttutar",
-  },
-])
-</script>
-
-<template>
+<!-- <template>
   <div class="container">
     <div class="footer__profiles">
       <div
@@ -61,4 +44,4 @@ const profiles = ref([
       </div>
     </div>
   </div>
-</template>
+</template> -->

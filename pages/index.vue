@@ -3,7 +3,7 @@ import heroSection from "~/components/index/heroSection.vue"
 import projectsSection from "~/components/index/projectsSection.vue"
 import aboutSection from "~/components/index/aboutSection.vue"
 import awardSliderSection from "~/components/index/awardSlider.vue"
-import footerTop from "~/components/index/footerTop.vue"
+// import footerTop from "~/components/index/footerTop.vue"
 </script>
 
 <template>
@@ -12,6 +12,6 @@ import footerTop from "~/components/index/footerTop.vue"
     <projectsSection />
     <aboutSection />
     <awardSliderSection />
-    <footerTop />
+    <!-- <footerTop /> -->
   </main>
 </template>

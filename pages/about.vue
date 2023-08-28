@@ -1,39 +1,14 @@
 <script setup>
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { usePersonalStore } from "~/stores/personal-info"
 gsap.registerPlugin(ScrollTrigger)
 
-const socials = ref([
-  {
-    icon: "iconLinkedin",
-    link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
-  },
-  {
-    icon: "iconGithub",
-    link: "https://github.com/eqber0",
-  },
-  {
-    icon: "iconTwitter",
-    link: "https://twitter.com/eqbeR_",
-  },
-])
-const skills = ref([
-  { title: "HTML 5", percent: 87 },
-  { title: "CSS", percent: 93 },
-  { title: "Javascript", percent: 76 },
-  { title: "Vue.js", percent: 66 },
-  { title: "Nuxt.js", percent: 37 },
-])
-const languages = ref([
-  {
-    language: "Turkish",
-    level: "Native",
-  },
-  {
-    language: "English",
-    level: "B1",
-  },
-])
+const personalStore = usePersonalStore()
+
+const socialMedias = ref(personalStore.socials)
+const languages = ref(personalStore.language)
+const skills = ref(personalStore.skills)
 
 const progressItem = ref()
 onMounted(() => {
@@ -54,25 +29,28 @@ onMounted(() => {
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title route-transition">
+        <div class="subheader__title">
           <mainTitle title="About Me" />
         </div>
       </div>
-      <div class="about__wrapper route-transition">
+      <div class="about__wrapper">
         <div class="row g-4 g-md-5">
           <div class="col-12 col-xl-4">
-            <div class="about__sticky">
-              <div class="about__image">
-                <img src="~/assets/images/bilgehan.png" alt="" />
-              </div>
-
-              <div class="about__info c-white mt-5">
-                <authorCard name="Bilgehan Yılmaz" title="Frontend Developer" />
+            <div class="about__left">
+              <div class="about__info c-white">
+                <authorCard
+                  :name="personalStore.name"
+                  :title="personalStore.title"
+                />
                 <div class="about__info-cards mt-5">
-                  <infoCard title="email" value="eqber00@gmail.com" />
-                  <infoCard title="adress" value="Bursa / Nilüfer" />
-                  <infoCard type="socials" title="socials" :socials="socials" />
-                  <infoCard title="phone" value="0555 685 77 45" />
+                  <infoCard title="email" :value="personalStore.name" />
+                  <infoCard title="adress" :value="personalStore.address" />
+                  <infoCard
+                    type="socials"
+                    title="socials"
+                    :socials="socialMedias"
+                  />
+                  <infoCard title="phone" :value="personalStore.phone" />
                 </div>
                 <div class="about__info-languages mt-5">
                   <div
@@ -80,7 +58,7 @@ onMounted(() => {
                     v-for="(item, index) in languages"
                     :key="index"
                   >
-                    {{ item.language }}
+                    {{ item.name }}
                     <span v-if="item.level">{{ item.level }}</span>
                   </div>
                 </div>

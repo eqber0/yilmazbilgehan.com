@@ -16,7 +16,7 @@ onMounted(() => {
       <div class="hero__wrapper">
         <div class="hero__text">
           <h1 class="txt txt--rem128 txt--font900 c-white">
-            <div class="text-line route-transition">
+            <div class="text-line">
               <p
                 class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
@@ -24,7 +24,7 @@ onMounted(() => {
                 Good design is
               </p>
             </div>
-            <div class="text-line route-transition">
+            <div class="text-line">
               <p
                 class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
@@ -33,7 +33,7 @@ onMounted(() => {
                 <span class="c-primary">process</span>,
               </p>
             </div>
-            <div class="text-line route-transition">
+            <div class="text-line">
               <p
                 class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
@@ -44,7 +44,7 @@ onMounted(() => {
             </div>
           </h1>
         </div>
-        <div class="route-transition">
+        <div class="">
           <div class="hero__scroll">
             <div class="hero__scroll-line"></div>
           </div>

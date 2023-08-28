@@ -18,10 +18,10 @@ onMounted(() => {
 })
 </script>
 <template>
-  <main class="detail-page route-transition">
+  <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title route-transition">
+        <div class="subheader__title">
           <mainTitle
             v-if="currentProject?.name"
             :title="currentProject?.name"

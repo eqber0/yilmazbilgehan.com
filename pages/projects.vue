@@ -17,12 +17,12 @@ onMounted(() => {
   <main class="detail-page">
     <div class="container container--fluid">
       <div class="subheader">
-        <div class="subheader__title route-transition">
+        <div class="subheader__title">
           <mainTitle title="Projects" />
         </div>
       </div>
     </div>
-    <section class="section works route-transition">
+    <section class="section works">
       <div class="container container--fluid">
         <div v-if="projectList" class="row g-4 g-md-5">
           <div

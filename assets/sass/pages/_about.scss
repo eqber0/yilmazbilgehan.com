@@ -9,19 +9,6 @@
       margin-bottom: 4rem;
     }
   }
-  .col-lg-4 {
-    position: relative;
-  }
-  &__sticky {
-    position: sticky;
-    top: 10rem;
-    @include bp(tablet) {
-      position: unset;
-      top: unset;
-      margin-bottom: 4rem;
-      padding-top: 5rem;
-    }
-  }
   &__image {
     border: 0.1rem solid var(--c-white);
     border-radius: 1.5rem;

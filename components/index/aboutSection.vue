@@ -1,17 +1,13 @@
 <script setup>
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { usePersonalStore } from "~/stores/personal-info"
 gsap.registerPlugin(ScrollTrigger)
 
-const progressItem = ref()
+const personalStore = usePersonalStore()
+const skillData = ref(personalStore.skills)
 
-const skillData = ref([
-  { title: "HTML 5", percent: 87 },
-  { title: "CSS", percent: 93 },
-  { title: "Javascript", percent: 76 },
-  { title: "Vue.js", percent: 66 },
-  { title: "Nuxt.js", percent: 37 },
-])
+const progressItem = ref()
 onMounted(() => {
   gsap.from(progressItem.value, {
     scrollTrigger: {
@@ -24,8 +20,6 @@ onMounted(() => {
     duration: 1,
   })
 })
-
-function progressItemFn(item) {}
 
 const props = defineProps({
   skillData: {

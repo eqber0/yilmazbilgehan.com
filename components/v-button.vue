@@ -29,8 +29,8 @@ const props = defineProps({
     default: null,
   },
   submit: {
-    type: String,
-    default: null,
+    type: Boolean,
+    default: false,
   },
   form: {
     type: String,
