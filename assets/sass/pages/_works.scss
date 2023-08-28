@@ -157,6 +157,10 @@
     @include bp(tablet-small) {
       height: 42rem;
     }
+    video {
+      width: 100%;
+      height: 100%;
+    }
   }
   &__slider {
     max-width: 128rem;

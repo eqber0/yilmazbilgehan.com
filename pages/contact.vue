@@ -16,10 +16,10 @@ function onSubmit(e) {
   try {
     emailjs
       .sendForm(
-        "service_ns9zwo9",
-        "template_6ekpnv9",
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         contactForms.value,
-        "YoA8yYQZfRNA85jP6"
+        import.meta.env.VITE_EMAILJS_AUTH_ID
       )
       .then(
         (result) => {
@@ -76,7 +76,6 @@ function onSubmit(e) {
                   name="name"
                   v-model="name"
                   required
-                  @input="onInputChange()"
                 />
               </div>
             </div>
@@ -88,7 +87,6 @@ function onSubmit(e) {
                   id="company"
                   name="company"
                   v-model="company"
-                  @input="onInputChange()"
                 />
               </div>
             </div>
@@ -101,7 +99,6 @@ function onSubmit(e) {
                   id="mail"
                   name="mail"
                   required
-                  @input="onInputChange()"
                 />
               </div>
             </div>
@@ -114,7 +111,6 @@ function onSubmit(e) {
                   id="phoneNumber"
                   name="phoneNumber"
                   required
-                  @input="onInputChange()"
                 />
               </div>
             </div>
@@ -127,7 +123,6 @@ function onSubmit(e) {
                   id="message"
                   name="message"
                   v-model="message"
-                  @input="onInputChange()"
                 >
                 </textarea>
               </div>

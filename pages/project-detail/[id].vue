@@ -24,7 +24,7 @@ const currentProjectData = await useAsyncData("currentProject", () => {
     </div>
     <project-detail-hero
       :sliderImages="currentProject?.sliderImgs"
-      :heroImage="currentProject?.fullpage"
+      :video="currentProject?.video"
     />
     <project-detail-about
       :websiteHref="currentProject?.website"

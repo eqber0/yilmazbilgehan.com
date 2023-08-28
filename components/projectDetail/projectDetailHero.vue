@@ -1,13 +1,4 @@
 <script setup>
-const workDetailImg = ref()
-onMounted(() => {
-  console.log(props.heroImage)
-  if (props.heroImage) {
-    console.log(workDetailImg.value)
-    workDetailImg.value.style.backgroundImage = "url(" + props.heroImage + ")"
-  }
-})
-
 const workSliderBp = {
   xm: 320,
   slidesPerView: 1.25,
@@ -24,7 +15,7 @@ const props = defineProps({
     type: Array,
     default: () => [],
   },
-  heroImage: {
+  video: {
     type: String,
     default: "",
   },
@@ -34,7 +25,9 @@ const props = defineProps({
 <template>
   <section class="work-detail">
     <div class="container">
-      <div ref="workDetailImg" class="work-detail-image"></div>
+      <div class="work-detail-image">
+        <video :src="props.video" muted autoplay playsinline></video>
+      </div>
       <div v-if="props.sliderImages.length > 0" class="work-detail__slider">
         <Swiper
           ref="workSlider"
