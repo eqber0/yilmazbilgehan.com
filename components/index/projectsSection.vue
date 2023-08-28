@@ -8,12 +8,13 @@ const { fetchProjects } = projectStore
 const { projects } = storeToRefs(projectStore)
 fetchProjects()
 
-const projectList = ref([])
+const projectList = await useAsyncData("projects", () => {
+  return projects
+}).data.value
 
 onMounted(async () => {
-  projectList.value = projects.value
-
-  if (projectList.value.length > 0) {
+  console.log(projects.value)
+  if (projects.value.length > 0) {
     setTimeout(() => {
       initHomeWork()
     }, 250)
@@ -73,7 +74,7 @@ function stopCarousel() {
               <div ref="carouselGroup" class="carousel-group">
                 <div
                   ref="thumbWrap"
-                  v-for="(item, i) in projectList"
+                  v-for="(item, i) in projects"
                   :key="i"
                   class="thumb-wrap"
                 >
