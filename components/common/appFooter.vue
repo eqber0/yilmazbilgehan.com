@@ -22,7 +22,7 @@ const footerDatas = ref([
   {
     id: 3,
     title: "Socials",
-    value: personalStore.socials,
+    socials: personalStore.socials,
     type: "socials",
   },
 ])
@@ -91,7 +91,7 @@ const profiles = ref([
                 :title="item.title"
                 :value="item.value"
                 :type="item.type"
-                :socials="item.value"
+                :socials="item.socials"
               />
             </div>
           </div>

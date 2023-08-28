@@ -21,7 +21,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="section">
+  <section v-if="props.imageList" class="section">
     <div class="container">
       <div class="work-detail__gallery">
         <div

@@ -3,59 +3,41 @@ import { storeToRefs } from "pinia"
 import { useProjectStore } from "/stores/project-store.js"
 
 const projectStore = useProjectStore()
-const { fetchProjects } = projectStore
-const { projects } = storeToRefs(projectStore)
-const route = useRoute()
-
-const routeId = ref(route.params.id)
-const currentProject = ref()
-
+const { fetchProjects, getProject } = projectStore
+const { currentProject } = storeToRefs(projectStore)
 fetchProjects()
-onMounted(() => {
-  currentProject.value = projects.value.filter(
-    (item) => item.slug === routeId.value
-  )[0]
-})
+const route = useRoute()
+getProject(route.params.id)
+
+const currentProjectData = await useAsyncData("currentProject", () => {
+  return currentProject
+}).data.value
 </script>
 <template>
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
         <div class="subheader__title">
-          <mainTitle
-            v-if="currentProject?.name"
-            :title="currentProject?.name"
-          />
+          <mainTitle :title="currentProject?.name" />
         </div>
       </div>
     </div>
     <project-detail-hero
-      v-if="currentProject?.fullpage"
       :sliderImages="currentProject?.sliderImgs"
       :heroImage="currentProject?.fullpage"
     />
     <project-detail-about
-      v-if="currentProject?.description && currentProject?.name"
       :websiteHref="currentProject?.website"
       :aboutDesc="currentProject?.description"
       :aboutName="currentProject?.name"
     />
     <project-detail-info
-      v-if="
-        currentProject?.name &&
-        currentProject?.country &&
-        currentProject?.duration &&
-        currentProject?.type
-      "
       :infoName="currentProject?.name"
       :infoCountry="currentProject?.country"
       :infoDuration="currentProject?.duration"
       :infoType="currentProject?.type"
     />
-    <project-detail-gallery
-      v-if="currentProject?.gallery"
-      :imageList="currentProject?.gallery"
-    />
+    <project-detail-gallery :imageList="currentProject?.gallery" />
     <section class="section section--pt0">
       <div class="container">
         <h2 class="txt txt--rem48 txt--font300 c-white text-center">

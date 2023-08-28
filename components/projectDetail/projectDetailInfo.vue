@@ -20,7 +20,15 @@ const props = defineProps({
 </script>
 
 <template>
-  <section class="work-detail__info">
+  <section
+    v-if="
+      props.infoName &&
+      props.infoType &&
+      props.infoCountry &&
+      props.infoDuration
+    "
+    class="work-detail__info"
+  >
     <div class="container">
       <div class="row g-4 g-md-5">
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">

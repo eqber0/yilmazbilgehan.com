@@ -49,7 +49,7 @@ const props = defineProps({
     :href="props.href"
     :type="props.submit ? 'submit' : undefined"
     :form="props.form ? props.form : undefined"
-    :to="props.element == 'nuxt-link' ? props.href : undefined"
+    :to="props.element == 'NuxtLink' ? props.href : undefined"
     :target="props.target == true ? '_blank' : undefined"
     :class="[
       'btn',

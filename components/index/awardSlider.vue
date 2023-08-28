@@ -1,14 +1,4 @@
 <script setup>
-import { storeToRefs } from "pinia"
-import { useProjectStore } from "~/stores/project-store.js"
-
-const projectStore = useProjectStore()
-const { fetchProjects } = projectStore
-const { awardedProjects } = storeToRefs(projectStore)
-fetchProjects()
-
-const awardSliderData = ref([])
-
 const textSliderBreakpoints = {
   sm: 320,
   direction: "horizontal",
@@ -69,13 +59,18 @@ function touchEndFn() {
 onMounted(() => {
   cursor.value = document.querySelector(".cursor")
   cursorText.value = cursor.value.querySelector(".cursor__txt")
-  awardSliderData.value = awardedProjects.value
-  console.log(awardSliderData.value)
 })
 onUnmounted(() => {
   cursor.value.classList.remove("is-drag")
   cursor.value.classList.remove("is-link")
   cursorText.value.innerHTML = ""
+})
+
+const props = defineProps({
+  projects: {
+    type: Array,
+    default: [],
+  },
 })
 </script>
 
@@ -97,10 +92,10 @@ onUnmounted(() => {
             :breakpoints="textSliderBreakpoints"
             @swiper="onSwiper"
           >
-            <SwiperSlide v-for="slide in awardSliderData" :key="slide.id">
+            <SwiperSlide v-for="(slide, index) in props.projects" :key="index">
               <NuxtLink
                 :to="{
-                  path: `project-detail/${slide.slug}`,
+                  path: `project-detail/${slide?.slug}`,
                 }"
               >
                 <div
@@ -111,12 +106,12 @@ onUnmounted(() => {
                   <div
                     class="award-slider__text-item__title txt txt--rem64 txt--font900 c-white"
                   >
-                    {{ slide.name }}
+                    {{ slide?.name }}
                   </div>
                   <div
                     class="award-slider__text-item__subtitle txt txt--rem28 txt--font300 c-paragraph"
                   >
-                    {{ slide.awardName }}
+                    {{ slide?.awardName }}
                   </div>
                 </div>
               </NuxtLink>
@@ -150,13 +145,13 @@ onUnmounted(() => {
             @touch-start="touchStartFn"
             @touch-end="touchEndFn"
           >
-            <SwiperSlide v-for="slide in awardSliderData" :key="slide.id">
+            <SwiperSlide v-for="(image, index) in props.projects" :key="index">
               <div class="award-slider__right-item">
                 <div class="award-image">
-                  <img :src="slide.awardImage" alt="" />
+                  <img :src="image?.awardImage" alt="" />
                 </div>
                 <div class="award-slider__right-item__image">
-                  <img :src="slide.cover" alt="" />
+                  <img :src="image?.cover" alt="" />
                 </div>
               </div>
             </SwiperSlide>

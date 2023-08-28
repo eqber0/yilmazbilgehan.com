@@ -20,17 +20,19 @@ const props = defineProps({
     <div class="container">
       <div class="work-detail__about">
         <mainTitle
+          v-if="props.aboutName"
           class="text-center"
           type="bold"
           :title="'About ' + props.aboutName"
         />
         <br />
+        <!-- eslint-disable vue/no-v-html -->
         <p
           v-if="props.aboutDesc"
           class="txt txt--rem32 txt--font300 c-white text-center"
-        >
-          {{ props.aboutDesc }}
-        </p>
+          v-html="props.aboutDesc"
+        ></p>
+        <!--eslint-enable-->
         <br />
         <br />
         <v-button

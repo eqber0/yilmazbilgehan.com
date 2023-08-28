@@ -4,13 +4,11 @@ import { useProjectStore } from "/stores/project-store.js"
 
 const projectStore = useProjectStore()
 const { fetchProjects } = projectStore
-const { projects } = storeToRefs(projectStore)
 fetchProjects()
-
-const projectList = ref()
-onMounted(() => {
-  projectList.value = projects.value
-})
+const { projects } = storeToRefs(projectStore)
+const projectList = await useAsyncData("projects", () => {
+  return projects
+}).data.value
 </script>
 
 <template>
@@ -24,26 +22,26 @@ onMounted(() => {
     </div>
     <section class="section works">
       <div class="container container--fluid">
-        <div v-if="projectList" class="row g-4 g-md-5">
+        <div class="row g-4 g-md-5">
           <div
             class="col-12 col-md-6 col-xl-4"
-            v-for="item in projectList"
-            :key="item.id"
+            v-for="(item, index) in projectList"
+            :key="index"
           >
             <NuxtLink
-              :to="{ path: 'project-detail/' + item.slug }"
+              :to="{ path: 'project-detail/' + item?.slug }"
               class="works-card"
             >
               <div class="works-card__image">
-                <img :src="item.cover" alt="" />
+                <img :src="item?.cover" alt="" />
               </div>
               <div class="works-card__content">
                 <div class="works-card__content-title">
                   <h3 class="txt txt--rem32 txt--font900 c-white">
-                    {{ item.name }}
+                    {{ item?.name }}
                   </h3>
                   <p class="txt txt--rem20 txt--font300 c-white">
-                    {{ item.type }}
+                    {{ item?.type }}
                   </p>
                 </div>
                 <div class="works-card__content-button c-white">

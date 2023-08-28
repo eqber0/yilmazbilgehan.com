@@ -139,15 +139,17 @@ function stopCarousel() {
               </div>
             </NuxtLink>
           </div>
-          <v-button
-            element="nuxt-link"
-            href="/projects"
-            color=""
-            icon="iconArrow"
-            hover="primary"
-            text="More Work"
-            type="centered"
-          />
+          <NuxtLink to="/projects">
+            <v-button
+              element="button"
+              href=""
+              color=""
+              icon="iconArrow"
+              hover="primary"
+              text="All Projects"
+              type="centered"
+            />
+          </NuxtLink>
         </div>
       </div>
     </div>
