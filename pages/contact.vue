@@ -1,5 +1,8 @@
 <script setup>
-const contactFrom = ref()
+// import emailjs from "emailjs-com"
+import emailjs from "@emailjs/browser"
+const contactForms = ref()
+console.log(contactForms)
 
 // Form Data
 const name = ref()
@@ -9,45 +12,38 @@ const company = ref()
 const message = ref()
 const submitSuccess = ref(false)
 
-function onInputChange() {
-  console.log("Name: ", name.value)
-  console.log("Phone Number: ", phoneNumber.value)
-  console.log("Mail: ", mail.value)
-  console.log("Company: ", company.value)
-  console.log("Message: ", message.value)
-}
+function onSubmit(e) {
+  try {
+    emailjs
+      .sendForm(
+        "service_ns9zwo9",
+        "template_6ekpnv9",
+        contactForms.value,
+        "YoA8yYQZfRNA85jP6"
+      )
+      .then(
+        (result) => {
+          if (result.status == 200) {
+            submitSuccess.value = true
+            name.value = ""
+            mail.value = ""
+            company.value = ""
+            phoneNumber.value = ""
+            message.value = ""
 
-// function onSubmit(e) {
-//   try {
-//     emailjs
-//       .sendForm(
-//         "service_ns9zwo9",
-//         "template_6ekpnv9",
-//         contactForm.value,
-//         "YoA8yYQZfRNA85jP6"
-//       )
-//       .then(
-//         (result) => {
-//           if (result.status == 200) {
-//             submitSuccess.value = true
-//             name.value = ""
-//             email.value = ""
-//             company.value = ""
-//             phoneNumber.value = ""
-//             message.value = ""
-//             setTimeout(() => {
-//               alert("Your message sent succesfully.")
-//             }, 1000)
-//           }
-//         },
-//         (error) => {
-//           // console.log("FAILED...", error.text);
-//         }
-//       )
-//   } catch (error) {
-//     console.log({ error })
-//   }
-// }
+            setTimeout(() => {
+              alert("Your message sent succesfully.")
+            }, 250)
+          }
+        },
+        (error) => {
+          // console.log("FAILED...", error.text);
+        }
+      )
+  } catch (error) {
+    console.log({ error })
+  }
+}
 </script>
 
 <template>
@@ -66,7 +62,7 @@ function onInputChange() {
             Tell me about your Dream <b>Website</b>
           </h2>
           <form
-            ref="contactForm"
+            ref="contactForms"
             class="row g-4 g-md-5"
             id="contactForm"
             @submit.prevent="onSubmit"
