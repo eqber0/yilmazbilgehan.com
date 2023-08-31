@@ -101,7 +101,7 @@ const profiles = ref([
     <div class="footer__rights">
       <div class="container">
         <div class="footer__rights-text txt txt--rem24 txt--font300">
-          ALL RIGHTS RESERVED BY <span>QBR</span> & TORE
+          All Rights Reserverd by <span>QBR</span>
         </div>
       </div>
     </div>

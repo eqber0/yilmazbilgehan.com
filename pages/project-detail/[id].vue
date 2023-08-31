@@ -52,15 +52,17 @@ const currentProjectData = await useAsyncData("currentProject", () => {
         </p>
         <br />
         <br />
-        <v-button
-          element="nuxt-link"
-          color=""
-          icon="iconArrow"
-          hover="primary"
-          text="Get an Offer"
-          type="centered"
-          href="/contact"
-        />
+        <NuxtLink to="/contact">
+          <v-button
+            element="button"
+            color=""
+            icon="iconArrow"
+            hover="primary"
+            text="Get an Offer"
+            type="centered"
+            href=""
+          />
+        </NuxtLink>
       </div>
     </section>
   </main>
