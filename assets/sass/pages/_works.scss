@@ -145,9 +145,9 @@
     overflow: hidden;
     border-radius: 1.6rem;
     background-repeat: repeat-y;
-    animation: workHero 100s 2s linear forwards infinite;
     transition: var(--transition);
     background-size: 100%;
+    background-color: var(--c-paragraph-alt);
     @include bp(desktop) {
       height: 62rem;
     }
@@ -160,6 +160,8 @@
     video {
       width: 100%;
       height: 100%;
+      object-fit: cover;
+      object-position: top;
     }
   }
   &__slider {
@@ -273,14 +275,5 @@
         object-fit: cover;
       }
     }
-  }
-}
-
-@keyframes workHero {
-  from {
-    background-position-y: 0%;
-  }
-  to {
-    background-position-y: 100%;
   }
 }
