@@ -13,7 +13,6 @@ const projectList = await useAsyncData("projects", () => {
 }).data.value
 
 onMounted(async () => {
-  console.log(projects.value)
   if (projects.value.length > 0) {
     setTimeout(() => {
       initHomeWork()

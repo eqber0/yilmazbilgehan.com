@@ -116,47 +116,18 @@ main {
       }
     }
   }
-  .route-transition {
-    &-inner {
-      transition: all var(--transition-extraslow);
-      transition-delay: 1.05s !important;
-      &--second {
-        transition-delay: 0.7s !important;
-      }
-      &--third {
-        transition-delay: 0.35s !important;
-      }
-      &--fourth {
-        transition-delay: 0s !important;
-      }
-    }
-  }
-}
-.home-enter,
-.home-leave-to {
-  .route-transition {
-    &-inner {
-      transform: translateY(5rem);
-      opacity: 0;
-    }
-  }
-}
-.route-transition {
-  overflow: hidden;
-  &-inner {
-    transition: var(--transition-extraslow);
-    &--second {
-      transition-delay: 0.35s !important;
-    }
-    &--third {
-      transition-delay: 0.7s !important;
-    }
-    &--fourth {
-      transition-delay: 1.05s !important;
-    }
-  }
 }
 
 .text-center {
   text-align: center;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: var(--transition-extraslow);
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
 }

@@ -12,8 +12,6 @@ onMounted(() => {
 
 function handleScroll() {
   const currentScrollPos = window.pageYOffset
-  console.log("current " + currentScrollPos)
-  console.log("prev " + prevScrollPos.value)
   if (currentScrollPos > 100) {
     isUnpinned.value = true
     isPinned.value = false

@@ -20,7 +20,6 @@ export const useProjectStore = defineStore("projects", {
     async getProject(slug) {
       const nuxtApp = useNuxtApp()
       const projects = await nuxtApp.$projects
-      console.log(slug)
       this.currentProject = projects.filter((item) => item.slug === slug)[0]
     },
   },
