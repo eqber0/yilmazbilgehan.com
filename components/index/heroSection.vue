@@ -1,12 +1,9 @@
 <script setup>
-import { onMounted } from "vue"
-
 const isLoaded = ref(false)
 
-onMounted(() => {
-  setTimeout(() => {
-    isLoaded.value = true
-  }, 1500)
+const nuxtApp = useNuxtApp()
+nuxtApp.hook("page:finish", () => {
+  isLoaded.value = true
 })
 </script>
 

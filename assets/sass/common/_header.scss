@@ -1,8 +1,11 @@
 .header {
-  position: relative;
+  position: sticky;
   top: 0;
+  left: 0;
   width: 100%;
   transition: var(--transition);
+  z-index: 10;
+
   &:before {
     content: "";
     position: absolute;
@@ -16,37 +19,22 @@
     z-index: 0;
     pointer-events: none;
   }
-  // &--pinned {
-  //   .header {
-  //     transform: translateY(0);
-  //     &__wrapper {
-  //       &::after {
-  //         opacity: 1;
-  //       }
-  //     }
-  //   }
-  // }
-  // &--unpinned {
-  //   .header {
-  //     transform: translateY(-100%);
-  //   }
-  // }
-  // &--not-top {
-  //   .header {
-  //     &__logo {
-  //       filter: brightness(0) invert(1);
-  //     }
-  //   }
-  // }
-  // &--top {
-  //   .header {
-  //     &__wrapper {
-  //       &::after {
-  //         opacity: 0;
-  //       }
-  //     }
-  //   }
-  // }
+  &--pinned {
+    .header {
+      transform: translateY(0);
+      &__logo {
+        filter: brightness(0) invert(1);
+      }
+      &__wrapper {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &--unpinned {
+    transform: translateY(-100%);
+  }
 
   &__wrapper {
     padding: 2rem 3rem;

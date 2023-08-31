@@ -1,8 +1,35 @@
 <script setup>
+import { onMounted } from "vue"
+
 const isMenuOpen = ref(false)
+const isPinned = ref(false)
+const isUnpinned = ref(false)
+const prevScrollPos = ref()
+
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll)
+})
+
+function handleScroll() {
+  const currentScrollPos = window.pageYOffset
+  console.log("current " + currentScrollPos)
+  console.log("prev " + prevScrollPos.value)
+  if (currentScrollPos > 100) {
+    isUnpinned.value = true
+    isPinned.value = false
+  } else {
+    isPinned.value = false
+    isUnpinned.value = false
+  }
+
+  if (prevScrollPos.value > currentScrollPos && currentScrollPos > 100) {
+    isUnpinned.value = false
+    isPinned.value = true
+  }
+  prevScrollPos.value = currentScrollPos
+}
 
 function toggleMenu(status) {
-  console.log(status)
   if (status) {
     isMenuOpen.value = true
   } else {
@@ -14,7 +41,11 @@ function toggleMenu(status) {
   <header
     ref="header"
     class="header"
-    :class="isMenuOpen == true ? 'menu-opened' : undefined"
+    :class="{
+      'menu-opened': isMenuOpen,
+      'header--pinned': isPinned,
+      'header--unpinned': isUnpinned,
+    }"
   >
     <div class="container">
       <div class="header__wrapper">

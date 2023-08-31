@@ -34,7 +34,7 @@ onMounted(() => {
         </div>
       </div>
       <div class="about__wrapper">
-        <div class="row g-4 g-md-5">
+        <div class="row g-4 g-md-5 about__wrapper-inner">
           <div class="col-12 col-xl-4">
             <div class="about__left">
               <div class="about__info c-white">

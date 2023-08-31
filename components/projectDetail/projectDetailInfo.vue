@@ -34,12 +34,12 @@ const props = defineProps({
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="work-detail__info-card">
             <div
-              class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
+              class="work-detail__info-card__title txt txt--rem32 txt--font400 c-white"
             >
               {{ props.infoName }}
             </div>
             <div
-              class="work-detail__info-card__value txt txt--rem32 txt--font300 c-white"
+              class="work-detail__info-card__value txt txt--rem30 txt--font300 c-white"
             >
               Client
             </div>
@@ -48,12 +48,12 @@ const props = defineProps({
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="work-detail__info-card">
             <div
-              class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
+              class="work-detail__info-card__title txt txt--rem32 txt--font400 c-white"
             >
               {{ props.infoCountry }}
             </div>
             <div
-              class="work-detail__info-card__value txt txt--rem32 txt--font300 c-white"
+              class="work-detail__info-card__value txt txt--rem30 txt--font300 c-white"
             >
               Country
             </div>
@@ -62,12 +62,12 @@ const props = defineProps({
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="work-detail__info-card">
             <div
-              class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
+              class="work-detail__info-card__title txt txt--rem32 txt--font400 c-white"
             >
               {{ props.infoType }}
             </div>
             <div
-              class="work-detail__info-card__value txt txt--rem32 txt--font300 c-white"
+              class="work-detail__info-card__value txt txt--rem30 txt--font300 c-white"
             >
               Type
             </div>
@@ -76,12 +76,12 @@ const props = defineProps({
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <div class="work-detail__info-card">
             <div
-              class="work-detail__info-card__title txt txt--rem48 txt--font400 c-white"
+              class="work-detail__info-card__title txt txt--rem32 txt--font400 c-white"
             >
               {{ props.infoDuration }}
             </div>
             <div
-              class="work-detail__info-card__value txt txt--rem32 txt--font300 c-white"
+              class="work-detail__info-card__value txt txt--rem30 txt--font300 c-white"
             >
               Duration
             </div>

@@ -2,7 +2,6 @@
 // import emailjs from "emailjs-com"
 import emailjs from "@emailjs/browser"
 const contactForms = ref()
-console.log(contactForms)
 
 // Form Data
 const name = ref()
