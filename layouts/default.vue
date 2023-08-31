@@ -1,7 +1,37 @@
+<script setup>
+import appHeader from "~/components/common/appHeader.vue"
+import appFooter from "~/components/common/appFooter.vue"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+
+const cursor = ref()
+
+onMounted(() => {
+  cursor.value = document.querySelector(".cursor")
+  gsap.set(cursor.value, {
+    xPercent: -50,
+    yPercent: -50,
+  })
+  document.addEventListener("pointermove", movecursor)
+  function movecursor(e) {
+    gsap.to(cursor.value, {
+      duration: false,
+      x: e.clientX,
+      y: e.clientY,
+      duration: 0.5,
+      ease: "slow",
+    })
+  }
+})
+</script>
 <template>
-  <div style="position: relative; z-index: 1">
+  <div>
     <appHeader />
-    <Nuxt />
+    <slot />
+
     <appFooter />
     <div class="cursor">
       <div class="cursor__txt"></div>
@@ -9,48 +39,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import appHeader from "../components/common/appHeader.vue";
-import appFooter from "../components/common/appFooter.vue";
-import gsap from "gsap";
-
-export default {
-  components: {
-    appHeader,
-    appFooter,
-  },
-  data() {
-    return {};
-  },
-  mounted() {
-    // this.$nextTick(() => {
-    //   this.$nuxt.$loading.start();
-    //   setTimeout(() => this.$nuxt.$loading.finish(), 1000);
-    // });
-    this.cursorFunction();
-  },
-  methods: {
-    cursorFunction() {
-      const cursor = document.querySelector(".cursor");
-
-      gsap.set(cursor, {
-        xPercent: -50,
-        yPercent: -50,
-      });
-      document.addEventListener("pointermove", movecursor);
-      function movecursor(e) {
-        gsap.to(cursor, {
-          duration: false,
-          x: e.clientX,
-          y: e.clientY,
-          duration: 0.5,
-          ease: "slow",
-        });
-      }
-    },
-  },
-};
-</script>
-
-AppHeader

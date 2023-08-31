@@ -1,0 +1,42 @@
+:root {
+  // Font Family
+  --font-family: "Gotham", sans-serif;
+
+  // Transitions
+  --transition-fast: 0.2s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition: 0.3s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition-slow: 0.4s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+  --transition-extraslow: 0.5s cubic-bezier(0.29, 0.13, 0.27, 0.74);
+
+  // Colors
+  --c-white: #ffffff;
+  --c-white-alt: #c1c1c1;
+  --c-black: #000000;
+  --c-primary: #7d26cd;
+  --c-secondary: #ae062c;
+  --c-paragraph: #aaaaaa;
+  --c-paragraph-alt: #484848;
+  --c-border-color: #7a7b7f;
+}
+
+.c-white {
+  color: var(--c-white);
+}
+.c-white-alt {
+  color: var(--c-white-alt);
+}
+.c-black {
+  color: var(--c-black);
+}
+.c-primary {
+  color: var(--c-primary);
+}
+.c-secondary {
+  color: var(--c-secondary);
+}
+.c-paragraph {
+  color: var(--c-paragraph);
+}
+.c-paragraph-alt {
+  color: var(--c-paragraph-alt);
+}

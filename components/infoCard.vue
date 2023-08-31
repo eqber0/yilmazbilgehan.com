@@ -1,22 +1,47 @@
+<script setup>
+const props = defineProps({
+  type: {
+    type: String,
+    default: null,
+  },
+  title: {
+    type: String,
+    default: null,
+  },
+  value: {
+    type: String,
+    default: null,
+  },
+  socials: {
+    type: Array,
+    default: [],
+  },
+  color: {
+    type: String,
+    default: null,
+  },
+})
+</script>
+
 <template>
   <div class="info-card__item">
     <div
       class="info-card__item-title txt txt--rem28 txt--font300"
-      :class="color == 'paragrah' ? 'c-paragraph' : 'c-primary'"
+      :class="props.color == 'paragrah' ? 'c-paragraph' : 'c-primary'"
     >
-      {{ title }}
+      {{ props.title }}
     </div>
     <div
-      v-if="type == 'socials' && socials"
+      v-if="props.type == 'socials' && props.socials"
       class="footer__info-content__item-socials justify-content-start"
     >
       <div
-        v-for="(social, index) in socials"
+        v-for="(social, index) in props.socials"
         :key="index"
         class="footer__info-content__item-socials__item me-5"
       >
         <a target="_blank" :href="social.link">
-          <svg-icon :name="social.icon" />
+          <nuxt-icon class="icon icon-font" :name="social.icon" />
         </a>
       </div>
     </div>
@@ -24,12 +49,7 @@
       v-else
       class="info-card__item-subtitle txt txt--rem32 txt--font700 c-white"
     >
-      {{ value }}
+      {{ props.value }}
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: ["type", "title", "value", "socials", "color"],
-};
-</script>

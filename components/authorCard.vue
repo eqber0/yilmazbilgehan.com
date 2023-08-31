@@ -1,13 +1,21 @@
+<script setup>
+const props = defineProps({
+  name: {
+    type: String,
+    default: null,
+  },
+  title: {
+    type: String,
+    default: null,
+  },
+})
+</script>
+
 <template>
   <div class="author-card">
-    <mainTitle type="bold" :title="name" />
+    <mainTitle type="bold" :title="props.name" />
     <div class="txt txt--rem24 txt--font300 c-paragraph">
-      {{ title }}
+      {{ props.title }}
     </div>
   </div>
 </template>
-<script>
-export default {
-  props: ["name", "title"],
-};
-</script>

@@ -1,0 +1,133 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility !important;
+  position: relative;
+  min-height: 100vh;
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("~/assets/images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    @include bp(tablet) {
+      background-size: contain;
+      background-repeat: repeat-y;
+    }
+  }
+}
+main {
+  position: relative;
+  z-index: 1;
+  margin-top: 4rem;
+}
+
+.section {
+  padding: 10rem 0;
+
+  @include bp(tablet) {
+    padding: 7.5rem 0;
+  }
+  @include bp(tablet-small) {
+    padding: 5rem 0;
+  }
+  @include bp(mobile) {
+    padding: 2.5rem 0;
+  }
+
+  &--pt0 {
+    padding-top: 0;
+  }
+  &--pb0 {
+    padding-bottom: 0;
+  }
+}
+
+.c-none {
+  cursor: none;
+}
+
+.subheader {
+  margin: 12rem;
+  @include bp(desktop) {
+    margin: 8rem;
+  }
+  @include bp(tablet) {
+    margin: 6rem;
+  }
+  @include bp(tablet-small) {
+    margin: 6rem 0rem;
+  }
+  &__title {
+    text-align: center;
+    text-transform: capitalize;
+  }
+}
+
+.info-card {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    line-height: 1em;
+    &-title {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.home-enter-active {
+  .route-transition {
+    &-inner {
+      transition: all var(--transition-extraslow);
+      &--second {
+        transition-delay: 0.35s !important;
+      }
+      &--third {
+        transition-delay: 0.7s !important;
+      }
+      &--fourth {
+        transition-delay: 1.05s !important;
+      }
+    }
+  }
+}
+.home-leave-active {
+  .hero {
+    &__text {
+      .text-line {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          transition-delay: 0s !important;
+        }
+      }
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: var(--transition-extraslow);
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}

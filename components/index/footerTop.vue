@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="container">
     <div class="footer__profiles">
       <div
@@ -44,27 +44,4 @@
       </div>
     </div>
   </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      profiles: [
-        {
-          author: "Frontend Developer",
-          bgImage: "images/qbr-footer.svg",
-          image: "images/bilgehan-footer.png",
-          name: "Bilgehan Yılmaz",
-        },
-        {
-          author: "UI / UX Designer",
-          bgImage: "images/tore-footer.svg",
-          image: "images/tore-footer.png",
-          name: "Tolunay Kurttutar",
-        },
-      ],
-    };
-  },
-};
-</script>
+</template> -->

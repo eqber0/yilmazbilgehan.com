@@ -1,28 +1,56 @@
+<script setup>
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { usePersonalStore } from "~/stores/personal-info"
+gsap.registerPlugin(ScrollTrigger)
+
+const personalStore = usePersonalStore()
+
+const socialMedias = ref(personalStore.socials)
+const languages = ref(personalStore.language)
+const skills = ref(personalStore.skills)
+
+const progressItem = ref()
+onMounted(() => {
+  gsap.from(progressItem.value, {
+    scrollTrigger: {
+      trigger: progressItem.value,
+      start: "center-=100 center",
+      end: "center-=100 center",
+    },
+    width: 0,
+    ease: "power2",
+    duration: 1,
+  })
+})
+</script>
+
 <template>
   <main class="detail-page">
     <div class="container">
       <div class="subheader">
-        <div class="subheader__title route-transition">
-          <mainTitle class="route-transition-inner" title="About Me" />
+        <div class="subheader__title">
+          <mainTitle title="About Me" />
         </div>
       </div>
-      <div class="about__wrapper route-transition">
-        <div
-          class="row g-4 g-md-5 route-transition-inner route-transition-inner--second"
-        >
+      <div class="about__wrapper">
+        <div class="row g-4 g-md-5 about__wrapper-inner">
           <div class="col-12 col-xl-4">
-            <div class="about__sticky">
-              <div class="about__image">
-                <img src="~/static/images/bilgehan.png" alt="" />
-              </div>
-
-              <div class="about__info c-white mt-5">
-                <authorCard name="Bilgehan Yılmaz" title="Frontend Developer" />
+            <div class="about__left">
+              <div class="about__info c-white">
+                <authorCard
+                  :name="personalStore.name"
+                  :title="personalStore.title"
+                />
                 <div class="about__info-cards mt-5">
-                  <infoCard title="email" value="eqber00@gmail.com" />
-                  <infoCard title="adress" value="Bursa / Nilüfer" />
-                  <infoCard type="socials" title="socials" :socials="socials" />
-                  <infoCard title="phone" value="0555 685 77 45" />
+                  <infoCard title="email" :value="personalStore.name" />
+                  <infoCard title="adress" :value="personalStore.address" />
+                  <infoCard
+                    type="socials"
+                    title="socials"
+                    :socials="socialMedias"
+                  />
+                  <infoCard title="phone" :value="personalStore.phone" />
                 </div>
                 <div class="about__info-languages mt-5">
                   <div
@@ -30,7 +58,7 @@
                     v-for="(item, index) in languages"
                     :key="index"
                   >
-                    {{ item.language }}
+                    {{ item.name }}
                     <span v-if="item.level">{{ item.level }}</span>
                   </div>
                 </div>
@@ -44,18 +72,16 @@
               </div>
               <div class="about__section-content">
                 <div class="txt txt--rem32 txt--font300 c-white">
-                  I am a <span>Frontend Developer</span> who has been keeping up
-                  with the developing technologies for almost 2 years, not
-                  afraid to experiment, and has been developing award-winning
-                  websites in this process. With my results-oriented mindset, I
-                  have ensured unequivocal satisfaction with the product or
-                  service by searching, learning and applying efficient
-                  technologies. While developing award-winning projects, I
-                  always aimed my vision at the top and used the most
-                  appropriate technology for the projects. I am experienced in
-                  working with a team and I see myself as someone who can
-                  contribute to teamwork. my vision; is to improve myself and
-                  where I am to always be the best you can be.
+                  I am a passionate and results-driven
+                  <span>Frontend Developer</span> who is dedicated to staying
+                  updated with the latest technologies. My fearless
+                  experimentation has led me to craft award-winning websites.
+                  Committed to excellence, I ensure satisfaction by leveraging
+                  efficient technologies. I aspire to be an ever-evolving
+                  developer, pushing innovation and embracing challenges to
+                  continuously refine my skills. With relentless drive, I
+                  consistently exceed expectations, delivering exceptional
+                  results in every project.
                 </div>
               </div>
             </div>
@@ -65,13 +91,8 @@
               </div>
               <div class="about__section-content">
                 <experienceItem
-                  date="2023-2019"
-                  title="BACHELORS DEGREE"
-                  text="Atatürk University / Advertising Managament"
-                />
-                <experienceItem
-                  date="2019-2015"
-                  title=" HIGH SCHOOL GRADUATE"
+                  date="2016-2020"
+                  title=" High School Graduate"
                   text="Süleyman Çelebi High School"
                 />
               </div>
@@ -112,8 +133,8 @@
               </div>
               <div class="about__section-content">
                 <experienceItem
-                  date="Now - July 2021"
-                  title=" BABEL AGENCY"
+                  date="July 2021 - Now"
+                  title="Babel Agency"
                   text="Frontend Developer"
                 />
               </div>
@@ -124,43 +145,3 @@
     </div>
   </main>
 </template>
-
-<script>
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
-export default {
-  data() {
-    return {
-      socials: [],
-      skills: [],
-      languages: [
-        {
-          language: "Turkish",
-          level: "Native",
-        },
-        {
-          language: "English",
-          level: "B1",
-        },
-      ],
-    };
-  },
-  async mounted() {
-    this.socials = await this.$store.state.socials;
-    this.skills = await this.$store.state.skills;
-    this.$nextTick(() => {
-      gsap.from(this.$refs.progressItem, {
-        scrollTrigger: {
-          trigger: this.$refs.progressItem,
-          start: "center-=100 center",
-          end: "center-=100 center",
-        },
-        width: 0,
-        ease: "power2",
-        duration: 1,
-      });
-    });
-  },
-};
-</script>
