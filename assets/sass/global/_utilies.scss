@@ -61,6 +61,7 @@
   }
 }
 .txt {
+  line-height: 1.3em;
   &--rem {
     &128 {
       font-size: var(--txt-rem128);

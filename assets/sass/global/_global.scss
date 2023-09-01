@@ -82,6 +82,15 @@ main {
     flex-direction: column;
     gap: 2rem;
     line-height: 1em;
+    @include bp(tablet) {
+      gap: 1.5rem;
+    }
+    @include bp(tablet-small) {
+      gap: 1rem;
+    }
+    @include bp(mobile) {
+      gap: 0.5rem;
+    }
     &-title {
       text-transform: uppercase;
     }
