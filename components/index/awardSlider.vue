@@ -84,12 +84,20 @@ const props = defineProps({
           <Swiper
             :slides-per-view="1"
             :loop="false"
-            :direction="'vertical'"
             :speed="1000"
             :watchSlidesProgress="true"
             :watchSlidesVisibility="true"
             :allowTouchMove="false"
-            :breakpoints="textSliderBreakpoints"
+            :breakpoints="{
+              320: {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                spaceBetween: 40,
+              },
+              992: {
+                direction: 'vertical',
+              },
+            }"
             @swiper="onSwiper"
           >
             <SwiperSlide v-for="(slide, index) in props.projects" :key="index">
@@ -132,11 +140,19 @@ const props = defineProps({
               SwiperManipulation,
             ]"
             :slides-per-view="1"
-            :loop="false"
-            :direction="'vertical'"
             :thumbs="{ swiper: textSlider }"
             :speed="1000"
-            :breakpoints="thumbSliderBreakpoints"
+            :loop="false"
+            :breakpoints="{
+              320: {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                spaceBetween: 40,
+              },
+              992: {
+                direction: 'vertical',
+              },
+            }"
             :navigation="{
               prevEl: '.award-slider__buttons-prev',
               nextEl: '.award-slider__buttons-next',

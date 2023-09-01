@@ -114,7 +114,9 @@ function stopCarousel() {
           </div>
           <div class="index-works__mobile">
             <NuxtLink
-              v-for="(item, index) in projectList"
+              v-for="(item, index) in Array.isArray(projectList)
+                ? projectList.slice(0, 3)
+                : []"
               :key="index"
               :to="{
                 path: `project-detail/${item.slug}`,

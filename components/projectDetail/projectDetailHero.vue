@@ -1,20 +1,5 @@
 <script setup>
-const workSliderBp = {
-  xm: 320,
-  slidesPerView: 1.25,
-  sm: 569,
-  slidesPerView: 1.5,
-  m: 768,
-  slidesPerView: 2.25,
-  md: 992,
-  slidesPerView: 3,
-}
-
 const props = defineProps({
-  sliderImages: {
-    type: Array,
-    default: () => [],
-  },
   video: {
     type: String,
     default: "",
@@ -26,30 +11,35 @@ const props = defineProps({
   <section class="work-detail">
     <div class="container">
       <div class="work-detail-image">
-        <video :src="props.video" muted autoplay playsinline></video>
-      </div>
-      <div v-if="props.sliderImages.length > 0" class="work-detail__slider">
-        <Swiper
-          ref="workSlider"
-          :modules="[SwiperAutoplay]"
-          :slidesPerView="3"
-          :loop="true"
-          :spaceBetween="40"
-          :speed="1500"
-          :autoplay="{ delay: 3000 }"
-          :breakpoints="workSliderBp"
-        >
-          <SwiperSlide v-for="slide in props.sliderImages" :key="slide.id">
-            <div class="work-detail__slider-item">
-              <img :src="slide.image" alt="" />
-            </div>
-          </SwiperSlide>
-        </Swiper>
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide"></div>
-          </div>
+        <div v-if="props.video == ''" class="loader">
+          <svg
+            version="1.1"
+            id="L9"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 100 100"
+            enable-background="new 0 0 0 0"
+            xml:space="preserve"
+          >
+            <path
+              fill="#fff"
+              d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+            >
+              <animateTransform
+                attributeName="transform"
+                attributeType="XML"
+                type="rotate"
+                dur="1s"
+                from="0 50 50"
+                to="360 50 50"
+                repeatCount="indefinite"
+              />
+            </path>
+          </svg>
         </div>
+        <video v-else :src="props.video" muted autoplay playsinline></video>
       </div>
     </div>
   </section>

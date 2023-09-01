@@ -26,52 +26,6 @@ const footerDatas = ref([
     type: "socials",
   },
 ])
-
-const profiles = ref([
-  {
-    author: "Frontend Developer",
-    bgImage: "images/qbr-footer.svg",
-    image: "images/bilgehan-footer.png",
-    items: [
-      {
-        text: "eqber00@gmail.com",
-        title: "mail",
-      },
-      {
-        text: "Bursa / Nilüfer",
-        title: "address",
-      },
-      {
-        text: "0 555 685 7745",
-        title: "Phone",
-      },
-      {
-        socials: [
-          {
-            icon: "iconLinkedin",
-            link: "https://www.linkedin.com/in/bilgehan-y%C4%B1lmaz-a723b0220/",
-          },
-          {
-            icon: "iconGithub",
-            link: "https://github.com/eqber0",
-          },
-          {
-            icon: "iconTwitter",
-            link: "https://twitter.com/eqbeR_",
-          },
-        ],
-        title: "socials",
-      },
-    ],
-    name: "Bilgehan Yılmaz",
-  },
-  {
-    author: "UI / UX Designer",
-    bgImage: "images/tore-footer.svg",
-    image: "images/tore-footer.png",
-    name: "Tolunay Kurttutar",
-  },
-])
 </script>
 <template>
   <footer ref="footer" class="footer">
@@ -101,7 +55,7 @@ const profiles = ref([
     <div class="footer__rights">
       <div class="container">
         <div class="footer__rights-text txt txt--rem24 txt--font300">
-          ALL RIGHTS RESERVED BY <span>QBR</span> & TORE
+          All Rights Reserverd by <span>QBR</span>
         </div>
       </div>
     </div>

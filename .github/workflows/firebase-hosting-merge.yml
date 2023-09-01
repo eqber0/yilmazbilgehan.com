@@ -10,7 +10,7 @@ env:
   NODE_VERSION: 16.18.0
 
 jobs:
-  generate_files:
+  generate_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

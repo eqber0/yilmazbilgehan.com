@@ -3,150 +3,10 @@
   z-index: 1;
   overflow: hidden;
 
-  // &.loaded {
-  //   opacity: 1;
-  //   transform: translateY(0);
-  //   .footer {
-  //     &__info,
-  //     &__rights {
-  //       opacity: 1;
-  //       transform: translateY(0);
-  //     }
-  //   }
-  // }
-  &__profiles {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10rem;
-    @include bp(tablet) {
-      flex-direction: column;
-      border-bottom: 0;
-    }
-    &__item {
-      width: calc(50%);
-      min-height: 60rem;
-      display: flex;
-      position: relative;
-      overflow: hidden;
-      @include bp(tablet) {
-        width: 100%;
-        border-bottom: 0.3rem solid var(--c-paragraph);
-        min-height: 50rem;
-        &:not(:last-child) {
-          margin-bottom: 2rem;
-        }
-      }
-      @include bp(tablet-small) {
-        min-height: unset;
-        max-height: 45rem;
-      }
-      &:hover {
-        .footer__profiles__item {
-          @include bp(r-tablet) {
-            &-author {
-              opacity: 0;
-              pointer-events: none;
-              visibility: hidden;
-            }
-            &-button {
-              transform: translate(-50%, 0);
-              opacity: 1;
-            }
-          }
-        }
-      }
-
-      &-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: 65rem;
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-        }
-      }
-      &-image {
-        max-width: 38rem;
-        position: relative;
-        z-index: 1;
-        img {
-          object-fit: contain;
-        }
-      }
-      &-author {
-        margin-top: auto;
-        position: absolute;
-        bottom: 4rem;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 1;
-        white-space: nowrap;
-        text-align: center;
-        padding: 1.5rem;
-        background-color: rgba(12, 12, 12, 0.8);
-        border-radius: 1.5rem;
-        transition: var(--transition);
-        @include bp(tablet) {
-          bottom: calc(4rem + 5.4rem + 2rem);
-        }
-        @include bp(tablet-small) {
-          bottom: calc(4rem + 5.4rem);
-        }
-        &__name {
-          line-height: 1em;
-          span {
-            font-weight: 900;
-          }
-        }
-      }
-      &-button {
-        width: 100%;
-        position: absolute;
-        bottom: 4rem;
-        left: 50%;
-        transform: translate(-50%, 100%);
-        opacity: 0;
-        z-index: 1;
-        transition: var(--transition);
-        @include bp(tablet) {
-          transform: translate(-50%, 0);
-          opacity: 1;
-        }
-        @include bp(tablet-small) {
-          bottom: 2rem;
-        }
-      }
-      &--left {
-        padding-right: 4.5rem;
-        border-right: 0.15rem solid var(--c-paragraph);
-        @include bp(tablet) {
-          border-right: unset;
-        }
-      }
-      &--right {
-        padding-left: 4.5rem;
-        border-left: 0.15rem solid var(--c-paragraph);
-        border-left: unset;
-        flex-direction: row-reverse;
-        .footer__profiles__item {
-          &-bg {
-            left: unset;
-            right: 0;
-          }
-        }
-      }
-    }
-  }
-
   &__info {
     height: 60rem;
     border-top: 0.3rem solid var(--c-paragraph);
     transition: var(--transition);
-    // transform: translateY(5rem);
-    // opacity: 0;
     @include bp(tablet) {
       height: unset;
     }
@@ -162,9 +22,7 @@
       height: 100%;
       border-right: 0.3rem solid var(--c-paragraph);
       @include bp(tablet) {
-        border-right: 0;
-        border-bottom: 0.3rem solid var(--c-paragraph);
-        padding: 4rem 0;
+        display: none;
       }
       img {
         max-width: 20rem;
@@ -217,10 +75,8 @@
 
   &__rights {
     background-color: var(--c-primary);
-    padding: 3rem;
+    padding: 2rem;
     transition: var(--transition);
-    // transform: translateY(5rem);
-    // opacity: 0;
     @include bp(tablet) {
       padding: 1.5rem;
     }

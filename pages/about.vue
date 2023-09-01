@@ -43,7 +43,7 @@ onMounted(() => {
                   :title="personalStore.title"
                 />
                 <div class="about__info-cards mt-5">
-                  <infoCard title="email" :value="personalStore.name" />
+                  <infoCard title="email" :value="personalStore.mail" />
                   <infoCard title="adress" :value="personalStore.address" />
                   <infoCard
                     type="socials"
