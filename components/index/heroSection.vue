@@ -18,7 +18,7 @@ nuxtApp.hook("page:finish", () => {
                 class="text-line-inner"
                 :class="isLoaded ? 'loaded' : undefined"
               >
-                Good design is (deploy test)
+                Good design is
               </p>
             </div>
             <div class="text-line">
