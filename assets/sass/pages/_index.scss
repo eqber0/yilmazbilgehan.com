@@ -49,6 +49,15 @@
     border-radius: 1.8rem;
     position: relative;
     overflow: hidden;
+    @include bp(desktop) {
+      margin: 6rem auto 0 auto;
+    }
+    @include bp(tablet) {
+      margin: 4rem auto 0 auto;
+    }
+    @include bp(mobile) {
+      margin: 2rem auto 0 auto;
+    }
     &:after {
       content: "";
       position: absolute;
