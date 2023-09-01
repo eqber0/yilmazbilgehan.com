@@ -9,6 +9,12 @@
   position: relative;
   border: 0.2rem solid var(--c-white);
   border-radius: 5rem;
+  @include bp(tablet) {
+    padding: 1rem 2rem;
+  }
+  @include bp(mobile) {
+    padding: 0.75rem 1.5rem;
+  }
   &-txt {
     line-height: 1em;
     font-size: var(--txt-rem24);
@@ -16,6 +22,9 @@
     color: var(--c-white);
     text-transform: uppercase;
     transition: var(--transition);
+    @include bp(mobile) {
+      font-size: var(--txt-rem20);
+    }
   }
   &-icon {
     display: flex;
@@ -25,6 +34,9 @@
     .icon {
       font-size: 1.8rem;
       color: var(--c-white);
+      @include bp(mobile) {
+        font-size: 1.2rem;
+      }
     }
   }
   &--primary-hover {

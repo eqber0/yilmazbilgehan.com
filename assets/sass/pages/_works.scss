@@ -127,12 +127,19 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 2rem;
       @include bp(tablet) {
         opacity: 1;
         transform: translateY(0);
+        left: 3rem;
+        bottom: 3rem;
+        width: calc(100% - 6rem);
       }
-      &-button {
-        margin-left: 2rem;
+      @include bp(mobile) {
+        left: 2rem;
+        bottom: 2rem;
+        width: calc(100% - 4rem);
+        gap: 1rem;
       }
     }
   }
@@ -159,7 +166,7 @@
       pointer-events: none;
     }
     @include bp(tablet) {
-      min-height: 38rem;
+      min-height: unset;
       .loader {
         width: 7.5rem;
         height: 7.5rem;
@@ -177,71 +184,24 @@
       height: auto;
     }
   }
-  &__slider {
-    max-width: 128rem;
-    margin-left: auto;
-    position: relative;
-    top: -12.5rem;
-    margin-bottom: -12.5rem;
-    min-height: 25rem;
-    @include bp(tablet) {
-      top: -7.5rem;
-      margin-bottom: -7.5rem;
-    }
-    &-item {
-      height: 25rem;
-      border-radius: 0.9rem;
-      overflow: hidden;
-      box-shadow: 0 0 1.6rem rgba(0, 0, 0, 0.1);
-      @include bp(tablet-small) {
-        height: 20rem;
-      }
-      img {
-        width: 100%;
-        height: auto;
-        max-height: 100%;
-        object-fit: contain;
-        border-radius: 0.9rem;
-        @include bp(tablet-small) {
-          object-fit: cover;
-        }
-      }
-    }
-  }
   &__info {
     &-card {
       &__title {
         padding-bottom: 2rem;
         margin-bottom: 2rem;
         border-bottom: 0.2rem solid rgba(#ffffff, 0.2);
+        @include bp(mobile) {
+          padding-bottom: 1rem;
+          margin-bottom: 1rem;
+          border-width: 0.1rem;
+        }
       }
       &__value {
         padding-bottom: 2rem;
+        @include bp(mobile) {
+          padding-bottom: 1rem;
+        }
       }
-    }
-  }
-  &__compare {
-    height: 80rem;
-    overflow: hidden;
-    @include bp(laptop) {
-      height: 70rem;
-    }
-    @include bp(tablet) {
-      height: 50rem;
-    }
-    @include bp(mobile) {
-      height: 35rem;
-    }
-    .left-image,
-    .right-image {
-      height: unset !important;
-    }
-    .vci-container {
-      height: 100% !important;
-    }
-    .handle {
-      background-color: var(--c-primary);
-      border-color: var(--c-primary) !important;
     }
   }
 
@@ -249,7 +209,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-
     &-item {
       height: 55rem;
       border-radius: 0.6rem;
@@ -267,7 +226,7 @@
         width: 100% !important;
       }
       @include bp(tablet) {
-        height: 35rem;
+        height: auto;
       }
       &:nth-child(1) {
         width: calc(45% - 1rem);
