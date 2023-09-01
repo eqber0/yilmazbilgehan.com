@@ -25,8 +25,10 @@ jobs:
     needs: generate_files
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
+          entryPoint: "."
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_YILMAZBILGEHAN_7C443 }}"
           channelId: live
