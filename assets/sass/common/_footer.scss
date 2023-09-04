@@ -5,6 +5,7 @@
 
   &__info {
     height: 60rem;
+    // height: 60rem;
     border-top: 0.3rem solid var(--c-paragraph);
     transition: var(--transition);
     @include bp(tablet) {
