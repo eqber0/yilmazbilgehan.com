@@ -17,10 +17,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: ${{env.NODE_VERSION}}
-          cache: "yarn"
+          cache: "npm"
       - run: |
-          yarn
-          yarn generate
+          npm install
+          npm run generate
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: "."
@@ -28,3 +28,4 @@ jobs:
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_YILMAZBILGEHAN_7C443 }}"
           channelId: live
           projectId: yilmazbilgehan-7c443
+          firebaseToolsVersion:
