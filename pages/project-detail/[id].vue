@@ -1,15 +1,11 @@
 <script setup>
 import { storeToRefs } from "pinia"
 import { useProjectStore } from "/stores/project-store.js"
-import { onMounted } from "vue"
 
 const projectStore = useProjectStore()
 const { fetchProjects, getProject } = projectStore
 const { currentProject } = storeToRefs(projectStore)
-onMounted(() => {
-  fetchProjects()
-})
-
+fetchProjects()
 const route = useRoute()
 getProject(route.params.id)
 

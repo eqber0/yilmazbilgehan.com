@@ -11,10 +11,7 @@ import { useProjectStore } from "~/stores/project-store.js"
 const projectStore = useProjectStore()
 const { fetchProjects } = projectStore
 const { awardedProjects } = storeToRefs(projectStore)
-// fetchProjects()
-onMounted(() => {
-  fetchProjects()
-})
+fetchProjects()
 
 const awardSliderData = await useAsyncData("awardedProjects", () => {
   return awardedProjects

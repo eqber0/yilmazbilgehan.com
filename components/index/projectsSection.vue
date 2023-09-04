@@ -6,13 +6,13 @@ import { useProjectStore } from "~/stores/project-store.js"
 const projectStore = useProjectStore()
 const { fetchProjects } = projectStore
 const { projects } = storeToRefs(projectStore)
+fetchProjects()
 
 const projectList = await useAsyncData("projects", () => {
   return projects
 }).data.value
 
 onMounted(async () => {
-  fetchProjects()
   if (projects.value.length > 0) {
     setTimeout(() => {
       initHomeWork()
