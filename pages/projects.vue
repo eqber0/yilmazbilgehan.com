@@ -1,10 +1,14 @@
 <script setup>
 import { storeToRefs } from "pinia"
 import { useProjectStore } from "/stores/project-store.js"
+import { onMounted } from "vue"
 
 const projectStore = useProjectStore()
 const { fetchProjects } = projectStore
-fetchProjects()
+
+onMounted(() => {
+  fetchProjects()
+})
 const { projects } = storeToRefs(projectStore)
 const projectList = await useAsyncData("projects", () => {
   return projects
