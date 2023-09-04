@@ -15,7 +15,10 @@ export default defineNuxtPlugin(async (nuxtApp) => {
     measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
   }
 
-  const app = initializeApp(firebaseConfig)
+  const app = initializeApp(firebaseConfig, {
+    experimentalForceLongPolling: true, // this line
+    useFetchStreams: false, // and this line
+  })
   const db = getFirestore(app)
 
   const projectColl = collection(db, "projects")
