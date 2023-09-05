@@ -355,7 +355,7 @@ export const state = () => ({
       link: "https://github.com/eqber0",
     },
     {
-      icon: "iconTwitter",
+      icon: "iconX",
       link: "https://twitter.com/eqbeR_",
     },
     // {
@@ -370,14 +370,14 @@ export const state = () => ({
     { title: "Vue.js", percent: 66 },
     { title: "Nuxt.js", percent: 37 },
   ],
-});
+})
 
 export const getters = {
   works: (state) => state.works,
   socials: (state) => state.socials,
   skills: (state) => state.skills,
-};
+}
 
-export const mutations = {};
+export const mutations = {}
 
-export const actions = {};
+export const actions = {}

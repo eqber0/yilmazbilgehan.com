@@ -23,7 +23,7 @@ export const usePersonalStore = defineStore("personal-info", {
       {
         id: 2,
         name: "Twitter",
-        icon: "iconTwitter",
+        icon: "iconX",
         link: "https://twitter.com/eqbeR_",
       },
     ],
