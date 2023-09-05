@@ -54,6 +54,9 @@
         width: 100%;
         height: max-content;
         line-height: 1em;
+        a {
+          display: block;
+        }
         &-title {
           text-transform: uppercase;
           margin-bottom: 2rem;
