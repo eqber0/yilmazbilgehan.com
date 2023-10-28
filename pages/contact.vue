@@ -82,7 +82,7 @@ function onSubmit(e) {
               <div class="input-item">
                 <input
                   type="text"
-                  placeholder="Company Name"
+                  placeholder="Subject"
                   id="company"
                   name="company"
                   v-model="company"
