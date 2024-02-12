@@ -22,10 +22,7 @@ const currentProjectData = await useAsyncData("currentProject", () => {
         </div>
       </div>
     </div>
-    <project-detail-hero
-      :sliderImages="currentProject?.sliderImgs"
-      :video="currentProject?.video"
-    />
+    <project-detail-hero :video="currentProject?.video" />
     <project-detail-about
       :websiteHref="currentProject?.website"
       :aboutDesc="currentProject?.description"
@@ -52,15 +49,17 @@ const currentProjectData = await useAsyncData("currentProject", () => {
         </p>
         <br />
         <br />
-        <v-button
-          element="nuxt-link"
-          color=""
-          icon="iconArrow"
-          hover="primary"
-          text="Get an Offer"
-          type="centered"
-          href="/contact"
-        />
+        <NuxtLink to="/contact">
+          <v-button
+            element="button"
+            color=""
+            icon="iconArrow"
+            hover="primary"
+            text="Get an Offer"
+            type="centered"
+            href=""
+          />
+        </NuxtLink>
       </div>
     </section>
   </main>

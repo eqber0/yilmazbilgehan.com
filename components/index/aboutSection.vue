@@ -69,9 +69,6 @@ const props = defineProps({
               </div>
             </div>
           </div>
-          <div class="index-about__skills-image">
-            <img src="~/assets/images/bilgehan.png" alt="" />
-          </div>
         </div>
       </div>
     </div>

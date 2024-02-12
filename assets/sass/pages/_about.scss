@@ -45,9 +45,25 @@
       gap: 4rem;
       @include bp(desktop) {
         gap: 3rem;
+        flex-direction: unset;
+        flex-wrap: wrap;
       }
       @include bp(tablet) {
         gap: 2rem;
+      }
+      @include bp(tablet-small) {
+        flex-direction: column;
+      }
+      .info-card__item {
+        @include bp(desktop) {
+          width: calc(50% - 3rem);
+        }
+        @include bp(tablet) {
+          width: calc(50% - 2rem);
+        }
+        @include bp(tablet-small) {
+          width: 100%;
+        }
       }
     }
     &-languages {
@@ -59,9 +75,6 @@
         border: 0.3rem solid rgba(#ffffff, 0.2);
         border-radius: 1.5rem;
         font-size: var(--txt-rem32);
-        @include bp(desktop) {
-          width: calc(50% - 3rem);
-        }
         @include bp(tablet) {
           padding: 1rem;
         }

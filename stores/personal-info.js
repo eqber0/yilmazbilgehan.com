@@ -4,7 +4,7 @@ export const usePersonalStore = defineStore("personal-info", {
   state: () => ({
     name: "Bilgehan Yılmaz",
     title: "Frontend Developer",
-    mail: "eqber00@gmail.com",
+    mail: "yilmaz.bilgehan@icloud.com",
     phone: "+90 555 685 77 45",
     address: "Bursa / Nilüfer",
     socials: [
@@ -23,7 +23,7 @@ export const usePersonalStore = defineStore("personal-info", {
       {
         id: 2,
         name: "Twitter",
-        icon: "iconTwitter",
+        icon: "iconX",
         link: "https://twitter.com/eqbeR_",
       },
     ],

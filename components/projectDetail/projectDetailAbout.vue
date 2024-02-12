@@ -25,7 +25,6 @@ const props = defineProps({
           type="bold"
           :title="'About ' + props.aboutName"
         />
-        <br />
         <!-- eslint-disable vue/no-v-html -->
         <p
           v-if="props.aboutDesc"
@@ -33,7 +32,6 @@ const props = defineProps({
           v-html="props.aboutDesc"
         ></p>
         <!--eslint-enable-->
-        <br />
         <br />
         <v-button
           v-if="props.websiteHref"
