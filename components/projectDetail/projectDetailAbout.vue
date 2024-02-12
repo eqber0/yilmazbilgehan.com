@@ -26,11 +26,11 @@ const props = defineProps({
           :title="'About ' + props.aboutName"
         />
         <!-- eslint-disable vue/no-v-html -->
-        <p
+        <div
           v-if="props.aboutDesc"
           class="txt txt--rem32 txt--font300 c-white text-center"
           v-html="props.aboutDesc"
-        ></p>
+        ></div>
         <!--eslint-enable-->
         <br />
         <v-button
