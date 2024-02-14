@@ -47,7 +47,7 @@ const props = defineProps({
     </div>
     <div
       v-else
-      class="info-card__item-subtitle txt txt--rem32 txt--font700 c-white"
+      class="info-card__item-subtitle txt txt--rem24 txt--font700 c-white"
     >
       {{ props.value }}
     </div>
