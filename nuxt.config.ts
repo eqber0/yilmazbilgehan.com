@@ -5,9 +5,6 @@ export default defineNuxtConfig({
     payloadExtraction: false,
   },
   ssr: true,
-  experimental: {
-    payloadExtraction: false,
-  },
   app: {
     head: {
       title: "Bilgehan Yılmaz Portfolio",
