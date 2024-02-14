@@ -13,6 +13,7 @@ const currentProjectData = await useAsyncData("currentProject", () => {
   return currentProject
 }).data.value
 </script>
+
 <template>
   <main class="detail-page">
     <div class="container">

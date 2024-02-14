@@ -35,23 +35,28 @@ export const usePersonalStore = defineStore("personal-info", {
       },
       {
         id: 1,
-        title: "CSS",
+        title: "CSS / SCSS",
         percent: 93,
       },
       {
+        id: 1,
+        title: "Tailwind",
+        percent: 78,
+      },
+      {
         id: 2,
-        title: "Javascript",
+        title: "JavaScript",
         percent: 76,
       },
       {
         id: 3,
         title: "Vue.js",
-        percent: 66,
+        percent: 76,
       },
       {
         id: 4,
         title: "Nuxt.js",
-        percent: 37,
+        percent: 67,
       },
     ],
     language: [
@@ -63,7 +68,7 @@ export const usePersonalStore = defineStore("personal-info", {
       {
         id: 1,
         name: "English",
-        level: "B1",
+        level: "B2",
       },
     ],
   }),
