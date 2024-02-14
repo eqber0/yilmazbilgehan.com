@@ -2,6 +2,9 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: true,
+  experimental: {
+    payloadExtraction: false,
+  },
   app: {
     head: {
       title: "Bilgehan Yılmaz Portfolio",

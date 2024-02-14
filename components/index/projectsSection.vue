@@ -67,92 +67,106 @@ function stopCarousel() {
   <section class="section index-works">
     <div class="container">
       <div class="index-works__wrapper">
-        <div ref="indexWorksSlider" class="index-works__slider">
-          <div class="work-carousel" data-min="900" style="" data-height="1140">
-            <div ref="carouselSpinner" id="mod-swiper" class="carousel-spinner">
-              <div ref="carouselGroup" class="carousel-group">
-                <div
-                  ref="thumbWrap"
-                  v-for="(item, i) in projects"
-                  :key="i"
-                  class="thumb-wrap"
-                >
+        <client-only>
+          <div ref="indexWorksSlider" class="index-works__slider">
+            <div
+              class="work-carousel"
+              data-min="900"
+              style=""
+              data-height="1140"
+            >
+              <div
+                ref="carouselSpinner"
+                id="mod-swiper"
+                class="carousel-spinner"
+              >
+                <div ref="carouselGroup" class="carousel-group">
                   <div
-                    class="work-thumb"
-                    @mouseover="stopCarousel()"
-                    @mouseleave="moveCarousel()"
+                    ref="thumbWrap"
+                    v-for="(item, i) in projects"
+                    :key="i"
+                    class="thumb-wrap"
                   >
-                    <NuxtLink
-                      :to="{
-                        path: `project-detail/${item.slug}`,
-                      }"
-                      class="index-works__slider-item"
+                    <div
+                      class="work-thumb"
+                      @mouseover="stopCarousel()"
+                      @mouseleave="moveCarousel()"
                     >
-                      <div class="index-works__slider-item__image">
-                        <img loading="lazy" :src="item.fullpage" alt="" />
-                      </div>
-                      <div class="index-works__slider-item__content">
-                        <div class="index-works__slider-item__content-title">
-                          <h3 class="txt txt--rem32 txt--font900 c-white">
-                            {{ item.name }}
-                          </h3>
-                          <p class="txt txt--rem20 txt--font300 c-white">
-                            {{ item.type }}
-                          </p>
+                      <NuxtLink
+                        :to="{
+                          path: `project-detail/${item.slug}`,
+                        }"
+                        class="index-works__slider-item"
+                      >
+                        <div class="index-works__slider-item__image">
+                          <img loading="lazy" :src="item.fullpage" alt="" />
                         </div>
-                        <div
-                          class="index-works__slider-item__content-button c-white"
-                        >
-                          <nuxt-icon class="icon icon-font" name="iconArrow" />
+                        <div class="index-works__slider-item__content">
+                          <div class="index-works__slider-item__content-title">
+                            <h3 class="txt txt--rem32 txt--font900 c-white">
+                              {{ item.name }}
+                            </h3>
+                            <p class="txt txt--rem20 txt--font300 c-white">
+                              {{ item.type }}
+                            </p>
+                          </div>
+                          <div
+                            class="index-works__slider-item__content-button c-white"
+                          >
+                            <nuxt-icon
+                              class="icon icon-font"
+                              name="iconArrow"
+                            />
+                          </div>
                         </div>
-                      </div>
-                    </NuxtLink>
+                      </NuxtLink>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="index-works__mobile">
-            <NuxtLink
-              v-for="(item, index) in Array.isArray(projectList)
-                ? projectList.slice(0, 3)
-                : []"
-              :key="index"
-              :to="{
-                path: `project-detail/${item.slug}`,
-              }"
-              class="index-works__slider-item"
-            >
-              <div class="index-works__slider-item__image">
-                <img quality="80" format="webp" :src="item.fullpage" />
-              </div>
-              <div class="index-works__slider-item__content">
-                <div class="index-works__slider-item__content-title">
-                  <h3 class="txt txt--rem32 txt--font900 c-white">
-                    {{ item.name }}
-                  </h3>
-                  <p class="txt txt--rem20 txt--font300 c-white">
-                    {{ item.type }}
-                  </p>
+            <div class="index-works__mobile">
+              <NuxtLink
+                v-for="(item, index) in Array.isArray(projectList)
+                  ? projectList.slice(0, 3)
+                  : []"
+                :key="index"
+                :to="{
+                  path: `project-detail/${item.slug}`,
+                }"
+                class="index-works__slider-item"
+              >
+                <div class="index-works__slider-item__image">
+                  <img quality="80" format="webp" :src="item.fullpage" />
                 </div>
-                <div class="index-works__slider-item__content-button c-white">
-                  <nuxt-icon class="icon icon-font" name="iconArrow" />
+                <div class="index-works__slider-item__content">
+                  <div class="index-works__slider-item__content-title">
+                    <h3 class="txt txt--rem32 txt--font900 c-white">
+                      {{ item.name }}
+                    </h3>
+                    <p class="txt txt--rem20 txt--font300 c-white">
+                      {{ item.type }}
+                    </p>
+                  </div>
+                  <div class="index-works__slider-item__content-button c-white">
+                    <nuxt-icon class="icon icon-font" name="iconArrow" />
+                  </div>
                 </div>
-              </div>
+              </NuxtLink>
+            </div>
+            <NuxtLink to="/projects">
+              <v-button
+                element="button"
+                href=""
+                color=""
+                icon="iconArrow"
+                hover="primary"
+                text="All Projects"
+                type="centered"
+              />
             </NuxtLink>
           </div>
-          <NuxtLink to="/projects">
-            <v-button
-              element="button"
-              href=""
-              color=""
-              icon="iconArrow"
-              hover="primary"
-              text="All Projects"
-              type="centered"
-            />
-          </NuxtLink>
-        </div>
+        </client-only>
       </div>
     </div>
   </section>
