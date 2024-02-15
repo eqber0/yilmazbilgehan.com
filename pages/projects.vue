@@ -25,7 +25,7 @@ const projectList = await useAsyncData("projects", () => {
         <div class="row g-4 g-md-5">
           <div
             class="col-12 col-md-6 col-xl-4"
-            v-for="(item, index) in projectList"
+            v-for="(item, index) in projects"
             :key="index"
           >
             <NuxtLink
