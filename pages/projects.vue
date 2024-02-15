@@ -10,13 +10,6 @@ const { projects } = storeToRefs(projectStore)
 const projectList = await useAsyncData("projects", () => {
   return projects
 }).data.value
-onMounted(() => {
-  console.log(
-    projectList.map((project) => {
-      return project?.name + " / " + project?.id
-    })
-  )
-})
 </script>
 
 <template>
