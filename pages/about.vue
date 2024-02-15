@@ -42,6 +42,7 @@ onMounted(() => {
                   :name="personalStore.name"
                   :title="personalStore.title"
                 />
+
                 <div class="about__info-cards mt-5">
                   <infoCard title="email" :value="personalStore.mail" />
                   <infoCard title="adress" :value="personalStore.address" />
@@ -61,6 +62,19 @@ onMounted(() => {
                     {{ item.name }}
                     <span v-if="item.level">{{ item.level }}</span>
                   </div>
+                </div>
+                <div class="mt-4">
+                  <v-button
+                    element="a"
+                    href="https://firebasestorage.googleapis.com/v0/b/yilmazbilgehan-7c443.appspot.com/o/bilgehan-resume.pdf?alt=media&token=23ffd041-b6cf-4bca-b53e-7cb60914560c"
+                    color=""
+                    icon="iconArrow"
+                    hover="primary"
+                    text="Resume"
+                    type="centered"
+                    size="md"
+                    :target="true"
+                  />
                 </div>
               </div>
             </div>
