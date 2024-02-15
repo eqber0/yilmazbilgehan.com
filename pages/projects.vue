@@ -1,6 +1,7 @@
 <script setup>
 import { storeToRefs } from "pinia"
 import { useProjectStore } from "/stores/project-store.js"
+import { onMounted } from "vue"
 
 const projectStore = useProjectStore()
 const { fetchProjects } = projectStore
@@ -9,6 +10,13 @@ const { projects } = storeToRefs(projectStore)
 const projectList = await useAsyncData("projects", () => {
   return projects
 }).data.value
+onMounted(() => {
+  console.log(
+    projectList.map((project) => {
+      return project?.name + " / " + project?.id
+    })
+  )
+})
 </script>
 
 <template>
@@ -25,8 +33,8 @@ const projectList = await useAsyncData("projects", () => {
         <div class="row g-4 g-md-5">
           <div
             class="col-12 col-md-6 col-xl-4"
-            v-for="(item, index) in projects"
-            :key="index"
+            v-for="item in projects.slice().sort((a, b) => a.id - b.id)"
+            :key="item?.id"
           >
             <NuxtLink
               :to="{ path: 'project-detail/' + item?.slug }"
