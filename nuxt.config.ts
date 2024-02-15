@@ -45,8 +45,12 @@ export default defineNuxtConfig({
     "bootstrap/dist/css/bootstrap-grid.min.css",
     "swiper/css",
   ],
-  modules: ["nuxt-swiper", "nuxt-icons", "@pinia/nuxt"],
+  modules: ["nuxt-swiper", "nuxt-icons", "@pinia/nuxt", "nuxt-gtag"],
   build: {
     transpile: ["gsap"],
+  },
+
+  gtag: {
+    id: "G-213S54WXN0",
   },
 })
