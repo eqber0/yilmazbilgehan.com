@@ -40,6 +40,10 @@ const props = defineProps({
     type: Boolean,
     default: null,
   },
+  size: {
+    type: String,
+    default: null,
+  },
 })
 </script>
 
@@ -58,6 +62,7 @@ const props = defineProps({
       props.hover == 'primary' ? 'btn--primary-hover' : '',
       props.hover == 'secondary' ? 'btn--secondary-hover' : '',
       props.type == 'centered' ? 'btn--centered' : '',
+      props.size ? 'btn--' + props.size : '',
     ]"
   >
     <div class="btn-txt">

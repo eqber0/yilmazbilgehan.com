@@ -39,6 +39,20 @@
       }
     }
   }
+  &--md {
+    padding: 1rem 2rem;
+    .btn {
+      &-txt {
+        font-size: var(--txt-rem20);
+        font-weight: 700;
+      }
+      &-icon {
+        .icon {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
   &--primary-hover {
     &:hover {
       background-color: var(--c-primary);
