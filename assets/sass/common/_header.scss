@@ -45,7 +45,6 @@
     transition: var(--transition);
     position: relative;
     z-index: 1;
-    // overflow: hidden;
     @include bp(tablet) {
       padding: 2rem 1rem;
     }
@@ -143,7 +142,6 @@
           margin-bottom: 1rem;
         }
         &:nth-child(2) {
-          // transition-delay: 0.1s;
           width: 3.7rem;
           margin-left: auto;
         }
