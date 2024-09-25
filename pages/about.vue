@@ -133,7 +133,7 @@ onMounted(() => {
               </div>
               <div class="about__section-content">
                 <experienceItem
-                  date="July 2021 - Now"
+                  date="July 2021 - September 2024"
                   title="Babel Agency"
                   text="Frontend Developer"
                 />
