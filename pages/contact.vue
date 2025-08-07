@@ -11,6 +11,10 @@ function onSubmit() {
     .post(import.meta.env.VITE_FORM_URL, formData.value)
     .then((res) => {
       submitSuccess.value = true
+
+      formData.value = {
+        form: "(yilmazbilgehan.com) Contact Submission",
+      }
     })
     .finally(() => {
       setTimeout(() => {
@@ -48,7 +52,7 @@ function onSubmit() {
                   placeholder="Name Surname"
                   id="name"
                   name="name"
-                  v-model="name"
+                  v-model="formData.name_surname"
                   required
                 />
               </div>
@@ -60,7 +64,7 @@ function onSubmit() {
                   placeholder="Subject"
                   id="company"
                   name="company"
-                  v-model="company"
+                  v-model="formData.subject"
                 />
               </div>
             </div>
@@ -69,7 +73,7 @@ function onSubmit() {
                 <input
                   type="email"
                   placeholder="Mail Address"
-                  v-model="mail"
+                  v-model="formData.email"
                   id="mail"
                   name="mail"
                   required
@@ -81,7 +85,7 @@ function onSubmit() {
                 <input
                   type="text"
                   placeholder="Phone"
-                  v-model="phoneNumber"
+                  v-model="formData.phone"
                   id="phoneNumber"
                   name="phoneNumber"
                   required
@@ -96,12 +100,19 @@ function onSubmit() {
                   placeholder="Message"
                   id="message"
                   name="message"
-                  v-model="message"
+                  v-model="formData.message"
                 >
                 </textarea>
               </div>
             </div>
           </form>
+          <div v-if="submitSuccess" class="col-12 mt-5">
+            <p class="txt txt--rem24 txt--font300 c-white text-center">
+              Your message has been sent successfully.
+              <br />
+              I will get back to you as soon as possible.
+            </p>
+          </div>
           <div class="col-12 mt-5">
             <v-button
               color=""
