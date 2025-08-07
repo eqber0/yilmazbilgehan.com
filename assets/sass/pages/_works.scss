@@ -210,19 +210,19 @@
     flex-wrap: wrap;
     gap: 2rem;
     &-item {
-      height: 55rem;
+      height: auto;
       border-radius: 0.6rem;
       overflow: hidden;
       width: calc(50% - 1rem);
       cursor: pointer;
       @include bp(laptop) {
-        height: 50rem;
+        // height: 50rem;
       }
       @include bp(desktop) {
-        height: 45rem;
+        // height: 45rem;
       }
       @include bp(tablet) {
-        height: 40rem;
+        // height: 40rem;
         width: 100% !important;
       }
       @include bp(tablet) {

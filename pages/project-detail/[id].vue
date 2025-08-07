@@ -1,17 +1,14 @@
 <script setup>
-import { storeToRefs } from "pinia"
-import { useProjectStore } from "/stores/project-store.js"
+import { useProjectStore } from "/stores/projects.js"
 
 const projectStore = useProjectStore()
-const { fetchProjects, getProject } = projectStore
-const { currentProject } = storeToRefs(projectStore)
-fetchProjects()
 const route = useRoute()
-getProject(route.params.id)
 
-const currentProjectData = await useAsyncData("currentProject", () => {
-  return currentProject
-}).data.value
+const currentProject = computed(() => {
+  return projectStore.projects.find(
+    (project) => project.slug === route.params.id
+  )
+})
 </script>
 <template>
   <main class="detail-page">
@@ -22,19 +19,11 @@ const currentProjectData = await useAsyncData("currentProject", () => {
         </div>
       </div>
     </div>
-    <project-detail-hero :video="currentProject?.video" />
-    <project-detail-about
-      :websiteHref="currentProject?.website"
-      :aboutDesc="currentProject?.description"
-      :aboutName="currentProject?.name"
-    />
-    <project-detail-info
-      :infoName="currentProject?.name"
-      :infoCountry="currentProject?.country"
-      :infoDuration="currentProject?.duration"
-      :infoType="currentProject?.type"
-    />
-    <project-detail-gallery :imageList="currentProject?.gallery" />
+    <project-detail-hero :item="currentProject" />
+
+    <project-detail-about :item="currentProject" />
+
+    <project-detail-gallery :item="currentProject" />
     <section class="section section--pt0">
       <div class="container">
         <h2 class="txt txt--rem48 txt--font300 c-white text-center">

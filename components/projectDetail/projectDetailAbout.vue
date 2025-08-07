@@ -1,16 +1,8 @@
 <script setup>
 const props = defineProps({
-  websiteHref: {
-    type: String,
-    default: "",
-  },
-  aboutDesc: {
-    type: String,
-    default: "",
-  },
-  aboutName: {
-    type: String,
-    default: "",
+  item: {
+    type: Object,
+    default: () => {},
   },
 })
 </script>
@@ -20,28 +12,28 @@ const props = defineProps({
     <div class="container">
       <div class="work-detail__about">
         <mainTitle
-          v-if="props.aboutName"
+          v-if="props.item.name"
           class="text-center"
           type="bold"
-          :title="'About ' + props.aboutName"
+          :title="'About ' + props.item.name"
         />
         <!-- eslint-disable vue/no-v-html -->
         <p
-          v-if="props.aboutDesc"
+          v-if="props.item.description"
           class="txt txt--rem32 txt--font300 c-white text-center"
-          v-html="props.aboutDesc"
+          v-html="props.item.description"
         ></p>
         <!--eslint-enable-->
         <br />
         <v-button
-          v-if="props.websiteHref"
+          v-if="props.item.website"
           color=""
           icon="iconArrow"
           hover="primary"
           text="Visit Website"
           type="centered"
           element="a"
-          :href="props.websiteHref"
+          :href="props.item.website"
           :target="true"
         />
       </div>

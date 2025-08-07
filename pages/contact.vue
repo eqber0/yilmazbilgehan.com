@@ -1,47 +1,22 @@
 <script setup>
-// import emailjs from "emailjs-com"
-import emailjs from "@emailjs/browser"
-const contactForms = ref()
+import axios from "axios"
 
-// Form Data
-const name = ref()
-const phoneNumber = ref()
-const mail = ref()
-const company = ref()
-const message = ref()
+const formData = ref({
+  form: "(yilmazbilgehan.com) Contact Submission",
+})
 const submitSuccess = ref(false)
 
-function onSubmit(e) {
-  try {
-    emailjs
-      .sendForm(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        contactForms.value,
-        import.meta.env.VITE_EMAILJS_AUTH_ID
-      )
-      .then(
-        (result) => {
-          if (result.status == 200) {
-            submitSuccess.value = true
-            name.value = ""
-            mail.value = ""
-            company.value = ""
-            phoneNumber.value = ""
-            message.value = ""
-
-            setTimeout(() => {
-              alert("Your message sent succesfully.")
-            }, 250)
-          }
-        },
-        (error) => {
-          // console.log("FAILED...", error.text);
-        }
-      )
-  } catch (error) {
-    console.log({ error })
-  }
+function onSubmit() {
+  axios
+    .post(import.meta.env.VITE_FORM_URL, formData.value)
+    .then((res) => {
+      submitSuccess.value = true
+    })
+    .finally(() => {
+      setTimeout(() => {
+        submitSuccess.value = false
+      }, 3000)
+    })
 }
 </script>
 

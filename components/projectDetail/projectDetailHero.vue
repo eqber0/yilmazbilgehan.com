@@ -1,8 +1,8 @@
 <script setup>
 const props = defineProps({
-  video: {
-    type: String,
-    default: "",
+  item: {
+    type: Object,
+    default: () => {},
   },
 })
 </script>
@@ -11,8 +11,9 @@ const props = defineProps({
   <section class="work-detail">
     <div class="container">
       <div class="work-detail-image">
-        <div v-if="props.video == ''" class="loader">
-          <svg
+        <div v-if="props.item.video == ''" class="loader">
+          <img :src="props.item.cover" alt="" />
+          <!-- <svg
             version="1.1"
             id="L9"
             xmlns="http://www.w3.org/2000/svg"
@@ -37,9 +38,15 @@ const props = defineProps({
                 repeatCount="indefinite"
               />
             </path>
-          </svg>
+          </svg> -->
         </div>
-        <video v-else :src="props.video" muted autoplay playsinline></video>
+        <video
+          v-else
+          :src="props.item.video"
+          muted
+          autoplay
+          playsinline
+        ></video>
       </div>
     </div>
   </section>

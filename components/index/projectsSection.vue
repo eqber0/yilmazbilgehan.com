@@ -1,16 +1,10 @@
 <script setup>
 import gsap from "gsap"
 import { storeToRefs } from "pinia"
-import { useProjectStore } from "~/stores/project-store.js"
+import { useProjectStore } from "~/stores/projects.js"
 
 const projectStore = useProjectStore()
-const { fetchProjects } = projectStore
 const { projects } = storeToRefs(projectStore)
-fetchProjects()
-
-const projectList = await useAsyncData("projects", () => {
-  return projects
-}).data.value
 
 onMounted(async () => {
   if (projects.value.length > 0) {
@@ -114,9 +108,7 @@ function stopCarousel() {
           </div>
           <div class="index-works__mobile">
             <NuxtLink
-              v-for="(item, index) in Array.isArray(projectList)
-                ? projectList.slice(0, 3)
-                : []"
+              v-for="(item, index) in projects.slice(0, 3)"
               :key="index"
               :to="{
                 path: `project-detail/${item.slug}`,

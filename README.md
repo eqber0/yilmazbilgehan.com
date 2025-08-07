@@ -9,7 +9,6 @@ Welcome to the GitHub repository of my personal portfolio website. This site sho
 - Bootstrap Grid
 - Vue.js (v3)
 - Nuxt.js (v3)
-- Firebase Firestore Database ( Used only with projects )
 - Nuxt Pinia (Pinia for Nuxt - State Management )
 - Nuxt Swiper ( Swiperjs for Nuxt )
 - Fancyapps/ui

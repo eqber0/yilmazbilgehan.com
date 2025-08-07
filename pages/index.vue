@@ -6,15 +6,14 @@ import awardSliderSection from "~/components/index/awardSlider.vue"
 // import footerTop from "~/components/index/footerTop.vue"
 
 import { storeToRefs } from "pinia"
-import { useProjectStore } from "~/stores/project-store.js"
+import { useProjectStore } from "~/stores/projects.js"
 
 const projectStore = useProjectStore()
-const { fetchProjects } = projectStore
-const { awardedProjects } = storeToRefs(projectStore)
-fetchProjects()
 
-const awardSliderData = await useAsyncData("awardedProjects", () => {
-  return awardedProjects
+const { projects } = storeToRefs(projectStore)
+
+const awardedProjects = computed(() => {
+  return projects.value.filter((project) => project.awarded)
 })
 </script>
 

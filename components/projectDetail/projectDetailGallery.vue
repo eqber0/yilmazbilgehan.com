@@ -1,7 +1,14 @@
 <script setup>
 import { Fancybox } from "@fancyapps/ui"
 
-const gallery = ref(props.imageList)
+const props = defineProps({
+  item: {
+    type: Object,
+    default: () => {},
+  },
+})
+
+const gallery = ref(props?.item?.gallery)
 function startFancy(image, index) {
   const fancyboxArr = []
   gallery.value.map((item) => {
@@ -11,24 +18,17 @@ function startFancy(image, index) {
     startIndex: index,
   })
 }
-
-const props = defineProps({
-  imageList: {
-    type: Array,
-    default: [],
-  },
-})
 </script>
 
 <template>
-  <section v-if="props.imageList" class="section">
+  <section v-if="props.item?.gallery" class="section">
     <div class="container">
       <div class="work-detail__gallery">
         <div
           :href="image"
           data-fancybox="gallery"
           class="work-detail__gallery-item"
-          v-for="(image, imageIndex) in props.imageList"
+          v-for="(image, imageIndex) in props.item?.gallery"
           :key="imageIndex"
           @click="startFancy(image, imageIndex)"
         >

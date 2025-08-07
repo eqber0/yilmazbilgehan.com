@@ -1,14 +1,9 @@
 <script setup>
 import { storeToRefs } from "pinia"
-import { useProjectStore } from "/stores/project-store.js"
+import { useProjectStore } from "/stores/projects.js"
 
 const projectStore = useProjectStore()
-const { fetchProjects } = projectStore
-fetchProjects()
 const { projects } = storeToRefs(projectStore)
-const projectList = await useAsyncData("projects", () => {
-  return projects
-}).data.value
 </script>
 
 <template>
@@ -25,7 +20,7 @@ const projectList = await useAsyncData("projects", () => {
         <div class="row g-4 g-md-5">
           <div
             class="col-12 col-md-6 col-xl-4"
-            v-for="(item, index) in projectList"
+            v-for="(item, index) in projects"
             :key="index"
           >
             <NuxtLink
