@@ -12,14 +12,16 @@ export const useProjectStore = defineStore("projects", {
         cover:
           "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-cover.jpg",
         fullpage:
-          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-fullpage.webp",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-fullpage.jpg",
+        video:
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-video.mp4",
         website: "https://dentalcentreturkey.com/",
         gallery: [
           "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-cover.jpg",
-          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-1.png",
-          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-2.png",
-          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-3.png",
-          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-4.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-1.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-2.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-3.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-4.jpg",
         ],
       },
       {
@@ -38,11 +40,11 @@ export const useProjectStore = defineStore("projects", {
           "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-video.mp4",
         website: "https://dentgroup.com.tr",
         gallery: [
-          "/images/dentgroup/dentgroup-cover.jpg",
-          "/images/dentgroup/dentgroup-mockup-1.jpg",
-          "/images/dentgroup/dentgroup-mockup-2.jpg",
-          "/images/dentgroup/dentgroup-mockup-3.jpg",
-          "/images/dentgroup/dentgroup-mockup-4.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-cover.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-mockup-1.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-mockup-2.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-mockup-3.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-mockup-4.jpg",
         ],
       },
       {
@@ -79,16 +81,16 @@ export const useProjectStore = defineStore("projects", {
         cover:
           "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-cover.jpg",
         fullpage:
-          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-fullpage.png",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-fullpage.jpeg",
         video:
           "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-video.mp4",
         website: "https://rantech.com.tr",
         gallery: [
           "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-cover.jpg",
-          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-1.png",
-          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-2.png",
-          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-3.png",
-          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-4.png",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-1.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-2.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-3.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-4.jpg",
         ],
       },
       {

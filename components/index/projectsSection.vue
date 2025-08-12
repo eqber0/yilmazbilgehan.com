@@ -45,7 +45,7 @@ function initHomeWork() {
   })
 
   carouselOn = true
-  carousel_tl.value = gsap.timeline({ repeat: -1 }).to($(".carousel-spinner"), {
+  carousel_tl.value = gsap.timeline({ repeat: -1 }).to(carouselSpinner.value, {
     duration: cSpeed,
     rotation: rotLoop,
     ease: "none",
