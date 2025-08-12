@@ -10,16 +10,16 @@ export const useProjectStore = defineStore("projects", {
         <br />
         <p><b>Tech Stack &amp; Libraries:</b> Vuejs Options API, SCSS, Bootstrap Grid, Nuxt.js (v2), Swiper.js, Google Tag Manager, Vee-Validate</p>`,
         cover:
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-cover.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-cover.jpg",
         fullpage:
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-fullpage.webp",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-fullpage.webp",
         website: "https://dentalcentreturkey.com/",
         gallery: [
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-cover.jpg",
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-1.png",
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-2.png",
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-3.png",
-          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-4.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-cover.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-1.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-2.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-3.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental-centre-turkey/dental-centre-turkey-mockup-4.png",
         ],
       },
       {
@@ -113,8 +113,9 @@ export const useProjectStore = defineStore("projects", {
           "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-7.png",
         ],
         awarded: true,
-        awardName: "Horizon Silver Award",
-        awardImage: "https://media.yilmaz-bilgehan.workers.dev/horizon.png",
+        awardName: "Kristal Elma Silver Award",
+        awardImage:
+          "https://media.yilmaz-bilgehan.workers.dev/kristal-elma.png",
       },
       {
         id: 5,

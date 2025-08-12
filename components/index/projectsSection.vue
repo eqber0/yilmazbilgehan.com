@@ -6,6 +6,8 @@ import { useProjectStore } from "~/stores/projects.js"
 const projectStore = useProjectStore()
 const { projects } = storeToRefs(projectStore)
 
+const projectData = projects.value.filter((item) => item.fullpage !== "")
+
 onMounted(async () => {
   if (projects.value.length > 0) {
     setTimeout(() => {
@@ -67,7 +69,7 @@ function stopCarousel() {
               <div ref="carouselGroup" class="carousel-group">
                 <div
                   ref="thumbWrap"
-                  v-for="(item, i) in projects"
+                  v-for="(item, i) in projectData.slice(0, 8)"
                   :key="i"
                   class="thumb-wrap"
                 >
