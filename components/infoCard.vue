@@ -1,4 +1,5 @@
 <script setup>
+import { Icon } from "@iconify/vue"
 const props = defineProps({
   type: {
     type: String,
@@ -41,7 +42,7 @@ const props = defineProps({
         class="footer__info-content__item-socials__item me-5"
       >
         <a target="_blank" :href="social.link">
-          <nuxt-icon class="icon icon-font" :name="social.icon" />
+          <Icon class="icon icon-font" :icon="social.icon" />
         </a>
       </div>
     </div>

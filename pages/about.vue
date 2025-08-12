@@ -52,16 +52,6 @@ onMounted(() => {
                   />
                   <infoCard title="phone" :value="personalStore.phone" />
                 </div>
-                <div class="about__info-languages mt-5">
-                  <div
-                    class="about__info-languages__item"
-                    v-for="(item, index) in languages"
-                    :key="index"
-                  >
-                    {{ item.name }}
-                    <span v-if="item.level">{{ item.level }}</span>
-                  </div>
-                </div>
                 <v-button
                   class="mt-5"
                   color=""

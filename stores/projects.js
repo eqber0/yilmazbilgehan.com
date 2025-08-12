@@ -2,7 +2,122 @@ export const useProjectStore = defineStore("projects", {
   state: () => ({
     projects: [
       {
-        id: "0",
+        id: 0,
+        slug: "dental-centre-turkey",
+        name: "Dental Centre Turkey",
+        type: "Health Tourism",
+        description: `<p>As a frontend developer with a strong focus on SEO and performance optimization, I played a crucial role in enhancing the online presence of Dental Centre Turkey, a leading dental services provider. My responsibilities extended beyond traditional frontend tasks, encompassing advanced SEO strategies, analytics integration, dynamic content management, and performance optimizations to ensure the website not only attracts but also retains a global clientele seeking top-tier dental services.</p>
+        <br />
+        <p><b>Tech Stack &amp; Libraries:</b> Vuejs Options API, SCSS, Bootstrap Grid, Nuxt.js (v2), Swiper.js, Google Tag Manager, Vee-Validate</p>`,
+        cover:
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-cover.jpg",
+        fullpage:
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-fullpage.webp",
+        website: "https://dentalcentreturkey.com/",
+        gallery: [
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-cover.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-1.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-2.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-3.png",
+          "https://media.yilmaz-bilgehan.workers.dev/dental/dental-mockup-4.png",
+        ],
+      },
+      {
+        id: 1,
+        name: "Dentgroup",
+        slug: "dentgroup",
+        type: "Health",
+        description: `<p>As a frontend developer, I was tasked with the development of the dentgroup website, a leading dental services provider. The project aimed to create an online platform that effectively showcases dentgroup's comprehensive dental services, state-of-the-art clinics, and patient-centric approach to dental care.</p>
+        <br />
+        <p><b>Tech Stack &amp; Libraries:</b> Laravel Blade Template, SCSS, Bootstrap Grid, Javascript, Swiper.js,</p>`,
+        cover:
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-cover.jpg",
+        fullpage:
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-fullpage.png",
+        video:
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup/dentgroup-video.mp4",
+        website: "https://dentgroup.com.tr",
+        gallery: [
+          "/images/dentgroup/dentgroup-cover.jpg",
+          "/images/dentgroup/dentgroup-mockup-1.jpg",
+          "/images/dentgroup/dentgroup-mockup-2.jpg",
+          "/images/dentgroup/dentgroup-mockup-3.jpg",
+          "/images/dentgroup/dentgroup-mockup-4.jpg",
+        ],
+      },
+      {
+        id: 2,
+        name: "Dentgroup Kids",
+        slug: "dentgroup-kids",
+        type: "Health",
+        description: `<p>As a frontend developer, I was tasked with the development of the dentgroup kids website, a leading dental services provider. The project aimed to create an online platform that effectively showcases dentgroup kids's comprehensive dental services, state-of-the-art clinics, and patient-centric approach to dental care.</p>
+        <br />
+        <p><b>Tech Stack &amp; Libraries:</b> Laravel Blade Template, SCSS, Bootstrap Grid, Javascript, Swiper.js,</p>`,
+        cover:
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-cover.jpg",
+        fullpage:
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-fullpage.png",
+        video:
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-video.mp4",
+        website: "https://dentgroup.com.tr",
+        gallery: [
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-cover.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-mockup-1.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-mockup-2.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-mockup-3.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/dentgroup-kids/dentgroup-kids-mockup-4.jpg",
+        ],
+      },
+      {
+        id: 3,
+        name: "RanTech",
+        slug: "rantech",
+        type: "Automotive",
+        description: `<p>As the frontend developer for the RanTech website, my role was to create an engaging and informative online presence for RanTech, a company specializing in offers rapid delivery, superior quality, and competitive prices for spare parts in all product categories for commercial vehicles. The aim was to design a website that not only highlights RanTech's offerings and expertise but also enhances user engagement and facilitates business growth.</p>
+        <br />
+        <p><b>Tech Stack &amp; Libraries:</b> Pug Template, SCSS, Javascript, GSAP, Swiper.js, Tagify</p>`,
+        cover:
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-cover.jpg",
+        fullpage:
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-fullpage.png",
+        video:
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-video.mp4",
+        website: "https://rantech.com.tr",
+        gallery: [
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-cover.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-1.png",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-2.png",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-3.png",
+          "https://media.yilmaz-bilgehan.workers.dev/rantech/rantech-mockup-4.png",
+        ],
+      },
+      {
+        id: 4,
+        name: "Latro",
+        slug: "latro",
+        type: "Corporate",
+        description: `Latro is a chemical company known for its unconventional solutions. I designed a website similar to theirs, adopting an unconventional layout. This award-winning website maximized accessibility. With color-blind, visually impaired, high-contrast, and low-carbon footprint modes, I created a project that will inspire future generations by offering a visual feast while reducing our digital footprint.`,
+        cover:
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-banner.jpg",
+        fullpage:
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-fullpage.webp",
+        // video: "/images/latro/latro-video.mp4",
+        website: "https://latro.com.tr",
+        gallery: [
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-banner.jpg",
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-2.png",
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-3.png",
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-4.png",
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-5.png",
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-6.png",
+          "https://media.yilmaz-bilgehan.workers.dev/latro/latro-mockup-7.png",
+        ],
+        awarded: true,
+        awardName: "Horizon Silver Award",
+        awardImage: "https://media.yilmaz-bilgehan.workers.dev/horizon.png",
+      },
+      {
+        id: 5,
         slug: "chace-people",
         name: "Chace People",
         type: "Corporate",
@@ -37,7 +152,7 @@ export const useProjectStore = defineStore("projects", {
         awardImage: "https://media.yilmaz-bilgehan.workers.dev/horizon.png",
       },
       {
-        id: "1",
+        id: 6,
         name: "Trowas",
         slug: "trowas",
         type: "Corporate",
@@ -70,10 +185,10 @@ export const useProjectStore = defineStore("projects", {
           "https://media.yilmaz-bilgehan.workers.dev/altin-orumcek.png",
       },
       {
-        id: "3",
+        id: 7,
         name: "Dakar Aeroport",
         slug: "dakar-airport",
-        type: "Corporate",
+        type: "Airport",
         description: `The Dakar Aeroport website serves as a one-stop solution for all your travel needs related to the Senegal Airport. Developed with a focus on usability and convenience, the website offers an engaging and intuitive interface that simplifies the travel process for passengers flying in and out of Dakar.
         <br>
         <br>
@@ -106,7 +221,7 @@ export const useProjectStore = defineStore("projects", {
           "https://media.yilmaz-bilgehan.workers.dev/horizon-bronze.png",
       },
       {
-        id: "4",
+        id: 8,
         name: "Tansu Yacht",
         slug: "tansu-yacht",
         type: "Corporate",
@@ -129,10 +244,10 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "5",
+        id: 9,
         name: "Trace Aerospace",
         slug: "trace-aerospace",
-        type: "Corporate",
+        type: "Aerospace",
         description: `This platform is a testament to our dedication to creating visually appealing and user-friendly web experiences that showcase our client's expertise in aerospace engineering and their commitment to delivering exceptional customer satisfaction.
         <br>
         <br>
@@ -160,7 +275,7 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "6",
+        id: 10,
         name: "Yaşalar",
         slug: "yasalar",
         type: "Corporate",
@@ -192,7 +307,7 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "7",
+        id: 11,
         name: "NSK Group",
         slug: "nsk-group",
         type: "Corporate",
@@ -222,10 +337,10 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "8",
+        id: 12,
         name: "FCB Interiors",
         slug: "fcb-interiors",
-        type: "Corporate",
+        type: "Interior",
         description: `FCB Interiors website, an exceptional platform designed to highlight the company's expertise in interior design for residential and commercial spaces. Based in Bursa, FCB Interiors is a specialist in crafting and implementing unique interior designs, providing comprehensive services from conception to production and completion.
         <br>
         <br>
@@ -252,7 +367,7 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "9",
+        id: 13,
         name: "Elkon",
         slug: "elkon",
         type: "Corporate",
@@ -275,10 +390,10 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "10",
+        id: 14,
         name: "Madamnica",
         slug: "madamnica",
-        type: "Corporate",
+        type: "Restaurant",
         description: `Madam Niça website, a captivating platform designed to share the unique culinary story that began in Bozcaada in 2016. The founders, Oya Terzioğlu and Saada Delen, have breathed new life into an old winery once owned by a Greek woman named Dominiça Yusufiz, creating a charming dining experience that embraces the richness of various food cultures.
         <br>
         <br>
@@ -307,10 +422,10 @@ export const useProjectStore = defineStore("projects", {
         ],
       },
       {
-        id: "11",
+        id: 15,
         name: "SKT",
         slug: "skt",
-        type: "Corporate",
+        type: "Industrial",
         description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, aliquid.`,
         cover: "https://media.yilmaz-bilgehan.workers.dev/skt/skt-mockup-1.png",
         fullpage:
